@@ -1,0 +1,147 @@
+// MIXINS //
+
+@mixin clear {
+  content: "";
+  display: table;
+  clear: both;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin block {
+	margin: 0;
+	width: auto;
+	min-width: 100%;
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+}
+
+@mixin contain {
+	position: relative;
+	margin: 0px auto;
+	display: block;
+	box-sizing: border-box;
+   width: $site-size;
+}
+
+@mixin center {
+   position: relative;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+@mixin v-center {
+   position: relative;
+   top: 50%;
+   -webkit-transform: translateY(-50%);
+   -moz-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
+
+@mixin h-center {
+   position: relative;
+   left: 50%;
+   -webkit-transform: translateX(-50%);
+   -moz-transform: translateX(-50%);
+   transform: translateX(-50%);
+}
+
+@mixin transition($args) {
+   -webkit-transition: $args;
+   -moz-transition: $args;
+   -ms-transition: $args;
+   -o-transition: $args;
+   transition: $args;
+}
+
+@mixin transform($transforms) {
+   -moz-transform: $transforms;
+   -o-transform: $transforms;
+   -ms-transform: $transforms;
+   -webkit-transform: $transforms;
+   transform: $transforms;
+}
+
+@mixin flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+   align-items: flex-start;
+}
+
+// BREAKPOINTS //
+
+@mixin breakpoint-wide {
+   @media only screen and (min-width: 1920px) {
+      @content;
+   }
+}
+
+@mixin breakpoint-md {
+   @media only screen and (max-width: 1359px) {
+      @content;
+   }
+}
+
+@mixin breakpoint-tablet {
+   @media only screen and (max-width: 1199px) {
+      @content;
+   }
+}
+
+@mixin breakpoint-tablet-vertical {
+   @media only screen and (max-width: 1023px) and (orientation: portrait) {
+      @content;
+   }
+}
+
+@mixin breakpoint-991 {
+   @media only screen and (max-width: 991px) {
+      @content;
+   }
+}
+
+@mixin breakpoint-mobile {
+   @media only screen and (max-width: 767px),
+   screen and (max-width: 991px) and (max-height: 400px) {
+      @content;
+   }
+}
+
+@mixin breakpoint-mobile-vertical {
+   @media only screen and (max-width: 767px) and (orientation: portrait) {
+      @content;
+   }
+}
+
+@mixin breakpoint-mobile-wide {
+   @media all and (pointer: coarse) and (max-width: 899px) and (orientation: landscape) {
+      @content;
+   }
+}
+
+@mixin breakpoint-xs {
+   @media only screen and (max-width: 349px) {
+      @content;
+   }
+}
+
+@mixin touch {
+   @media all and (pointer: coarse) and (max-width: 1199px) {
+      @content;
+   }
+}
+
+@mixin desktop {
+   @media all and (pointer: fine),
+   screen and (-moz-touch-enabled:0) {
+      @content;
+   }
+}

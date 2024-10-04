@@ -1,0 +1,144 @@
+// HEADER //
+
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 18px 30px;
+   box-sizing: border-box;
+   font-size: 16px;
+   z-index: 10001;
+   background-color: $black;
+   .inner-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   .logo {
+      width: 175px;
+      position: relative;
+      z-index: 2;
+      img {
+         width: 100%;
+         display: block;
+      }
+   }
+   nav {
+      @include h-center;
+      position: absolute;
+      z-index: 1;
+   }
+   ul {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+   }
+   li {
+      a.active {
+         color: $yellow;
+      }
+   }
+   #nav-btn {
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+   }
+   @include breakpoint-tablet {
+      ul {
+         gap: 22px;
+      }
+   }
+   @include breakpoint-991 {
+      #nav-btn {
+         opacity: 1;
+         visibility: visible;
+         display: block;
+         position: relative;
+         z-index: 3;
+         width: 26px;
+         height: 20px;
+         &:before, &:after {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            content: '';
+            height: 4px;
+            background: $white;
+         }
+         &:before {
+            top: 0;
+         }
+         &:after {
+            bottom: 0;
+         }
+         span {
+            text-indent: -9999px;
+            background: $white;
+            display: block;
+            width: 100%;
+            height: 4px;
+         }
+         &.active {
+            span {
+               opacity: 0;
+               visibility: hidden;
+            }
+            &:before {
+               transform: rotate(-45deg);
+               top: 8px;
+            }
+            &:after {
+               transform: rotate(45deg);
+               bottom: 8px;
+            }
+         }
+      }
+      nav {
+         position: fixed;
+         background: $black;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 100vh;
+         height: 100svh;
+         transform: unset;
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         font-size: 36px;
+         font-weight: 300;
+         transition: all .15s ease-in-out;
+         opacity: 0;
+         visibility: hidden;
+         &.active {
+            opacity: 1;
+            visibility: visible;
+         }
+         ul {
+            flex-direction: column;
+            text-align: left;
+            padding: 0 30px;
+         }
+      }
+   }
+   @include breakpoint-mobile {
+      padding: 18px 22px;
+      nav {
+         ul {
+            padding: 0 22px;
+         }
+      }
+   }
+   @include breakpoint-mobile-wide {
+      nav {
+         font-size: 22px;
+         font-weight: 400;
+         ul {
+            gap: 10px;
+         }
+      }
+   }
+}

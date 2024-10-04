@@ -1,0 +1,90 @@
+// COMPONENTS //
+
+#hero {
+   position: relative;
+   height: 100vh;
+   height: 100svh;
+   width: 100%;
+   display: flex;
+   box-sizing: border-box;
+}
+
+.video-bg {
+   position: absolute;
+   bottom: 0;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: flex-end;
+   video {
+      position: relative;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.grid {
+   display: grid;
+   box-sizing: border-box;
+   &.grid-2-column {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 100px 120px;
+   }
+   &.grid-3-column {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 50px;
+   }
+   .span-all {
+      grid-column: 1/-1;
+   }
+   @include breakpoint-tablet {
+      &.grid-2-column {
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+         gap: 80px 100px;
+      }
+      &.grid-3-column {
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+         gap: 50px;
+      }
+   }
+   @include breakpoint-991 {
+      display: block;
+   }
+}
+
+.grid-intro {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   max-width: 800px;
+   margin: 0 auto;
+   .icon {
+      width: 68px;
+      margin: 0 auto;
+   }
+}
+
+.page-content {
+   width: 100%;
+   // styles for ul, li, p, headers, etc
+   line-height: 1.4;
+   p {
+      margin: 20px 0;
+   }
+   ul, ol {
+      margin: 20px 40px;
+      li {
+         margin-bottom: 10px;
+         list-style-type: disc;
+      }
+   }
+   h1, h2, h3, h4, h5, h6 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+   }
+
+}

@@ -1,0 +1,124 @@
+// FOOTER //
+
+footer {
+   background: linear-gradient(to bottom, $black, $yellow 325px);
+   color: $black;
+   padding: 375px 0 35px;
+   position: relative;
+   &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 350px;
+   }
+   &:before {
+      z-index: 2;
+      background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(255, 218, 52,.0));
+      color: $yellow;
+   }
+   &:after {
+      z-index: 1;
+      background: url(/images/pattern-bg-yellow.svg) top center repeat-x;
+      background-size: auto 350px;
+   }
+   a {
+      color: $black !important;
+      @include desktop {
+         &:hover {
+            color: $white !important;
+         }
+      }
+   }
+   .contain {
+      display: flex;
+      gap: 70px;
+   }
+   .logo {
+      width: 25%;
+      img {
+         max-width: 100%;
+      }
+   }
+   .footer-content {
+      box-sizing: border-box;
+      margin-top: -20px;
+      flex: 1;
+   }
+   #footer-nav {
+      position: relative;
+   }
+   .row {
+      width: 100%;
+      border-bottom: 2px solid $black;
+      display: flex;
+      padding: 20px 0;
+      li {
+         width: 20%;
+      }
+      .title {
+         width: 30%;
+         text-transform: uppercase;
+         font-weight: 700;
+      }
+   }
+   .copyright {
+      margin: 80px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 12px;
+      ul.social {
+         display: flex;
+         justify-content: flex-end;
+         gap: 15px;
+      }
+   }
+   @include breakpoint-tablet {
+      font-size: 16px;
+      .row {
+         li {
+            width: 22%;
+         }
+         .title {
+            width: 35%;
+         }
+      }
+   }
+   @include breakpoint-991 {
+      .contain {
+         display: block;
+      }
+      .footer-content {
+         margin-top: 30px;
+      }
+   }
+   @include breakpoint-mobile {
+      background: linear-gradient(to bottom, $black, $yellow 225px);
+      padding: 250px 0 40px;
+      &:before, &:after {
+         height: 250px;
+      }
+      .row {
+         flex-wrap: wrap;
+         li {
+            width: 100%;
+            padding: 0 0 6px 50%;
+         }
+         li.title {
+            position: absolute;
+            padding: 0;
+         }
+      }
+      .copyright {
+         margin-top: 20px;
+         flex-wrap: wrap;
+         gap: 20px;
+         ul.social {
+            width: 100%;
+            justify-content: flex-start;
+         }
+      }
+   }
+}

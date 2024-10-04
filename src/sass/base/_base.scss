@@ -1,0 +1,188 @@
+// BASE //
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-size: $base-font-size;
+   font-family: $base-font-family;
+   font-weight: $base-font-weight;
+   color: $base-font-color;
+   line-height: $base-line-height;
+   background: $base-background-color;
+}
+
+.contain {
+	@include contain;
+	@include breakpoint-wide {
+	}
+   @include breakpoint-mobile {
+      width: 100%;
+      padding: 0 22px;
+   }
+}
+
+// CUSTOM SCROLL //
+
+body {
+   &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background: $black;
+      padding: 2px;
+   }
+   &::-webkit-scrollbar-thumb {
+      background: $yellow;
+      opacity: .5;
+   }
+   ::-moz-selection { /* Code for Firefox */
+      color: $yellow;
+      background: $black;
+      opacity: .5;
+   }
+   ::selection {
+      color: $yellow;
+      background: $black;
+      opacity: .5;
+   }
+}
+
+main {   
+   max-width: 1200px;
+   width: 97%;
+   margin: 0 auto;
+   padding: 80px 0;
+}
+
+// LINK STYLES //
+
+a {
+   cursor: pointer;
+	position: relative;
+	display: inline-block;
+	outline: none;
+   color: $white;
+	@include desktop {
+		transition: all .15s ease-in-out;
+      img {transition: all .25s ease-in-out;}
+	}
+   &:after {
+      @include desktop {
+   		transition: all .15s ease-in-out;
+   	}
+   }
+}
+a:focus {outline:none;}
+a:active {color: $white;}
+a:visited {color: $white;}
+a:hover {color: $yellow;}
+
+.btn {
+   background: $yellow;
+   color: $black !important;
+   font-family: $everett;
+   font-size: 14px;
+   font-weight: 500;
+   text-transform: uppercase;
+   text-align: center;
+   display: table;
+   padding: 10px 20px;
+   letter-spacing: .05em;
+   @include desktop {
+      &:hover {
+         background: $white;
+         color: $black;
+      }
+   }
+}
+
+
+// TYPOGRAPHY //
+
+.body-36 {
+   font-size: 36px;
+}
+
+.body-32 {
+   font-size: 32px;
+   line-height: 1.4375;
+   font-weight: 300;
+}
+
+.body-24 {
+   font-size: 24px;
+}
+
+.body-20 {
+   font-size: 20px;
+}
+
+.body-16 {
+   font-size: 16px;
+}
+
+h1, .h1 {
+   font-size: 54px;
+   font-weight: 300;
+   font-family: $everett;
+}
+
+h2, .h2 {
+   font-size: 42px;
+   font-weight: 200;
+   font-family: $everett;
+}
+
+h3, .h3 {
+   font-size: 24px;
+   font-weight: 500;
+   color: $yellow;
+   text-transform: uppercase;
+   font-family: $everett;
+}
+
+h4, .h4 {
+   font-size: 20px;
+   font-weight: 700;
+}
+
+
+// RESPONSIVE TYPOGRAPHY //
+
+@include breakpoint-tablet {
+   .body-36 {
+      font-size: 32px;
+   }
+   .body-32 {
+      font-size: 28px;
+   }
+   .body-24 {
+      font-size: 21px;
+   }
+}
+
+@include breakpoint-991 {
+   body {
+   }
+}
+@include breakpoint-mobile {
+   body {
+      font-size: $mobile-font-size;
+   }
+   h2, .h2 {
+      font-size: 42;
+   }
+   h2, .h2 {
+      font-size: 35px;
+   }
+   h3, .h3 {
+      font-size: 20px;
+   }
+   .body-32 {
+      font-size: 25px;
+   }
+   .body-20 {
+      font-size: 18px;
+   }
+}

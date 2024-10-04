@@ -1,0 +1,31 @@
+// VARIABLES //
+
+// COLORS //
+$black: #000000;
+$white: #FFFFFF;
+$green: #29CF96;
+$blue: #0337FF;
+$pink: #F068D4;
+$yellow: #FFDA34;
+
+// BASE STYLES //
+$base-font-family: 'neue-haas-unica', sans-serif;
+$base-font-weight: 400;
+$base-font-size: 18px;
+$base-font-color: $white;
+$base-line-height: 1.25;
+$base-background-color: $black;
+
+// SITE SIZE //
+$site-size: calc(100% - 60px);
+
+// MOBILE STYLES //
+$mobile-font-size: 16px;
+
+// EASING/ANIMATION //
+$duration: .25s;
+$easing: ease-in-out;
+$delay: .25s;
+
+// TYPOGRAPHY //
+$everett: var(--ff_1), sans-serif;
