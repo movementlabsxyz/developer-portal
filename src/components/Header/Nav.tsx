@@ -83,22 +83,22 @@ export default function Nav() {
         },
         {
             name: 'Faucets',
-            link: 'https://faucets.movementnetwork.xyz/',
+            link: 'https://faucet.movementlabs.xyz/',
             target: '_blank',
         },
         {
             name: 'RPC',
-            link: 'https://rpc.movementnetwork.xyz/',
+            link: 'https://aptos.testnet.suzuka.movementlabs.xyz/v1',
             target: '_blank',
         },
         {
             name: 'DevTools',
-            link: 'https://devtools.movementnetwork.xyz/',
-            target: '_blank',
+            link: '#',
+            target: '_self',
         },
         {
             name: 'Learn',
-            link: '/learn',
+            link: 'https://movementnetwork.xyz/learn',
         },
     ]
 
@@ -106,7 +106,7 @@ export default function Nav() {
         <header id="site-header">
             <div className="inner-wrap">
                 <Link href={'/'} className="logo">
-                    <Image src={logo} alt="Movement Network" />
+                    <Image src={logo} alt="Movement Developer Portal" />
                 </Link>
                 <nav id="main-nav" role="navigation" className={mobileNavOpen ? 'active' : ''}>
                     <ul>
