@@ -11,6 +11,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.22.11",
     "@contentful/rich-text-types": "^16.8.5",
+    "fs": "0.0.1-security",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
     "next": "14.2.13",
