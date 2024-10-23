@@ -2,8 +2,7 @@
 
 import { getAllPostsData, getPostData } from '../../../lib/posts'
 import { Metadata } from 'next'
-import { PostData } from '@/types/posts'
-import { Markdown } from '@/lib/markdown'
+import Article from '@/pages/Tutorials/Article'
 
 interface PostPageProps {
     params: {
@@ -42,8 +41,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
     return (
         <article className="page-content">
-            {/* <h1>{decodeURIComponent(postData.title || "")}</h1> */}
-            <Markdown content={postData.contentHtml || ''} />
+            <Article data={postData} />
         </article>
     )
 }

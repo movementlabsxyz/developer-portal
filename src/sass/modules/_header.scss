@@ -9,7 +9,7 @@ header {
    box-sizing: border-box;
    font-size: 16px;
    z-index: 10001;
-   background-color: $black;
+   background: $black;
    .inner-wrap {
       position: relative;
       display: flex;
@@ -35,9 +35,12 @@ header {
       display: flex;
       justify-content: center;
       gap: 40px;
+      a:hover {
+         color: $yellow;
+      }
    }
-   li {
-      a.active {
+   li.active {
+      a {
          color: $yellow;
       }
    }

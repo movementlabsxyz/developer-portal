@@ -7,7 +7,7 @@ a, img, button {background: none; outline: none; border: 0px; text-decoration: n
 button, .btn {transition: all .125s ease-in-out; cursor: pointer;}
 img {display: block; width: 100%;}
 ul, li {list-style-type: none;}
-html, body {width: auto; min-width: 100%; max-width: 100%; min-height: 100%; overflow: auto; overflow-x: hidden;}
+html, body {width: auto; min-width: 100%; max-width: 100%; min-height: 100%; overflow: visible; overflow-x: clip;}
 html.noScroll, body.noScroll {overflow: hidden;position:fixed;}
 html {-ms-content-zooming: none; height: 100%;}
 @-ms-viewport {width: device-width;}

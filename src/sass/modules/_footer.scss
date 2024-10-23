@@ -5,6 +5,7 @@ footer {
    color: $black;
    padding: 375px 0 35px;
    position: relative;
+   margin-top: 100px;
    &:before, &:after {
       content: '';
       position: absolute;
@@ -15,8 +16,7 @@ footer {
    }
    &:before {
       z-index: 2;
-      background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(255, 218, 52,.0));
-      color: $yellow;
+      background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,.0));
    }
    &:after {
       z-index: 1;
@@ -24,11 +24,14 @@ footer {
       background-size: auto 350px;
    }
    a {
-      color: $black !important;
+      color: $black;
       @include desktop {
          &:hover {
-            color: $white !important;
+            color: $white;
          }
+      }
+      &:visited {
+         color: $black;
       }
    }
    .contain {
@@ -97,6 +100,7 @@ footer {
    @include breakpoint-mobile {
       background: linear-gradient(to bottom, $black, $yellow 225px);
       padding: 250px 0 40px;
+      margin-top: 40px;
       &:before, &:after {
          height: 250px;
       }
@@ -110,6 +114,18 @@ footer {
             position: absolute;
             padding: 0;
          }
+         li.blank {
+            height: 0;
+         }
+      }
+      #footer-nav {
+         ul:first-of-type {
+            border-bottom: 0;
+            padding-bottom: 0;
+         }
+            ul:nth-of-type(2) {
+               padding-top: 0;
+            }
       }
       .copyright {
          margin-top: 20px;

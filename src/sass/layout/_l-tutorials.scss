@@ -1,0 +1,230 @@
+// HOMEPAGE //
+
+.tutorial-content {
+   padding-top: 40px;
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 70px;
+   font-size: 15px;
+   .sidebar {
+      position: relative;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 100px;
+      display: block;
+      z-index: 2;
+   }
+   .col-rt {
+      margin-top: -20px;
+      position: relative;
+      z-index: 1;
+      > div {
+         padding-bottom: 20px;
+      }
+      .content-group {
+         border-top: 1px solid $white;
+         padding-top: 30px;
+      }
+      > div:first-of-type {
+         border-top: 0;
+         padding-top: 0;
+      }
+   }
+   p, ul {
+      width: 75%;
+   }
+   h2, h3, h4, h5, p {
+      padding: 10px 0;
+   }
+   ul:not(#scroll-index, .nested) {
+      padding: 6px 0;
+      li {
+         padding: 4px 0 4px 20px;
+         position: relative;
+         &:before {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            content: '';
+            border-radius: 4px;
+            left: 0;
+            top: 12px;
+            background: $white;
+         }
+      }
+   }
+   @include breakpoint-tablet {
+      padding-top: 20px;
+      gap: 50px;
+      p, ul {
+         width: 100%;
+      }
+   }
+   @include breakpoint-991 {
+      display: block;
+      .sidebar {
+         width: 100%;
+         margin: 0 auto;
+         top: 80px;
+      }
+      .col-rt {
+         width: 100%;
+         margin: 50px auto 0;
+      }
+      h4 {
+         border: 1px solid $yellow;
+         color: $white;
+         font-size: 18px;
+         border-radius: 50px;
+         padding: 10px 20px;
+         position: relative;
+         height: 50px;
+         box-sizing: border-box;
+         display: flex;
+         align-items: center;
+         z-index: 2;
+         transition: all .15s ease-in-out;
+         background: $black;
+         &:after {
+            position: absolute;
+            right: 20px;
+            top: 14px;
+            content: '';
+            text-align: right;
+            border: solid $white;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 6px;
+            transform: rotate(45deg);
+            transition: all .15s ease-in-out;
+         }
+         &.active {
+            background: $yellow;
+            color: $black;
+            &:after {
+               border-color: $black;
+            }
+         }
+      }
+   }
+   @include breakpoint-mobile {
+      padding-top: 0;
+      h2, h5, p {
+         padding: 7px 0;
+      }
+      pre {
+         margin: 10px auto;
+      }
+      ul:not(#scroll-index, .nested) {
+         padding: 4px 0;
+      }
+   }
+}
+
+#scroll-index {
+   margin: 15px 0 0 8px;
+   border-left: 1px solid $yellow;
+   padding-left: 20px;
+   box-sizing: border-box;
+   transition: all .15s ease-in-out;
+   li {
+      padding: 5px 0;
+      white-space: nowrap;
+   }
+   > li {
+      padding: 0 0 5px;
+      &.current > span {
+         color: $yellow;
+      }
+   }
+   .nested {
+      padding: 5px 0 0 15px;
+   }
+   span:hover {
+      color: $yellow;
+      cursor: pointer;
+   }
+   @include breakpoint-991 {
+      width: 100%;
+      position: absolute;
+      margin: -25px auto 0;
+      border: 1px solid $yellow;
+      border-top: 0;
+      border-radius: 0 0 20px 20px;
+      z-index: 1;
+      background: $black;
+      padding: 45px 20px 20px;
+      opacity: 0;
+      visibility: hidden;
+      &.active {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+}
+
+.tut-nav {
+   display: flex;
+   margin: 40px auto 0;
+   justify-content: space-between;
+   a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $yellow;
+      &:hover {
+         @include desktop {
+            .icon {
+               background: $yellow;
+               svg path {
+                  fill: $black;
+               }
+            }
+         }
+      }
+      .icon {
+         width: 28px;
+         height: 28px;
+         border-radius: 28px;
+         border: 1px solid $yellow;
+         background: $black;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         cursor: pointer;
+         svg {
+            width: 14px;
+            path {
+               transition: all .15s ease-in-out;
+               fill: $yellow;
+            }
+         }
+      }
+      &.tut-prev {
+         svg {
+            transform: translateX(-1px);
+         }
+      }
+      &.tut-next {
+         svg {
+            transform: translateX(1px);
+         }
+      }
+   }
+   @include breakpoint-mobile {
+      a {
+         flex-direction: column;
+         align-items: flex-start;
+         .icon {
+            order: 1;
+         }
+         .text {
+            order: 2;
+         }
+      }
+      .tut-next {
+         align-items: flex-end;
+      }
+   }
+}

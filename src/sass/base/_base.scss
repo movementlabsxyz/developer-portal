@@ -1,9 +1,5 @@
 // BASE //
 
-html {
-   scroll-behavior: smooth;
-}
-
 body {
    font-size: $base-font-size;
    font-family: $base-font-family;
@@ -15,6 +11,7 @@ body {
 
 .contain {
 	@include contain;
+   max-width: 1300px;
 	@include breakpoint-wide {
 	}
    @include breakpoint-mobile {
@@ -37,22 +34,15 @@ body {
       opacity: .5;
    }
    ::-moz-selection { /* Code for Firefox */
-      color: $yellow;
+      color: $green;
       background: $black;
       opacity: .5;
    }
    ::selection {
-      color: $yellow;
+      color: $green;
       background: $black;
       opacity: .5;
    }
-}
-
-main {   
-   max-width: 1100px;
-   width: 90%;
-   margin: 0 auto;
-   padding: 80px 0;
 }
 
 // LINK STYLES //
@@ -73,10 +63,15 @@ a {
    	}
    }
 }
+
 a:focus {outline:none;}
 a:active {color: $white;}
 a:visited {color: $white;}
-a:hover {color: $yellow;}
+
+.ul-link {
+   text-decoration: underline;
+   text-underline-offset: 3px;
+}
 
 .btn {
    background: $yellow;
@@ -88,12 +83,16 @@ a:hover {color: $yellow;}
    text-align: center;
    display: table;
    padding: 10px 20px;
-   letter-spacing: .05em;
+   letter-spacing: .025em;
+   border-radius: 40px;
    @include desktop {
       &:hover {
          background: $white;
          color: $black;
       }
+   }
+   &.btn-12 {
+      font-size: 12px;
    }
 }
 
@@ -112,6 +111,7 @@ a:hover {color: $yellow;}
 
 .body-24 {
    font-size: 24px;
+   font-weight: 300;
 }
 
 .body-20 {
@@ -122,20 +122,23 @@ a:hover {color: $yellow;}
    font-size: 16px;
 }
 
+.body-12 {
+   font-size: 12px;
+}
+
 h1, .h1 {
-   font-size: 54px;
-   font-weight: 300;
-   font-family: $everett;
+   font-weight: 200;
+   font-size: 70px;
+   line-height: 1.05;
 }
 
 h2, .h2 {
-   font-size: 42px;
+   font-size: 40px;
    font-weight: 200;
-   font-family: $everett;
 }
 
 h3, .h3 {
-   font-size: 24px;
+   font-size: 20px;
    font-weight: 500;
    color: $yellow;
    text-transform: uppercase;
@@ -143,14 +146,30 @@ h3, .h3 {
 }
 
 h4, .h4 {
-   font-size: 20px;
-   font-weight: 700;
+   font-size: 18px;
+   font-weight: 500;
+   color: $yellow;
+   text-transform: uppercase;
+   font-family: $everett;
 }
 
+h5, .h5 {
+   font-size: 25px;
+   font-weight: 200;
+}
 
 // RESPONSIVE TYPOGRAPHY //
 
 @include breakpoint-tablet {
+   h1, .h1 {
+      font-size: 55px;
+   }
+   h2, .h2 {
+      font-size: 32px;
+   }
+   h5, .h5 {
+      font-size: 20px;
+   }
    .body-36 {
       font-size: 32px;
    }
@@ -161,23 +180,21 @@ h4, .h4 {
       font-size: 21px;
    }
 }
-
-@include breakpoint-991 {
-   body {
-   }
-}
 @include breakpoint-mobile {
    body {
       font-size: $mobile-font-size;
    }
-   h2, .h2 {
-      font-size: 42;
+   h1, .h1 {
+      font-size: 50px;
    }
    h2, .h2 {
-      font-size: 35px;
+      font-size: 25px;
    }
    h3, .h3 {
       font-size: 20px;
+   }
+   h4, .h4 {
+      font-size: 15px;
    }
    .body-32 {
       font-size: 25px;

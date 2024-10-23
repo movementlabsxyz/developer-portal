@@ -63,13 +63,7 @@ export default function Nav() {
             lastScroll = window.scrollY
         })
     }, [pathname])
-
-    // Docs
-    // Explorer
-    // Faucets
-    // RPC
-    // DevTools
-    // Learn
+    
     const navItems = [
         {
             name: 'Docs',
@@ -77,29 +71,18 @@ export default function Nav() {
             target: '_blank',
         },
         {
-            name: 'Explorer',
-            link: 'https://explorer.movementnetwork.xyz/',
-            target: '_blank',
+            name: 'Learning Paths',
+            link: '/learning-paths',
         },
         {
-            name: 'Faucets',
-            link: 'https://faucet.movementlabs.xyz/',
-            target: '_blank',
-        },
-        {
-            name: 'RPC',
-            link: 'https://aptos.testnet.suzuka.movementlabs.xyz/v1',
-            target: '_blank',
+            name: 'Tutorials',
+            link: '/tutorials',
         },
         {
             name: 'DevTools',
-            link: '#',
-            target: '_self',
-        },
-        {
-            name: 'Learn',
-            link: 'https://movementnetwork.xyz/learn',
-        },
+            link: '/devtools',
+        }
+
     ]
 
     return (
