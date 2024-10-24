@@ -1,0 +1,14 @@
+{
+  "Movement CLI" : {
+    "title": "Movement CLI",
+    "description": "CLI tool for compiling, testing, and deploying Move Contracts",
+    "link":"https://docs.movementnetwork.xyz/devs/movementcli",
+    "tags": ["cli", "contracts"]
+  },
+  "Aptos TS SDK": {
+    "title": "Aptos TS SDK",
+    "description": "https://aptos.dev/en/build/sdks/ts-sdk",
+    "link": "https://aptos.dev/en/build/sdks/ts-sdk",
+    "tags": ["sdk", "frontend"]
+  }
+}

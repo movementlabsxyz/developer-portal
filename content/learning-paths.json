@@ -1,0 +1,32 @@
+{
+  "Basic Concepts": {
+    "mainBlurb": "Learn the core syntax, data structures, and fundamental concepts of the Move Language.",
+    "extendedBlurb": "Dive into the core principles of the Move Language. Learn the essential syntax, explore key data structures, and start mastering the fundamental concepts of the Move Language.",
+    "learningPoints": [
+      "Data Types",
+      "Functions",
+      "Resources",
+      "Conditionals and Loops",
+      "Constants and Error Handling",
+      "Generics Type & Phantom Type",
+      "Unit Test"
+    ]
+  },
+  "Advanced Move": {
+    "mainBlurb": "Master advanced concepts in Move, including storage, events, objects, and resource accounts.",
+    "extendedBlurb": "Take your understanding of Move to the next level with advanced concepts. Learn about storage operations, resource management, and smart object design to build robust applications.",
+    "learningPoints": [
+      "Local Storage & Global Storage Operations",
+      "Deploy & Call function on-chain",
+      "Writing/Reading resources to user accounts",
+      "Destroying a resource",
+      "Resource Groups",
+      "Events",
+      "Objects",
+      "Smart Vector",
+      "Smart Tables",
+      "Resources Account",
+      "Creating NFTs using Resource Accounts"
+    ]
+  }
+}
