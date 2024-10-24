@@ -7,8 +7,38 @@
   },
   "Aptos TS SDK": {
     "title": "Aptos TS SDK",
-    "description": "https://aptos.dev/en/build/sdks/ts-sdk",
+    "description": "Typescript SDK for interacting with Aptos Move based chains like Movement Network.",
     "link": "https://aptos.dev/en/build/sdks/ts-sdk",
     "tags": ["sdk", "frontend"]
-  }
+  },
+    "Razer Wallet Kit": {
+      "title": "Razor Wallet Kit",
+      "description": "A wallet adaptor for DApps to interact with all the wallets in Movement ecosystem easily",
+      "link": "https://kit.razorwallet.xyz/",
+      "tags": ["sdk", "frontend", "wallet"]
+    },
+    "Nightly Connect": {
+      "title": "Nightly Connect",
+      "description": "Nightly Connect is a permissionless, open-source solution that serves as both a wallet adapter and a bridge wallet, enabling connections through QR codes or deep links.",
+      "link": "https://connect.nightly.app/docs/movement/movement/start",
+      "tags": ["sdk", "frontend", "wallet"]
+    },
+    "Scaffold Move": {
+      "title": "Scaffold Move",
+      "description": "Scaffold Move is an open-source, cutting-edge toolkit for building decentralized applications (dApps) on Move Based Blockchains.",
+      "link": "https://scaffold-move-chi.vercel.app/",
+      "tags": ["fullstack", "contracts"]
+    },
+    "Lync Infrastructure Tools": {
+      "title": "Lync Infrastructure Tools",
+      "description": "Lync provides a suite of tools for helping speed up the development process on Movement Network, this includes Indexers, NFT Deployers, Social Login SDK's, Unity SDK, as well as Wallet Creation and Transaction APIs.",
+      "link": "https://docs.lync.world/movement-labs/",
+      "tags": ["fullstack", "contracts", "indexer", "sdk"]
+    },
+    "Pyth": {
+      "title": "Pyth",
+      "description": "Pyth Network is an oracle protocol that connects the owners of market data to applications on multiple blockchains.",
+      "link":"https://docs.pyth.network/home",
+      "tags":["oracle", "price feeds"]
+    }
 }

@@ -14,7 +14,7 @@
   },
   "Advanced Move": {
     "mainBlurb": "Master advanced concepts in Move, including storage, events, objects, and resource accounts.",
-    "extendedBlurb": "Take your understanding of Move to the next level with advanced concepts. Learn about storage operations, resource management, and smart object design to build robust applications.",
+    "extendedBlurb": "Take your understanding of Move to the next level with advanced concepts. Learn about storage operations, resource management, and smart object design to build robust applications on the Movement ecosystem.",
     "learningPoints": [
       "Local Storage & Global Storage Operations",
       "Deploy & Call function on-chain",
@@ -27,6 +27,39 @@
       "Smart Tables",
       "Resources Account",
       "Creating NFTs using Resource Accounts"
+    ]
+  },
+  "NFT": {
+    "mainBlurb": "Learn how to build, mint, and manage NFTs on Move-based platforms.",
+    "extendedBlurb": "Explore the world of digital assets by creating and managing NFTs. Learn how to mint NFTs, modify token metadata, manage collections, and enforce royalty rules using the Move language.",
+    "learningPoints": [
+      "Insight into Non-Fungible Tokens",
+      "Collection",
+      "Token Standard & Mint your NFT",
+      "Token Metadata & Modifying Data",
+      "Aptos Collection & Token V2",
+      "Managed Collection",
+      "Royalty & Property Map",
+      "Permission to mint NFTs"
+    ]
+  },
+  "DeFi": {
+    "mainBlurb": "Discover decentralized finance (DeFi) protocols, coin management, and lending on the Movement ecosystem.",
+    "extendedBlurb": "Learn how to create and manage coins, swap tokens, and provide liquidity. Explore lending protocols, pool types, and liquidation processes in the DeFi space.",
+    "learningPoints": [
+      "What is Coin?",
+      "Initialize Coin",
+      "Transfer, Withdraw, Deposit & Burn Coin",
+      "What is DEX & Constant Product Formula",
+      "How to Create a Pool",
+      "Add Liquidity Pool using Constant Product Formula",
+      "Swap Token",
+      "What is lending & borrowing in Web3 Domain?",
+      "Types of Lending Pools",
+      "Isolated Pool",
+      "Main Pool",
+      "Leverage Pool",
+      "Liquidation"
     ]
   }
 }
