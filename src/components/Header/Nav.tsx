@@ -63,7 +63,7 @@ export default function Nav() {
             lastScroll = window.scrollY
         })
     }, [pathname])
-    
+
     const navItems = [
         {
             name: 'Docs',
@@ -102,6 +102,7 @@ export default function Nav() {
                         ))}
                     </ul>
                 </nav>
+                <div className="lang-selector"></div>
                 <button
                     id="nav-btn"
                     aria-label="Open Mobile Nav"

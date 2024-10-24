@@ -1,6 +1,6 @@
 
 import HeroSlider from '@/components/Slider/HeroSlider'
-import { getSubCategories } from '@/lib/posts'
+import { getAllPostsData, getPostData, getSubCategories } from '@/lib/posts'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import Article from '@/pages/Tutorials/Article'
@@ -19,7 +19,7 @@ interface PostPageProps {
 // }
 
 // export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-//     const id = params.slug.join('_')
+//     const id = params.category
 //     const postData = await getPostData(id)
 
 //     if (!postData) {
@@ -74,7 +74,7 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
                 categories.map((category, index) => {
                     return (
                         <div className="path-link" key={index}>
-                            <Link href={`/learning-paths/${pageCategory}/${category.link}`} preload="false" className="learning-content">
+                            <Link href={`/learning-paths/${pageCategory}/${category.link}`} prefetch={false} className="learning-content">
                                 <h2>{category.name}</h2>
                                 <p></p>
                             </Link>

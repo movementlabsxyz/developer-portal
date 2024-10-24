@@ -88,6 +88,7 @@ export default function RootLayout({
                 <main>{children}</main>
                 <Footer />
                 <GTM />
+                <WeGlot />
             </body>
         </html>
     )

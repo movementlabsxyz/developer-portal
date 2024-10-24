@@ -2,11 +2,16 @@ import TableOfContents from '@/components/Sidebar/TableOfContents'
 import { Markdown } from '@/lib/markdown'
 import { buildBreadCrumbs } from '@/lib/posts'
 
-export default async function ArticlePage(props: { data: any }) {
+export default function ArticlePage(props: { data: any }) {
+
+    if (!props.data) {
+        return null
+    }
+
     const breadCrumbs = buildBreadCrumbs(
         'Learning Paths',
         'Basic Concepts',
-        props.data.title,
+        props.data?.title || "",
     )
     return (
         <div id="tutorials-wrap" className="subpage-wrap">
@@ -19,7 +24,7 @@ export default async function ArticlePage(props: { data: any }) {
                     ))}
                 </div>
                 <div className="page-intro">
-                    <h1 className="title">{props.data.title.split('-')[1]}</h1>
+                    <h1 className="title">{props.data.title ? props.data.title.split('-')[1] : ""}</h1>
                     <p className="body-24">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </p>
