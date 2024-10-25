@@ -1,16 +1,43 @@
-import React from 'react'
+'use client'
 
-type TableOfContentsItem = {
+import React, { useEffect, useState } from 'react'
+import slugify from 'slugify'
+
+interface TableOfContentsItem {
     depth: number
     text: string
+    id: string
     children?: TableOfContentsItem[] // Nested headings
 }
 
-type Props = {
+interface Props {
     tableOfContents: TableOfContentsItem[]
 }
 
 const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
+    const [activeId, setActiveId] = useState<string>('')
+
+    useEffect(() => {
+        const headingElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveId(entry.target.id)
+                    }
+                })
+            },
+            { rootMargin: '0% 0% -80% 0%' }, // Adjust based on when you'd like to trigger active link
+        )
+
+        headingElements.forEach((element) => observer.observe(element))
+
+        return () => {
+            headingElements.forEach((element) => observer.unobserve(element))
+        }
+    }, [])
+
 
     // Helper function to create a nested array structure based on depth
     const createNestedStructure = (
@@ -45,16 +72,19 @@ const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
 
     const renderItems = (items: TableOfContentsItem[]) => (
         <>
-            {items.map((item, index) => (
-                <li key={index}>
-                    <span>{item.text}</span>
-                    {item.children && item.children.length > 0 && (
-                        <ul className="nested">
-                            {renderItems(item.children)}
-                        </ul>
-                    )}
-                </li>
-            ))}
+            {items.map((item, index) => {
+                const slug = slugify(item.text, { lower: true, strict: true })
+                return (
+                    <li key={index}>
+                        <span><a href={`#user-content-${slug}`} className={activeId === `#user-content-${slug}` ? 'active' : ''}>
+                            {item.text}
+                        </a></span>
+                        {item.children && item.children.length > 0 && (
+                            <ul className="nested">{renderItems(item.children)}</ul>
+                        )}
+                    </li>
+                )
+            })}
         </>
     )
 

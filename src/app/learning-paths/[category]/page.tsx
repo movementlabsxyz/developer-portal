@@ -1,9 +1,9 @@
-
 import HeroSlider from '@/components/Slider/HeroSlider'
-import { getAllPostsData, getPostData, getSubCategories } from '@/lib/posts'
+import { getAllPostsData, getCategoryBySlug, getPostData, getSubCategories } from '@/lib/posts'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import Article from '@/pages/Tutorials/Article'
+import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
 
 interface PostPageProps {
     params: {
@@ -33,56 +33,54 @@ interface PostPageProps {
 // }
 
 export default async function LearningPathLandingPage({ params }: PostPageProps) {
-    const { category: pageCategory } = params
+    const { category: pageSlug } = params
 
-    if (!pageCategory) {
-        return;
+    if (!pageSlug) {
+        return
     }
-    
-    const categories = getSubCategories('learning-paths', pageCategory[0])
-    
+
+    const pageCategory = getCategoryBySlug('learning-paths', pageSlug.toString())
+    const categories = getSubCategories('learning-paths', pageSlug.toString())
+
     return (
-        <>
-        <HeroSlider>
-            <div className="slide">
-                <div className="col-lt">
-                    <picture>
-                        <img src="/images/nft-drop.jpg" alt="" style={{ mixBlendMode: 'lighten' }} />
-                    </picture>
+        <div id="learning-paths-inner-wrap" className="subpage-wrap">
+            <div className="contain">
+                <BreadCrumbs contain={false}>
+                    <Link href="/learning-paths">Learning Paths</Link>
+                </BreadCrumbs>
+
+                <div className="page-intro">
+                    <span className="subtitle body-12">6 Tutorials | 2 Demos | 3 Tools</span>
+                    <h1 className="title">{pageCategory?.name}</h1>
+                    <p className="body-24">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <Link href={`/${pageCategory?.link}/${categories[0].link}`} className="btn">
+                        Start
+                    </Link>
                 </div>
-                <div className="col-rt">
-                    <div className="inner">
-                        <span className="subtitle">Learn to Build</span>
-                        <h1 className="title">NFT Drop</h1>
-                        <p>
-                            Write your first smart contract and run it in your browser without any knowledge about
-                            Ethereum or blockchains.
-                        </p>
-                        <a href="#" className="btn btn-yellow">
-                            Guide
-                        </a>
-                        <a href="#" className="btn btn-yellow">
-                            Demo
-                        </a>
-                    </div>
+
+                <div className="grid grid-4-column path-types-grid">
+                    {categories.map((category, index) => {
+                        return (
+                            <Link 
+                            href={`/${pageCategory?.link}/${category.link}`}
+                            prefetch={false} className="card card-type-4" key={index}>
+                                <span className="inner">
+                                    <picture>
+                                        <img src="/assets/images/icon-bg-transparent.png" alt="" />
+                                    </picture>
+                                    <span className="title body-24">{category.name}</span>
+                                    <span className="btn">Start</span>
+                                </span>
+                                <span className="brief">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </span>
+                            </Link>
+                        )
+                    })}
                 </div>
             </div>
-        </HeroSlider>
-
-        <section className="contain learning-paths grid grid-cols-4 gap-4">
-            {
-                categories.map((category, index) => {
-                    return (
-                        <div className="path-link" key={index}>
-                            <Link href={`/learning-paths/${pageCategory}/${category.link}`} prefetch={false} className="learning-content">
-                                <h2>{category.name}</h2>
-                                <p></p>
-                            </Link>
-                        </div>
-                    )
-                })
-            }
-        </section>
-        </>
+        </div>
     )
 }

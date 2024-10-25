@@ -1,10 +1,11 @@
 export default function HeroSlider(
     props: {
-        children: React.ReactNode
+        children: React.ReactNode,
+        secClass?: string
     }
 ) {
     return (
-        <section className="contain landing-slider">
+        <section className={`contain ${props.secClass ? props.secClass : 'landing-slider'}`}>
             <div className="slick-slider hero-slider">
                 {props.children}
                 <div className="controls">

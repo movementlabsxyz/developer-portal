@@ -46,7 +46,6 @@ export default function Nav() {
                         duration: 0.5,
                         ease: 'power1.inOut',
                     })
-
                 }
                 isHeaderVisible = false
             } else if (isScrollingUp && !isHeaderVisible && isScrolling) {
@@ -80,9 +79,8 @@ export default function Nav() {
         },
         {
             name: 'DevTools',
-            link: '/devtools',
-        }
-
+            link: '/developer-tools',
+        },
     ]
 
     return (
@@ -95,7 +93,12 @@ export default function Nav() {
                     <ul>
                         {navItems.map((item, index) => (
                             <li key={index}>
-                                <Link href={item.link} target={item.target} onClick={() => setMobileNavOpen(false)}>
+                                <Link
+                                    href={item.link}
+                                    target={item.target}
+                                    onClick={() => setMobileNavOpen(false)}
+                                    className={pathname?.toLowerCase().includes(item.link.toLowerCase()) ? 'active' : ''}
+                                >
                                     {item.name}
                                 </Link>
                             </li>

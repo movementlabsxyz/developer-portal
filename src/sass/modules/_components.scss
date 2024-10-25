@@ -532,6 +532,92 @@
    }
 }
 
+.card-type-4 {
+   background: $black;
+   overflow: visible;
+   display: flex;
+   flex-direction: column;
+   &:after {
+      display: none;
+   }
+   .inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 25px 30px;
+      background: linear-gradient(to top, $yellow, #1d1700 62%, $black);
+      border-radius: 5px;
+      overflow: hidden;
+      &:after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         border: 1px solid transparent;
+         border-radius: 5px;
+         background: linear-gradient(to bottom, $yellow, $black) border-box;
+         -webkit-mask:
+         linear-gradient($black 0 0) padding-box,
+         linear-gradient($black 0 0);
+         -webkit-mask-composite: destination-out;
+         mask-composite: exclude;
+         z-index: 2;
+         pointer-events: none;
+         transition: all .15s ease-in-out;
+      }
+      * {
+         position: relative;
+         z-index: 3;
+      }
+      picture {
+         position: absolute;
+         top: 0;
+         z-index: 2;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         mix-blend-mode: overlay;
+         img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+            object-position: bottom right;
+         }
+      }
+   }
+   .title {
+      padding-bottom: 30px;
+   }
+   .btn {
+      font-size: 12px;
+      padding: 6px 12px;
+      background: $black;
+      color: $yellow !important;
+      margin-top: auto;
+   }
+   .brief {
+      position: relative;
+      z-index: 3;
+      color: $white;
+      padding: 12px;
+      box-sizing: border-box;
+      display: block;
+      font-size: 15px;
+   }
+   @include breakpoint-mobile {
+      width: 100% !important;
+      margin-top: 30px;
+      .inner {
+         min-height: 200px;
+      }
+   }
+}
+
 .card-type-play {
    background: url(/images/video-card-bg.jpg) no-repeat center center;
    background-size: cover;
@@ -597,21 +683,12 @@
 /****SUBPAGE TEMPLATE****/
 
 .subpage-wrap {
-   background: url(/images/subpage-bg.jpg) no-repeat top center;
-   background-size: 100% auto;
    padding-top: 200px;
    @include breakpoint-tablet {
       padding-top: 160px;
    }
-   @include breakpoint-991 {
-      background-size: 200% auto;
-   }
    @include breakpoint-mobile {
       padding-top: 80px;
-      background-size: 450% auto;
-   }
-   @include breakpoint-mobile-wide {
-      background-size: 150% auto;
    }
 }
 
@@ -682,12 +759,83 @@
 pre {
    white-space: pre-wrap;
    background: #212121;
+   padding: 25px 70px 20px 35px;
    box-sizing: border-box;
-   font-size: 15px;
+   font-size: 12px;
    position: relative;
-   margin: 20px 0 25px 0;
-   padding: 25px 50px 15px 25px;
+   button {
+      position: absolute;
+      background: #1d1d1d;
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      right: 8px;
+      top: 8px;
+      color: $white;
+      font-family: $base-font-family;
+      font-size: 12px;
+      line-height: 1;
+      gap: 4px;
+      &:hover {
+         background: #3d3d3d;
+      }
+   }
    @include breakpoint-mobile {
       padding: 25px 50px 15px 25px;
+      button {
+         display: none;
+      }
+   }
+}
+
+code {
+   font-size: 15px;
+   color: #ff1111;
+   background: #212121;
+   padding: 2px 4px;
+   margin: 0 2px;
+   display: inline-block;
+}
+
+
+/****CONTENT NAVIGATION ARROWS****/
+
+.nav-arrows {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   .btn {
+      padding: 8px 14px;
+   }
+   ul {
+      position: relative;
+      padding: 0 15px;
+      display: flex;
+      li {
+         padding: 0 6px;
+         line-height: 1;
+         &.active a {
+            text-decoration: underline;
+         }
+      }
+      a {
+         display: block;
+         text-underline-offset: 3px;
+         &:hover {
+            color: $yellow;
+         }
+      }
+      &:after {
+         padding-left: 6px;
+         position: relative;
+         content: '\2026';
+         transform: translateY(-2px);
+      }
+   }
+   @include breakpoint-mobile {
+      .btn {
+         font-size: 12px;
+      }
    }
 }

@@ -64,7 +64,7 @@ const twkEverettMono = localFont({
 })
 
 export const metadata: Metadata = {
-    title: 'The Movement Network Developer Portal',
+    title: 'Movement Network Developer Portal',
     description: 'The Movement Network developer portal....',
     metadataBase: new URL('https://developer.movementnetwork.xyz'),
     openGraph: {

@@ -1,5 +1,24 @@
 // HOMEPAGE //
 
+#tutorials-wrap {
+   background: url(/images/subpage-bg.jpg) no-repeat top center;
+   background-size: 100% auto;
+   padding-top: 200px;
+   @include breakpoint-tablet {
+      padding-top: 160px;
+   }
+   @include breakpoint-991 {
+      background-size: 200% auto;
+   }
+   @include breakpoint-mobile {
+      padding-top: 80px;
+      background-size: 450% auto;
+   }
+   @include breakpoint-mobile-wide {
+      background-size: 150% auto;
+   }
+}
+
 .tutorial-content {
    padding-top: 40px;
    display: flex;
@@ -14,6 +33,7 @@
       top: 100px;
       display: block;
       z-index: 2;
+      min-width: 300px;
    }
    .col-rt {
       margin-top: -20px;
@@ -137,6 +157,9 @@
       &.current > span {
          color: $yellow;
       }
+   }
+   span {
+      white-space: normal;
    }
    .nested {
       padding: 5px 0 0 15px;

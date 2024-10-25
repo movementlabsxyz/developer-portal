@@ -40,6 +40,11 @@ interface FileNode {
     postData: PostData
     link?: string
 }
+interface Heading {
+    depth: number
+    text: string
+    id: string
+}
 
 type PostNode = DirectoryNode | FileNode
 
@@ -68,10 +73,12 @@ function buildPostTree(dir: string, baseDir: string = contentDirectory): PostNod
                     path: relativePath,
                     type: 'directory',
                     children,
-                    link: 'learning-paths/' + slugify(entry.name, {
-                        lower: true,
-                        strict: true,
-                    }),
+                    link:
+                        'learning-paths/' +
+                        slugify(entry.name, {
+                            lower: true,
+                            strict: true,
+                        }),
                 }
                 return directoryNode
             } else if (entry.isFile() && fullPath.endsWith('.md')) {
@@ -81,7 +88,6 @@ function buildPostTree(dir: string, baseDir: string = contentDirectory): PostNod
                 const id = slugify(relativePath.replace(/\.md$/, '').replace(/[\\/]/g, '_'), {
                     lower: true,
                     strict: true,
-                    
                 })
 
                 const data = matterResult.data as {
@@ -105,7 +111,7 @@ function buildPostTree(dir: string, baseDir: string = contentDirectory): PostNod
                         categories: [], // Will be set during traversal
                         ...data,
                     },
-                    type: 'file'
+                    type: 'file',
                 }
                 return fileNode
             } else {
@@ -113,7 +119,6 @@ function buildPostTree(dir: string, baseDir: string = contentDirectory): PostNod
             }
         })
         .filter((node): node is PostNode => node !== null)
-        
 
     return nodes
 }
@@ -192,9 +197,8 @@ export async function getPostData(id: string): Promise<PostData | null> {
     const noTitleFileContents = fileContents.split('\n').slice(1).join('\n')
     const matterResult = matter(noTitleFileContents)
 
-
     // Process headings
-    const tableOfContents: { depth: number; text: string }[] = []
+    const tableOfContents: Heading[] = []
     const processedContent = await remark()
         .use(remarkParse)
         .use(() => (tree) => {
@@ -204,14 +208,21 @@ export async function getPostData(id: string): Promise<PostData | null> {
                         .filter((child: any) => child.type === 'text')
                         .map((child: any) => child.value)
                         .join('')
-    
+
+                    const slug = slugify(headingText, { lower: true, strict: true })
+
                     tableOfContents.push({
                         depth: node.depth,
                         text: headingText,
+                        id: slug,
                     })
+
+                    node.data = node.data || {}
+                    node.data.hProperties = node.data.hProperties || {}
+                    node.data.hProperties.id = slug
                 }
             }
-    
+
             function visit(parent: any, nodeVisitor: (node: any) => void) {
                 for (const node of parent.children) {
                     nodeVisitor(node)
@@ -220,12 +231,11 @@ export async function getPostData(id: string): Promise<PostData | null> {
                     }
                 }
             }
-    
+
             visit(tree, visitor)
         })
         .use(html)
         .process(matterResult.content)
-    
 
     const contentHtml = processedContent.toString()
 
@@ -251,7 +261,6 @@ export async function getPostData(id: string): Promise<PostData | null> {
     return postData
 }
 
-
 /**
  * Group posts by categories
  * @param posts The posts to group
@@ -260,7 +269,6 @@ export async function getPostData(id: string): Promise<PostData | null> {
  * const allPostsData = getAllPostsData()
  */
 export function groupPostsByCategories(posts: PostData[]): any {
-
     // const allPostsData = getAllPostsData()
     // const groupedPosts = groupPostsByCategories(allPostsData)
 
@@ -282,7 +290,6 @@ export function groupPostsByCategories(posts: PostData[]): any {
         currentLevel.posts.push(post)
     })
 
-
     return grouped
 }
 
@@ -295,28 +302,31 @@ export function groupPostsByCategories(posts: PostData[]): any {
  */
 export function getSubCategories(category: string, subcategory?: string): PostCategory[] {
     const postTree = getPostTree()
-    const categoryNode = postTree.find((node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory') as DirectoryNode
+    const categoryNode = postTree.find(
+        (node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory',
+    ) as DirectoryNode
 
     if (!categoryNode) {
         return []
     }
-    
+
     let nodes = categoryNode.children.map((child) => ({
         name: child.name,
-        link: child.link || "",
+        link: child.link || '',
     }))
 
     if (subcategory) {
-        const subcategoryNode = categoryNode.children.find((child) => child.link?.includes(subcategory.toLowerCase()) && child.type === 'directory') as DirectoryNode
-        
+        const subcategoryNode = categoryNode.children.find(
+            (child) => child.link?.includes(subcategory.toLowerCase()) && child.type === 'directory',
+        ) as DirectoryNode
+
         if (!subcategoryNode) {
             return []
         }
         nodes = subcategoryNode?.children.map((child) => ({
             name: child.name.split('-').slice(1).join(' ').replace('.md', ''),
-            link: child.link || "",
+            link: child.link || '',
         }))
-        
     }
 
     return nodes
@@ -332,10 +342,12 @@ export function getSubCategories(category: string, subcategory?: string): PostCa
 export function buildBreadCrumbs(
     category: string,
     subcategory: string,
-    post: string
+    post: string,
 ): { name: string; link: string }[] {
     const postTree = getPostTree()
-    const categoryNode = postTree.find((node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory') as DirectoryNode
+    const categoryNode = postTree.find(
+        (node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory',
+    ) as DirectoryNode
 
     if (!categoryNode) {
         return []
@@ -343,7 +355,9 @@ export function buildBreadCrumbs(
 
     const categoryLink = categoryNode.link
 
-    const subcategoryNode = categoryNode.children.find((child) => child.link?.includes(subcategory?.toLowerCase()) && child.type === 'directory') as DirectoryNode
+    const subcategoryNode = categoryNode.children.find(
+        (child) => child.link?.includes(subcategory?.toLowerCase()) && child.type === 'directory',
+    ) as DirectoryNode
 
     if (!subcategoryNode) {
         return []
@@ -351,7 +365,9 @@ export function buildBreadCrumbs(
 
     const subcategoryLink = subcategoryNode.link
 
-    const postNode = subcategoryNode.children.find((child) => child.link?.includes(post.toLowerCase()) && child.type === 'file') as FileNode
+    const postNode = subcategoryNode.children.find(
+        (child) => child.link?.includes(post.toLowerCase()) && child.type === 'file',
+    ) as FileNode
 
     if (!postNode) {
         return []
@@ -360,8 +376,29 @@ export function buildBreadCrumbs(
     return [
         { name: category, link: categoryLink },
         { name: subcategory, link: subcategoryLink },
-        { name: postNode.postData.title, link: postNode.link || "" },
+        { name: postNode.postData.title, link: postNode.link || '' },
     ]
+}
+
+export function getCategoryBySlug(category: string, slug: string): DirectoryNode | undefined {
+    const postTree = getPostTree()
+    const categoryNode = postTree.find(
+        (node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory',
+    ) as DirectoryNode
+
+    if (!categoryNode) {
+        return undefined
+    }
+
+    const subcategoryNode = categoryNode.children.find(
+        (child) => child.link?.includes(slug.toLowerCase()) && child.type === 'directory',
+    ) as DirectoryNode
+
+    if (!subcategoryNode) {
+        return undefined
+    }
+
+    return subcategoryNode
 }
 
 // export function renderCategories(categories: any, path: string[] = []) {

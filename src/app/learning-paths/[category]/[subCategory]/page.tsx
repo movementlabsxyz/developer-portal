@@ -1,18 +1,12 @@
-
-import { getAllPostsData, getPostData } from '@/lib/posts'
-import { Metadata } from 'next'
+import { getAllPostsData, getCategoryBySlug, getPostData } from '@/lib/posts'
 import Article from '@/pages/Tutorials/Article'
-
-interface PostPageProps {
-    params: {
-        subCategory: string
-    }
-}
+import { Metadata } from 'next'
+import { DirectoryNode, PostPageProps } from '@/types/posts'
 
 export async function generateStaticParams() {
     const posts = getAllPostsData()
     return posts.map((post) => ({
-        slug: post.filePath.replace('.md', '').split('/'),
+        slug: post.link,
     }))
 }
 
@@ -25,7 +19,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     }
 
     return {
-        title: `${decodeURIComponent(postData.title || "")} - Movement Network`,
+        title: `${decodeURIComponent(postData.title || '')} - Movement Developer Portal`,
         description: postData.description || '',
     }
 }
@@ -39,13 +33,11 @@ export default async function PostPage({ params }: PostPageProps) {
     const id = params.subCategory
     const postData = await getPostData(id)
 
+    const pageCategory = getCategoryBySlug('learning-paths', params.category.toString()) as DirectoryNode
+
     if (!postData) {
-       return;
+        return
     }
 
-    return (
-        <article className="page-content">
-            <Article data={postData} />
-        </article>
-    )
+    return <Article data={postData} category={pageCategory} />
 }

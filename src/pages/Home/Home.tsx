@@ -1,3 +1,4 @@
+import Scroller from '@/components/Marquee/Scroller'
 import HeroSlider from '@/components/Slider/HeroSlider'
 import { getSubCategories } from '@/lib/posts'
 import { PostData } from '@/types/posts'
@@ -7,7 +8,7 @@ export default function Home(props: { postData: PostData[] }) {
     const allPostsData = props.postData
     const categories = getSubCategories('learning-paths')
     return (
-        <>
+        <div className="md:mt-40">
             <HeroSlider>
                 <div className="slide has-video">
                     <div className="col-lt">
@@ -56,7 +57,7 @@ export default function Home(props: { postData: PostData[] }) {
                             <source type="video/mp4" src="/video/video-bg-1.mp4" />
                         </video>
                     </div>
-                    <a href="#" className="learning-content">
+                    <Link href="#" className="learning-content">
                         <h4>Jump in and start learning</h4>
                         <p>
                             A curated list of resources for developers in specific verticals to learn how to build on
@@ -77,7 +78,7 @@ export default function Home(props: { postData: PostData[] }) {
                                 />
                             </svg>
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </section>
 
@@ -322,6 +323,6 @@ export default function Home(props: { postData: PostData[] }) {
                     </a>
                 </div>
             </section>
-        </>
+        </div>
     )
 }
