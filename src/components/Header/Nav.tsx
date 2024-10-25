@@ -39,7 +39,7 @@ export default function Nav() {
                 isScrollingDown = false
             }
 
-            if (isScrollingDown && isHeaderVisible && isScrolling) {
+            if (isScrollingDown && isHeaderVisible && isScrolling && window.scrollY > 100) {
                 if (header) {
                     gsap.to(header, {
                         y: '-100%',
@@ -48,7 +48,7 @@ export default function Nav() {
                     })
                 }
                 isHeaderVisible = false
-            } else if (isScrollingUp && !isHeaderVisible && isScrolling) {
+            } else if ((isScrollingUp && !isHeaderVisible && isScrolling) || window.scrollY < 100) {
                 if (header) {
                     gsap.to(header, {
                         y: '0',
@@ -91,6 +91,11 @@ export default function Nav() {
                 </Link>
                 <nav id="main-nav" role="navigation" className={mobileNavOpen ? 'active' : ''}>
                     <ul>
+                        {pathname !== '/' && (
+                            <li>
+                                <Link href={'/'}>Home</Link>
+                            </li>
+                        )}
                         {navItems.map((item, index) => (
                             <li key={index}>
                                 <Link
