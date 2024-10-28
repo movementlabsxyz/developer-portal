@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import Article from '@/pages/Tutorials/Article'
 import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
+import useDeveloperTools from '@/hooks/useDeveloperTools'
 
 interface PostPageProps {
     params: {
@@ -33,6 +34,7 @@ interface PostPageProps {
 // }
 
 export default function TutorialsLandingPage() {
+    const DeveloperToolsData = useDeveloperTools()
     return (
         <div id="learning-paths-wrap" className="subpage-wrap">
                 <BreadCrumbs contain={true}>
@@ -67,22 +69,23 @@ export default function TutorialsLandingPage() {
 
                 <section className="contain dev-tools">
                     <div className="flex flex-col gap-10 mt-40">
-                        <input type="text" placeholder="Search" className="search-field w-full p-2" />
+                        {/* <input type="text" placeholder="Search" className="search-field w-full p-2" /> */}
                         <div className="grid grid-4-column guides-grid">
-                            {Array.from({ length: 12 }).map((_, index) => (
-                                <a href="#" className="card card-type-3" key={index}>
+                            {Object.keys(DeveloperToolsData).map((key) => (
+                                <Link href={DeveloperToolsData[key].link} target="_blank" className="card card-type-3" key={key}>
                                     <picture>
                                         <img src="/images/dev-tools-img.jpg" alt="" />
                                     </picture>
                                     <div className="card-content">
-                                        <span className="title">Title</span>
-                                        <p className="desc">Description</p>
+                                        <span className="title">{DeveloperToolsData[key].title}</span>
+                                        <p className="desc">{DeveloperToolsData[key].description}</p>
                                         <span className="tags">
-                                            <span className="tag">Tag</span>
-                                            <span className="tag">Tag</span>
+                                            {DeveloperToolsData[key].tags.map((tag) => (
+                                                <span className="tag" key={`tag${tag}`}>{tag}</span>
+                                            ))}
                                         </span>
                                     </div>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

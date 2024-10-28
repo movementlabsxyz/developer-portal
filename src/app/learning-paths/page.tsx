@@ -1,15 +1,17 @@
 import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
 import HeroSlider from '@/components/Slider/HeroSlider'
+import useLearningPaths from '@/hooks/useLearningPaths'
 import { getSubCategories } from '@/lib/posts'
 import Link from 'next/link'
+import slugify from 'slugify'
 
 export default function LearningPathLandingPage() {
     // get categories by slug
     const categories = getSubCategories('learning-paths')
+    const LearningPathsData = useLearningPaths()
 
     return (
         <div id="learning-paths-wrap" className="subpage-wrap">
-
             <BreadCrumbs contain={true}>
                 <Link href="/learning-paths">Learning Paths</Link>
             </BreadCrumbs>
@@ -79,7 +81,51 @@ export default function LearningPathLandingPage() {
             </HeroSlider>
 
             <section className="paths-list contain">
-                <div className="card path-card">
+                {Object.keys(LearningPathsData).map((key) => (
+                    <Link
+                        href={`/learning-paths/${slugify(key, {
+                            lower: true,
+                            strict: true,
+                        })}`}
+                        key={key}
+                    >
+                        <div className="card path-card" key={key}>
+                            <div className="col col-lt">
+                                <svg
+                                    width="55"
+                                    height="44"
+                                    viewBox="0 0 55 44"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect y="22" width="11" height="11" fill="#FFDA34" />
+                                    <rect x="11" y="33" width="11" height="11" fill="#FFDA34" />
+                                    <rect x="11" y="11" width="11" height="11" fill="#FFDA34" />
+                                    <rect width="11" height="11" fill="#FFDA34" />
+                                    <rect x="22" y="22" width="11" height="11" fill="#FFDA34" />
+                                    <rect x="33" y="11" width="11" height="11" fill="#FFDA34" />
+                                    <rect x="44" width="11" height="11" fill="#FFDA34" />
+                                    <rect x="44" y="22" width="11" height="11" fill="#FFDA34" />
+                                    <rect x="33" y="33" width="11" height="11" fill="#FFDA34" />
+                                </svg>
+                                <div className="content">
+                                    <span className="h2">{key}</span>
+                                    <p>{LearningPathsData[key].extendedBlurb}</p>
+                                </div>
+                            </div>
+                            <div className="col col-rt">
+                                <span>What you will learn:</span>
+                                <ul className="body-16">
+                                    {LearningPathsData[key].learningPoints.map((tag) => (
+                                        <li key={`tag${tag}`}>{tag}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </Link>
+                ))}
+
+                {/* <div className="card path-card">
                     <div className="col col-lt">
                         <svg width="55" height="44" viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="22" width="11" height="11" fill="#FFDA34" />
@@ -251,7 +297,7 @@ export default function LearningPathLandingPage() {
                         </li>
                     </ul>
                     <span className="btn btn-next">Next</span>
-                </div>
+                </div> */}
             </section>
 
             {/* <section className="contain learning-paths">

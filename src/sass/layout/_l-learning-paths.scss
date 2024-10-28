@@ -97,6 +97,9 @@
    justify-content: space-between;
    &:hover {
       transform: none;
+      .h2, p {
+         color: $yellow;
+      }
    }
    .col {
       width: 50%;
@@ -126,9 +129,6 @@
    .h2 {
       font-size: 60px;
       line-height: 1.1;
-      &:hover {
-         color: $yellow;
-      }
    }
    p {
       margin-top: 15px;
@@ -230,7 +230,7 @@
          display: block;
       }
       p {
-         max-width: 400px;
+         max-width: 600px;
       }
       .btn {
          margin: 20px 0 0;

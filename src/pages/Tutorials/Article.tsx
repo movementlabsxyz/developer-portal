@@ -24,9 +24,9 @@ export default function ArticlePage(props: {
 
                 <div className="page-intro">
                     <h1 className="title">{props.data.title ? props.data.title.split('-')[1] : ""}</h1>
-                    <p className="body-24">
+                    {/* <p className="body-24">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
+                    </p> */}
                 </div>
                 <div className="tutorial-content">
                     <div className="col col-lt sidebar">

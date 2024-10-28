@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import Article from '@/pages/Tutorials/Article'
 import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
+import useLearningPaths from '@/hooks/useLearningPaths'
+import slugify from 'slugify'
 
 interface PostPageProps {
     params: {
@@ -34,6 +36,7 @@ interface PostPageProps {
 
 export default async function LearningPathLandingPage({ params }: PostPageProps) {
     const { category: pageSlug } = params
+    const LearningPathsData = useLearningPaths()
 
     if (!pageSlug) {
         return
@@ -41,6 +44,13 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
 
     const pageCategory = getCategoryBySlug('learning-paths', pageSlug.toString())
     const categories = getSubCategories('learning-paths', pageSlug.toString())
+
+    const pageData = Object.keys(LearningPathsData).
+    filter((key) => slugify(key, {
+        lower: true,
+        strict: true,
+    }) === pageSlug.toString()).
+    map((key) => LearningPathsData[key])
 
     return (
         <div id="learning-paths-inner-wrap" className="subpage-wrap">
@@ -50,18 +60,21 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
                 </BreadCrumbs>
 
                 <div className="page-intro">
-                    <span className="subtitle body-12">6 Tutorials | 2 Demos | 3 Tools</span>
+                    {/* <span className="subtitle body-12">
+                        6 Tutorials | 2 Demos | 3 Tools
+                    </span> */}
                     <h1 className="title">{pageCategory?.name}</h1>
                     <p className="body-24">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        {pageData[0]?.extendedBlurb}
                     </p>
-                    <Link href={`/${pageCategory?.link}/${categories[0].link}`} className="btn">
+                    <Link href={`/${pageCategory?.link}/${categories[0]?.link}`} className="btn">
                         Start
                     </Link>
                 </div>
 
                 <div className="grid grid-4-column path-types-grid">
                     {categories.map((category, index) => {
+                        if (!category.name) return
                         return (
                             <Link 
                             href={`/${pageCategory?.link}/${category.link}`}
@@ -73,9 +86,9 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
                                     <span className="title body-24">{category.name}</span>
                                     <span className="btn">Start</span>
                                 </span>
-                                <span className="brief">
+                                {/* <span className="brief">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                </span>
+                                </span> */}
                             </Link>
                         )
                     })}

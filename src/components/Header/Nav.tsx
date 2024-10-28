@@ -93,7 +93,7 @@ export default function Nav() {
                     <ul>
                         {pathname !== '/' && (
                             <li>
-                                <Link href={'/'}>Home</Link>
+                                <Link href={'/'} onClick={() => setMobileNavOpen(false)}>Home</Link>
                             </li>
                         )}
                         {navItems.map((item, index) => (

@@ -1,12 +1,20 @@
 import Scroller from '@/components/Marquee/Scroller'
 import HeroSlider from '@/components/Slider/HeroSlider'
+import useLearningPaths from '@/hooks/useLearningPaths'
 import { getSubCategories } from '@/lib/posts'
 import { PostData } from '@/types/posts'
 import Link from 'next/link'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import useDeveloperTools from '@/hooks/useDeveloperTools'
+import ToolsCard from '@/components/Cards/Tools'
+import LearningPathCard from '@/components/Cards/LearningPath'
+import lottiebkg from '../../../public/json/home-circles.json'
 
 export default function Home(props: { postData: PostData[] }) {
     const allPostsData = props.postData
     const categories = getSubCategories('learning-paths')
+    const LearningPathsData = useLearningPaths()
+    const DeveloperToolsData = useDeveloperTools()
     return (
         <div className="md:mt-40">
             <HeroSlider>
@@ -47,9 +55,9 @@ export default function Home(props: { postData: PostData[] }) {
             <section className="contain learning-paths">
                 <div className="section-head">
                     <h3>Movement Learning Paths</h3>
-                    <a href="#" className="btn btn-12">
+                    <Link href="/learning-paths" className="btn btn-12">
                         View All
-                    </a>
+                    </Link>
                 </div>
                 <div className="path-link">
                     <div className="video-bg">
@@ -84,31 +92,8 @@ export default function Home(props: { postData: PostData[] }) {
 
             <section className="contain path-cards">
                 <div className="grid grid-3-column">
-                    {categories.map((category, index) => (
-                        <Link href={category.link} className="card card-type-1" key={category.name}>
-                            <svg
-                                width="55"
-                                height="44"
-                                viewBox="0 0 55 44"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="icon"
-                            >
-                                <rect y="22" width="11" height="11" fill="" />
-                                <rect x="11" y="33" width="11" height="11" fill="" />
-                                <rect x="11" y="11" width="11" height="11" fill="" />
-                                <rect width="11" height="11" fill="#FFDA34" />
-                                <rect x="22" y="22" width="11" height="11" fill="" />
-                                <rect x="33" y="11" width="11" height="11" fill="" />
-                                <rect x="44" width="11" height="11" fill="" />
-                                <rect x="44" y="22" width="11" height="11" fill="" />
-                                <rect x="33" y="33" width="11" height="11" fill="" />
-                            </svg>
-                            <span className="content">
-                                <span className="title body-20">{category.name}</span>
-                                <p className="body-16"></p>
-                            </span>
-                        </Link>
+                    {Object.keys(LearningPathsData).map((key) => (
+                        <LearningPathCard cardKey={key} data={LearningPathsData[key]} key={key} />
                     ))}
                 </div>
             </section>
@@ -116,9 +101,9 @@ export default function Home(props: { postData: PostData[] }) {
             <section className="contain guides">
                 <div className="section-head">
                     <h3>Guides and Tutorials</h3>
-                    <a href="#" className="btn btn-12">
+                    <Link href="/tutorials" className="btn btn-12">
                         View All
-                    </a>
+                    </Link>
                     <div className="slick-arrows section-arrows">
                         <a href="#" className="slick-arrow section-btn section-prev">
                             <svg
@@ -230,9 +215,9 @@ export default function Home(props: { postData: PostData[] }) {
             <section className="contain dev-tools">
                 <div className="section-head">
                     <h3>Developer Tools</h3>
-                    <a href="#" className="btn btn-12">
+                    <Link href="/developer-tools" className="btn btn-12">
                         View All
-                    </a>
+                    </Link>
                     <div className="slick-arrows section-arrows">
                         <a href="#" className="slick-arrow section-btn section-prev">
                             <svg
@@ -280,47 +265,12 @@ export default function Home(props: { postData: PostData[] }) {
                             </button>
                         </span>
                     </a>
-                    <a href="#" className="card card-type-3">
-                        <picture>
-                            <img src="/images/dev-tools-img.jpg" alt="" />
-                        </picture>
-                        <div className="card-content">
-                            <span className="title">Title</span>
-                            <p className="desc">Description</p>
-                            <span className="tags">
-                                <span className="tag">Tag</span>
-                                <span className="tag">Tag</span>
-                            </span>
-                        </div>
-                    </a>
-                    <a href="#" className="card card-type-3">
-                        <picture>
-                            <img src="/images/dev-tools-img.jpg" alt="" />
-                        </picture>
-                        <div className="card-content">
-                            <span className="title">Title</span>
-                            <p className="desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
-                            <span className="tags">
-                                <span className="tag">Tag</span>
-                                <span className="tag">Tag</span>
-                            </span>
-                        </div>
-                    </a>
-                    <a href="#" className="card card-type-3">
-                        <picture>
-                            <img src="/images/dev-tools-img.jpg" alt="" />
-                        </picture>
-                        <div className="card-content">
-                            <span className="title">Title</span>
-                            <p className="desc">Description</p>
-                            <span className="tags">
-                                <span className="tag">Tag</span>
-                                <span className="tag">Tag</span>
-                            </span>
-                        </div>
-                    </a>
+
+                    {Object.keys(DeveloperToolsData)
+                        .slice(0, 10)
+                        .map((key) => (
+                            <ToolsCard key={key} data={DeveloperToolsData[key]} />
+                        ))}
                 </div>
             </section>
         </div>
