@@ -127,6 +127,12 @@
    }
 }
 
+@mixin breakpoint-mobile-small {
+   @media only screen and (max-width: 400px) {
+      @content;
+   }
+}
+
 @mixin breakpoint-xs {
    @media only screen and (max-width: 349px) {
       @content;

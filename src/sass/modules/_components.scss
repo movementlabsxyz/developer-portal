@@ -199,6 +199,7 @@
       margin-right: 10px;
    }
    .controls {
+      display: none;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -306,8 +307,17 @@
       }
    }
 }
+
 .slick-slide {
-   margin: 0 20px 0 0;
+   border-right: transparent 20px solid;
+}
+@include breakpoint-mobile-small {
+   .slick-slide {
+      border-right: transparent 0 solid;
+   }
+}
+.slick-dots li button:before, li.slick-active button:before {
+   color: white !important;
 }
 
 
@@ -432,6 +442,7 @@
    .desc {
       font-size: 15px;
       padding-top: 5px;
+      height: 125px;
    }
    picture {
       position: relative;
