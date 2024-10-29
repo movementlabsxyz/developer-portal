@@ -132,7 +132,7 @@ export default function Home(props: { postData: PostData[] }) {
                             </span>
                         </a>
                         {Array.from({ length: 10 }, (_, i) => i).map((key) => (
-                            <a href="#" className="card card-type-2">
+                            <a href="#" className="card card-type-2" key={key}>
                                 <span className="meta">
                                     <span>Advanced</span>
                                     <span>25m</span>
