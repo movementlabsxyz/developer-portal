@@ -251,35 +251,42 @@
    }
 }
 
-.slick-arrows {
+.slick-arrow {
+   position: absolute;
+   top: -50px;
+   right: 5px;
+   width: 28px;
+   height: 28px;
+   border-radius: 28px;
+   border: 1px solid $yellow;
+   background: $black;
    display: flex;
-   gap: 10px;
-   .slick-arrow {
-      width: 28px;
-      height: 28px;
-      border-radius: 28px;
-      border: 1px solid $yellow;
-      background: $black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      &:hover {
-         @include desktop {
-            background: $yellow;
-            svg path {
-               fill: $black;
-            }
-         }
-      }
-      svg {
-         width: 14px;
-         path {
-            transition: all .15s ease-in-out;
-            fill: $yellow;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   &:hover {
+      @include desktop {
+         background: $yellow;
+         svg path {
+            fill: $black;
          }
       }
    }
+   svg {
+      width: 14px;
+      path {
+         transition: all .15s ease-in-out;
+         fill: $yellow;
+      }
+   }
+
+   &.section-prev {
+      right: 40px;
+   }
+}
+.slick-arrows {
+   display: flex;
+   gap: 10px;
 }
 
 .slick-pager {
@@ -298,6 +305,9 @@
          width: 40px;
       }
    }
+}
+.slick-slide {
+   margin: 0 20px 0 0;
 }
 
 
@@ -505,6 +515,7 @@
    background: $yellow;
    border: 1px solid $yellow;
    color: $black !important;
+   height: 100%;
    &:after {
       display: none;
    }
