@@ -9,6 +9,7 @@ import useDeveloperTools from '@/hooks/useDeveloperTools'
 import ToolsCard from '@/components/Cards/Tools'
 import LearningPathCard from '@/components/Cards/LearningPath'
 import lottiebkg from '../../../public/json/home-circles.json'
+import Carousel from '@/components/Slider/Carousel'
 
 export default function Home(props: { postData: PostData[] }) {
     const allPostsData = props.postData
@@ -105,110 +106,53 @@ export default function Home(props: { postData: PostData[] }) {
                         View All
                     </Link>
                     <div className="slick-arrows section-arrows">
-                        <a href="#" className="slick-arrow section-btn section-prev">
-                            <svg
-                                width="9"
-                                height="12"
-                                viewBox="0 0 9 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M7.86805e-07 6L9 0.803848L9 11.1962L7.86805e-07 6Z" fill="" />
-                            </svg>
-                        </a>
-                        <a href="#" className="slick-arrow section-btn section-next">
-                            <svg
-                                width="9"
-                                height="12"
-                                viewBox="0 0 9 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M9 6L4.64275e-07 11.1962L9.18537e-07 0.803847L9 6Z" fill="" />
-                            </svg>
-                        </a>
                     </div>
                 </div>
-                <div className="grid grid-4-column guides-grid">
-                    <a href="#" className="card card-type-play">
-                        <span className="body-20">
-                            Sharpen your skills and understand how to get the most out of Movement
-                        </span>
-                        <span className="play-wrap">
-                            <button className="play">
-                                <svg
-                                    width="38"
-                                    height="44"
-                                    viewBox="0 0 38 44"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M37.6506 22.0001L0.114485 43.9951L0.114487 0.00516918L37.6506 22.0001Z"
-                                        fill=""
-                                    />
-                                </svg>
-                            </button>
-                        </span>
-                    </a>
-                    <a href="#" className="card card-type-2">
-                        <span className="meta">
-                            <span>Advanced</span>
-                            <span>25m</span>
-                        </span>
-                        <div className="card-content">
-                            <span className="title">Title</span>
-                            <p className="desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
-                        </div>
-                        <picture>
-                            <img src="/images/tech-stack.png" alt="" />
-                            <span className="tags">
-                                <span className="tag">Tag</span>
-                                <span className="tag">Tag</span>
+                <div className="guides-grid">
+                    <Carousel>
+                        <a href="#" className="card card-type-play min-h-[300px]">
+                            <span className="body-20">
+                                Sharpen your skills and understand how to get the most out of Movement
                             </span>
-                        </picture>
-                    </a>
-                    <a href="#" className="card card-type-2">
-                        <span className="meta">
-                            <span>Advanced</span>
-                            <span>25m</span>
-                        </span>
-                        <div className="card-content">
-                            <span className="title">Title</span>
-                            <p className="desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
-                        </div>
-                        <picture>
-                            <img src="/images/tech-stack.png" alt="" />
-                            <span className="tags">
-                                <span className="tag">Tag</span>
-                                <span className="tag">Tag</span>
+                            <span className="play-wrap">
+                                <button className="play">
+                                    <svg
+                                        width="38"
+                                        height="44"
+                                        viewBox="0 0 38 44"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M37.6506 22.0001L0.114485 43.9951L0.114487 0.00516918L37.6506 22.0001Z"
+                                            fill=""
+                                        />
+                                    </svg>
+                                </button>
                             </span>
-                        </picture>
-                    </a>
-                    <a href="#" className="card card-type-2">
-                        <span className="meta">
-                            <span>Advanced</span>
-                            <span>25m</span>
-                        </span>
-                        <div className="card-content">
-                            <span className="title">Title</span>
-                            <p className="desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                is simply dummy text of the printing and typesetting industry.
-                            </p>
-                        </div>
-                        <picture>
-                            <img src="/images/tech-stack.png" alt="" />
-                            <span className="tags">
-                                <span className="tag">Tag</span>
-                                <span className="tag">Tag</span>
-                            </span>
-                        </picture>
-                    </a>
+                        </a>
+                        {Array.from({ length: 10 }, (_, i) => i).map((key) => (
+                            <a href="#" className="card card-type-2" key={key}>
+                                <span className="meta">
+                                    <span>Advanced</span>
+                                    <span>25m</span>
+                                </span>
+                                <div className="card-content">
+                                    <span className="title">Title</span>
+                                    <p className="desc">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    </p>
+                                </div>
+                                <picture>
+                                    <img src="/images/tech-stack.png" alt="" />
+                                    <span className="tags">
+                                        <span className="tag">Tag</span>
+                                        <span className="tag">Tag</span>
+                                    </span>
+                                </picture>
+                            </a>
+                        ))}
+                    </Carousel>
                 </div>
             </section>
 
@@ -218,59 +162,14 @@ export default function Home(props: { postData: PostData[] }) {
                     <Link href="/developer-tools" className="btn btn-12">
                         View All
                     </Link>
-                    <div className="slick-arrows section-arrows">
-                        <a href="#" className="slick-arrow section-btn section-prev">
-                            <svg
-                                width="9"
-                                height="12"
-                                viewBox="0 0 9 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M7.86805e-07 6L9 0.803848L9 11.1962L7.86805e-07 6Z" fill="" />
-                            </svg>
-                        </a>
-                        <a href="#" className="slick-arrow section-btn section-next">
-                            <svg
-                                width="9"
-                                height="12"
-                                viewBox="0 0 9 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M9 6L4.64275e-07 11.1962L9.18537e-07 0.803847L9 6Z" fill="" />
-                            </svg>
-                        </a>
-                    </div>
+                    <div className="slick-arrows section-arrows"></div>
                 </div>
-                <div className="grid grid-4-column guides-grid">
-                    <a href="#" className="card card-type-play">
-                        <span className="body-20">
-                            Sharpen your skills and understand how to get the most out of Movement
-                        </span>
-                        <span className="play-wrap">
-                            <button className="play">
-                                <svg
-                                    width="38"
-                                    height="44"
-                                    viewBox="0 0 38 44"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M37.6506 22.0001L0.114485 43.9951L0.114487 0.00516918L37.6506 22.0001Z"
-                                        fill=""
-                                    />
-                                </svg>
-                            </button>
-                        </span>
-                    </a>
-
-                    {Object.keys(DeveloperToolsData)
-                        .slice(0, 10)
-                        .map((key) => (
+                <div className="guides-grid">
+                    <Carousel>
+                        {Object.keys(DeveloperToolsData).map((key) => (
                             <ToolsCard key={key} data={DeveloperToolsData[key]} />
                         ))}
+                    </Carousel>
                 </div>
             </section>
         </div>
