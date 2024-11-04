@@ -71,7 +71,7 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
                     {/* <span className="subtitle body-12">
                         6 Tutorials | 2 Demos | 3 Tools
                     </span> */}
-                    <h1 className="title">{params.subCategory ? pageSubCategory?.name.split('-')[1] : pageCategory?.name}</h1>
+                    <h1 className="title">{params.subCategory ? pageSubCategory?.name.includes('-') ? pageSubCategory?.name.split('-')[1] : pageSubCategory?.name : pageCategory?.name}</h1>
                     <p className="body-24">
                         {params.subCategory ? '' : pageData[0]?.extendedBlurb}
                     </p>

@@ -322,7 +322,7 @@ export function getSubCategories(category: string, subcategory?: string, subSubC
             return []
         }
         nodes = subcategoryNode?.children.map((child) => ({
-            name: child.name.split('-').slice(1).join(' ').replace('.md', ''),
+            name: child.name.includes('.md') ? child.name.split('-').slice(1).join(' ').replace('.md', '') : child.name,
             link: child.link || '',
         }))
     }
@@ -423,8 +423,6 @@ export function getCategoryBySlug(category: string, slug: string, subCategory?: 
         const postNode = subcategoryNode.children.find(
             (child) => child.link?.includes(subCategory.toLowerCase()) && child.type === 'directory',
         ) as DirectoryNode
-
-        console.log('postNode', postNode)
 
         if (!postNode) {
             return undefined
