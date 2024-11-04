@@ -10,6 +10,7 @@ import slugify from 'slugify'
 interface PostPageProps {
     params: {
         category: string[]
+        subCategory?: string[] | undefined
     }
 }
 
@@ -35,7 +36,7 @@ interface PostPageProps {
 // }
 
 export default async function LearningPathLandingPage({ params }: PostPageProps) {
-    const { category: pageSlug } = params
+    const { category: pageSlug, subCategory } = params
     const LearningPathsData = useLearningPaths()
 
     if (!pageSlug) {
@@ -43,7 +44,8 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
     }
 
     const pageCategory = getCategoryBySlug('learning-paths', pageSlug.toString())
-    const categories = getSubCategories('learning-paths', pageSlug.toString())
+    const pageSubCategory = getCategoryBySlug('learning-paths', pageSlug.toString(), subCategory ? subCategory.toString() : undefined)
+    const categories = getSubCategories('learning-paths', pageSlug.toString(), subCategory ? subCategory.toString() : undefined)
 
     const pageData = Object.keys(LearningPathsData).
     filter((key) => slugify(key, {
@@ -52,22 +54,28 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
     }) === pageSlug.toString()).
     map((key) => LearningPathsData[key])
 
+    let pathUrl = `/learning-paths/${pageCategory?.link}`
+    if (subCategory) {
+        pathUrl += `/${subCategory}`
+    }
+
     return (
         <div id="learning-paths-inner-wrap" className="subpage-wrap">
             <div className="contain">
                 <BreadCrumbs contain={false}>
                     <Link href="/learning-paths">Learning Paths</Link>
+                    { pageCategory && <Link href={`/learning-paths/${pageCategory.link}`}>{pageCategory.name}</Link> }
                 </BreadCrumbs>
 
                 <div className="page-intro">
                     {/* <span className="subtitle body-12">
                         6 Tutorials | 2 Demos | 3 Tools
                     </span> */}
-                    <h1 className="title">{pageCategory?.name}</h1>
+                    <h1 className="title">{params.subCategory ? pageSubCategory?.name.split('-')[1] : pageCategory?.name}</h1>
                     <p className="body-24">
-                        {pageData[0]?.extendedBlurb}
+                        {params.subCategory ? '' : pageData[0]?.extendedBlurb}
                     </p>
-                    <Link href={`/${pageCategory?.link}/${categories[0]?.link}`} className="btn">
+                    <Link href={`${pathUrl}/${categories[0]?.link}`} className="btn">
                         Start
                     </Link>
                 </div>
@@ -77,13 +85,13 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
                         if (!category.name) return
                         return (
                             <Link 
-                            href={`/${pageCategory?.link}/${category.link}`}
+                            href={`${pathUrl}/${category.link}`}
                             prefetch={false} className="card card-type-4" key={index}>
                                 <span className="inner">
                                     <picture>
                                         <img src="/assets/images/icon-bg-transparent.png" alt="" />
                                     </picture>
-                                    <span className="title body-24">{category.name}</span>
+                                    <span className="title body-24">{category.name.split('-')[1] || category.name}</span>
                                     <span className="btn">Start</span>
                                 </span>
                                 {/* <span className="brief">

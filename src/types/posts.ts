@@ -32,5 +32,6 @@ export interface PostPageProps {
     params: {
         category: string
         subCategory: string
+        subSubCategory?: string | undefined
     }
 }

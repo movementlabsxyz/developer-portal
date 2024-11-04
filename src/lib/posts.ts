@@ -73,9 +73,7 @@ function buildPostTree(dir: string, baseDir: string = contentDirectory): PostNod
                     path: relativePath,
                     type: 'directory',
                     children,
-                    link:
-                        'learning-paths/' +
-                        slugify(entry.name, {
+                    link: slugify(entry.name, {
                             lower: true,
                             strict: true,
                         }),
@@ -300,7 +298,7 @@ export function groupPostsByCategories(posts: PostData[]): any {
  * @example
  * const subfolders = getSubfolders('learning-paths')
  */
-export function getSubCategories(category: string, subcategory?: string): PostCategory[] {
+export function getSubCategories(category: string, subcategory?: string, subSubCategory?: string): PostCategory[] {
     const postTree = getPostTree()
     const categoryNode = postTree.find(
         (node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory',
@@ -324,6 +322,29 @@ export function getSubCategories(category: string, subcategory?: string): PostCa
             return []
         }
         nodes = subcategoryNode?.children.map((child) => ({
+            name: child.name.split('-').slice(1).join(' ').replace('.md', ''),
+            link: child.link || '',
+        }))
+    }
+
+    if (subcategory && subSubCategory) {
+        const subcategoryNode = categoryNode.children.find(
+            (child) => child.link?.includes(subcategory.toLowerCase()) && child.type === 'directory',
+        ) as DirectoryNode
+
+        if (!subcategoryNode) {
+            return []
+        }
+
+        const subSubCategoryNode = subcategoryNode.children.find(
+            (child) => child.link?.includes(subSubCategory.toLowerCase()) && child.type === 'directory',
+        ) as DirectoryNode
+
+        if (!subSubCategoryNode) {
+            return []
+        }
+
+        nodes = subSubCategoryNode?.children.map((child) => ({
             name: child.name.split('-').slice(1).join(' ').replace('.md', ''),
             link: child.link || '',
         }))
@@ -380,7 +401,7 @@ export function buildBreadCrumbs(
     ]
 }
 
-export function getCategoryBySlug(category: string, slug: string): DirectoryNode | undefined {
+export function getCategoryBySlug(category: string, slug: string, subCategory?: string): DirectoryNode | undefined {
     const postTree = getPostTree()
     const categoryNode = postTree.find(
         (node) => node.name.toLowerCase() === category.toLowerCase() && node.type === 'directory',
@@ -396,6 +417,21 @@ export function getCategoryBySlug(category: string, slug: string): DirectoryNode
 
     if (!subcategoryNode) {
         return undefined
+    }
+
+    if (subCategory) {
+        const postNode = subcategoryNode.children.find(
+            (child) => child.link?.includes(subCategory.toLowerCase()) && child.type === 'directory',
+        ) as DirectoryNode
+
+        console.log('postNode', postNode)
+
+        if (!postNode) {
+            return undefined
+        }
+
+        return postNode
+
     }
 
     return subcategoryNode

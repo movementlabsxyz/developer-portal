@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-    const id = params.subCategory
+    const id = params.subSubCategory || params.subCategory
     const postData = await getPostData(id)
 
     if (!postData) {
@@ -31,13 +31,16 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
  * @returns {JSX.Element} The post page
  */
 export default async function PostPage({ params }: PostPageProps) {
-    const id = params.subCategory
+    const id = params.subSubCategory
+
+    if (!id) {
+        return  null
+    }
     const postData = await getPostData(id)
 
-    if (!postData) {
-        return <LearningPathLandingPage params={{ category:  [params.category], subCategory: [id] }} />
-    }
+    console.log('postData', postData)
 
     const pageCategory = getCategoryBySlug('learning-paths', params.category.toString()) as DirectoryNode
-    return <Article data={postData} category={pageCategory} />
+    const subCategory = getCategoryBySlug('learning-paths', params.category.toString(), params.subCategory.toString()) as DirectoryNode
+    return <Article data={postData} category={pageCategory} subCategory={subCategory} />
 }
