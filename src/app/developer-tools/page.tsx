@@ -30,10 +30,20 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 export default function TutorialsLandingPage() {
     const DeveloperToolsData = useDeveloperTools()
     return (
-        <div id="learning-paths-wrap" className="subpage-wrap">
+        <div id="learning-paths-inner-wrap" className="subpage-wrap">
                 <BreadCrumbs contain={true}>
                     <Link href="/developer-tools">Developer Tools</Link>
                 </BreadCrumbs>
+
+                <div className="contain">
+                    <div className="page-intro">
+                        <span className="subtitle body-12"></span>
+                        <h1 className="title">Developer Tools</h1>
+                        {/* <p className="body-24">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p> */}
+                    </div>
+                </div>
 
                 {/* <HeroSlider secClass="learning-paths-slider">
                     <div className="slide">
