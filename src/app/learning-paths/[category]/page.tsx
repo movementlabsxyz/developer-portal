@@ -91,7 +91,7 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
                             prefetch={false} className="card card-type-4" key={index}>
                                 <span className="inner">
                                     <picture>
-                                        <img src="/assets/images/icon-bg-transparent.png" alt="" />
+                                        <img src="/images/icon-bg-transparent.png" alt="" />
                                     </picture>
                                     <span className="title body-24">{category.name.split('-')[1] || category.name}</span>
                                     <span className="btn">Start</span>
