@@ -21,7 +21,7 @@ export default function ArticlePage(props: {
                 <BreadCrumbs contain={false}>
                     <Link href="/learning-paths">Learning Paths</Link>
                     <Link href={`/learning-paths/${props.category.link}`}>{props.category.name}</Link>
-                    { props.subCategory && <Link href={`/learning-paths/${props.category.link}/${props.subCategory.link}`}>{props.subCategory.name.split('-')[1]}</Link> }
+                    { props.subCategory && <Link href={`/learning-paths/${props.category.link}/${props.subCategory.link}`}>{props.subCategory.name.includes('-') ? props.subCategory.name.split('-')[1] : props.subCategory.name}</Link> }
                 </BreadCrumbs>
 
                 <div className="page-intro">

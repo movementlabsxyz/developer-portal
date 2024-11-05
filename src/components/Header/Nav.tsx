@@ -91,7 +91,7 @@ export default function Nav() {
                 </Link>
                 <nav id="main-nav" role="navigation" className={mobileNavOpen ? 'active' : ''}>
                     <ul>
-                        <li>
+                        <li key="home">
                             <Link href={'/'} onClick={() => setMobileNavOpen(false)} className={pathname === '/' ? 'active' : ''}>Home</Link>
                         </li>
                         {navItems.map((item, index) => (
