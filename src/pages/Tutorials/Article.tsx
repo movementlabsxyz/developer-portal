@@ -16,7 +16,7 @@ export default function ArticlePage(props: {
     }
 
     return (
-        <div id="tutorials-wrap" className="subpage-wrap">
+        <div id="tutorials-wrap" className="subpage-wrap line-numbers">
             <section className="contain">
                 <BreadCrumbs contain={false}>
                     <Link href="/learning-paths">Learning Paths</Link>
@@ -42,7 +42,7 @@ export default function ArticlePage(props: {
                         <div className="content-group">
                             <Markdown content={props.data.contentHtml || ''} />
                         </div>
-                        <div className="tut-nav">
+                        {/* <div className="tut-nav">
                             <Link href="#" className="tut-arrow tut-prev">
                                 <span className="icon">
                                     <svg
@@ -71,7 +71,7 @@ export default function ArticlePage(props: {
                                     </svg>
                                 </span>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

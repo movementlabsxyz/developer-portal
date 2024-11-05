@@ -4,6 +4,15 @@ import useLearningPaths from '@/hooks/useLearningPaths'
 import { getSubCategories } from '@/lib/posts'
 import Link from 'next/link'
 import slugify from 'slugify'
+import { Metadata } from 'next'
+
+export async function generateMetadata(): Promise<Metadata> {
+
+    return {
+        title: `Learning Paths - Movement Network`,
+        description: 'A curated list of resources for developers in specific verticals to learn how to build on movement',
+    }
+}
 
 export default function LearningPathLandingPage() {
     // get categories by slug
@@ -19,53 +28,37 @@ export default function LearningPathLandingPage() {
             <HeroSlider secClass="learning-paths-slider">
                 <div className="slide">
                     <div className="col-lt">
-                        <div className="hero-grid grid grid-3-column">
-                            <Link href="#" className="card card-type-3">
+                        <div className="hero-grid grid grid-2-column">
+                            <Link href="#Basic-Concepts" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
                                 <div className="card-content">
-                                    <span className="title">Guides</span>
+                                    <span className="title">Basic Concepts</span>
                                 </div>
                             </Link>
-                            <Link href="#" className="card card-type-3">
+                            <Link href="#Advanced-Move" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
                                 <div className="card-content">
-                                    <span className="title">Blogs</span>
+                                    <span className="title">Advanced Move</span>
                                 </div>
                             </Link>
-                            <Link href="#" className="card card-type-3">
+                            <Link href="#NFT" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
                                 <div className="card-content">
-                                    <span className="title">Docs</span>
+                                    <span className="title">NFT</span>
                                 </div>
                             </Link>
-                            <Link href="#" className="card card-type-3">
+                            <Link href="#DeFi" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
                                 <div className="card-content">
-                                    <span className="title">Demos</span>
-                                </div>
-                            </Link>
-                            <Link href="#" className="card card-type-3">
-                                <picture>
-                                    <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
-                                </picture>
-                                <div className="card-content">
-                                    <span className="title">Tutorials</span>
-                                </div>
-                            </Link>
-                            <Link href="#" className="card card-type-3">
-                                <picture>
-                                    <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
-                                </picture>
-                                <div className="card-content">
-                                    <span className="title">Tools</span>
+                                    <span className="title">DeFi</span>
                                 </div>
                             </Link>
                         </div>
@@ -73,8 +66,8 @@ export default function LearningPathLandingPage() {
                     <div className="col-rt">
                         <div className="inner">
                             <span className="subtitle">Featured</span>
-                            <h1 className="title">DeFi</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <h1 className="title">Advanced Move</h1>
+                            <p>Take your understanding of Move to the next level with advanced concepts. Learn about storage operations, resource management, and smart object design to build robust applications on the Movement ecosystem.</p>
                         </div>
                     </div>
                 </div>
@@ -88,6 +81,10 @@ export default function LearningPathLandingPage() {
                             strict: true,
                         })}`}
                         key={key}
+                        id={`${slugify(key, {
+                            lower: false,
+                            strict: true,
+                        })}`}
                     >
                         <div className="card path-card" key={key}>
                             <div className="col col-lt">

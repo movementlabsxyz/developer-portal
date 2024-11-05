@@ -19,19 +19,13 @@ interface PostPageProps {
 //     }))
 // }
 
-// export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-//     const id = params.category
-//     const postData = await getPostData(id)
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
 
-//     if (!postData) {
-//         return {}
-//     }
-
-//     return {
-//         title: `${decodeURIComponent(postData.title || "")} - Movement Network`,
-//         description: postData.description || '',
-//     }
-// }
+    return {
+        title: `Developer Tools - Movement Network`,
+        description: 'Developer Tools for the Movement Network',
+    }
+}
 
 export default function TutorialsLandingPage() {
     const DeveloperToolsData = useDeveloperTools()
@@ -41,7 +35,7 @@ export default function TutorialsLandingPage() {
                     <Link href="/developer-tools">Developer Tools</Link>
                 </BreadCrumbs>
 
-                <HeroSlider secClass="learning-paths-slider">
+                {/* <HeroSlider secClass="learning-paths-slider">
                     <div className="slide">
                         <div className="col-lt">
                             <picture>
@@ -65,7 +59,7 @@ export default function TutorialsLandingPage() {
                             </div>
                         </div>
                     </div>
-                </HeroSlider>
+                </HeroSlider> */}
 
                 <section className="contain dev-tools">
                     <div className="flex flex-col gap-10 mt-40">

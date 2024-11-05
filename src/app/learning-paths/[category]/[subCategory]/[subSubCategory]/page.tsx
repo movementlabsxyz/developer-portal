@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     }
 
     return {
-        title: `${decodeURIComponent(postData.title || '')} - Movement Developer Portal`,
+        title: `${decodeURIComponent(postData.title.includes('-') ? postData.title.split('-').slice(1).join(' ').replace('.md', '') : postData.title || '')} - Movement Developer Portal`,
         description: postData.description || '',
     }
 }
@@ -37,8 +37,6 @@ export default async function PostPage({ params }: PostPageProps) {
         return  null
     }
     const postData = await getPostData(id)
-
-    console.log('postData', postData)
 
     const pageCategory = getCategoryBySlug('learning-paths', params.category.toString()) as DirectoryNode
     const subCategory = getCategoryBySlug('learning-paths', params.category.toString(), params.subCategory.toString()) as DirectoryNode

@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import GTM from '@/components/GTM/GTM'
 import NavHeader from '@/components/Header/Nav'
 import Footer from '@/components/Footer/Footer'
-import WeGlot from '@/components/Translation/weGlot'
+// import WeGlot from '@/components/Translation/weGlot'
 
 const twkEverett = localFont({
     src: [
@@ -65,7 +65,7 @@ const twkEverettMono = localFont({
 
 export const metadata: Metadata = {
     title: 'Movement Network Developer Portal',
-    description: 'The Movement Network developer portal....',
+    description: 'Helpful resources and tutorials for building on the Movement Network.',
     metadataBase: new URL('https://developer.movementnetwork.xyz'),
     openGraph: {
         locale: 'en_US',
@@ -88,7 +88,7 @@ export default function RootLayout({
                 <main>{children}</main>
                 <Footer />
                 <GTM />
-                <WeGlot />
+                {/* <WeGlot /> */}
             </body>
         </html>
     )

@@ -34,11 +34,16 @@
       display: block;
       z-index: 2;
       min-width: 300px;
+      // min width 1600px;
+      @media screen and (min-width: 1600px) {
+         min-width: 400px;         
+      }
    }
    .col-rt {
       margin-top: -20px;
       position: relative;
       z-index: 1;
+      width: calc(100% - 350px);
       > div {
          padding-bottom: 20px;
       }
@@ -51,13 +56,13 @@
          padding-top: 0;
       }
    }
-   p, ul {
+   p, ul, ol {
       width: 75%;
    }
-   h2, h3, h4, h5, p {
-      padding: 10px 0;
+   h2, h3, h4, h5, p, ol, ul {
+      padding: 20px 0;
    }
-   ul:not(#scroll-index, .nested) {
+   ul:not(#scroll-index, .nested), ol {
       padding: 6px 0;
       li {
          padding: 4px 0 4px 20px;
@@ -77,7 +82,7 @@
    @include breakpoint-tablet {
       padding-top: 20px;
       gap: 50px;
-      p, ul {
+      p, ul, ol {
          width: 100%;
       }
    }

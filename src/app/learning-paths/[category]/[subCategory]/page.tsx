@@ -13,14 +13,26 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
     const id = params.subCategory
+    const { category: pageSlug, subCategory } = params
     const postData = await getPostData(id)
 
     if (!postData) {
-        return {}
+
+        if (!pageSlug) {
+            return {}
+        }
+    
+        const pageCategory = getCategoryBySlug('learning-paths', pageSlug.toString())
+        const pageSubCategory = getCategoryBySlug('learning-paths', pageSlug.toString(), subCategory ? subCategory.toString() : undefined)
+    
+        return {
+            title: `${params.subCategory ? pageSubCategory?.name.includes('-') ? pageSubCategory?.name.split('-')[1] : pageSubCategory?.name : pageCategory?.name} - Movement Network`,
+            description: 'Learning Paths for the Movement Network',
+        }
     }
 
     return {
-        title: `${decodeURIComponent(postData.title || '')} - Movement Developer Portal`,
+        title: `${decodeURIComponent(postData.title.includes('-') ? postData.title.split('-').slice(1).join(' ').replace('.md', '') : postData.title || '')} - Movement Developer Portal`,
         description: postData.description || '',
     }
 }

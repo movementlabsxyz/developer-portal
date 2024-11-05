@@ -9,17 +9,20 @@ import 'prismjs/components/prism-typescript.min.js'
 import 'prismjs/components/prism-json.min.js'
 import 'prismjs/components/prism-markdown.min.js'
 import 'prismjs/components/prism-bash.min.js'
+import 'prismjs/components/prism-ruby.min.js'
 import 'prismjs/plugins/toolbar/prism-toolbar.min.js'
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js'
 import 'prismjs/plugins/toolbar/prism-toolbar.min.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css'
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export function Markdown({ content }: { content: string }) {
+    const pathname = usePathname()
     useEffect(() => {
         prism.highlightAll()
-    }, [])
+    }, [pathname])
 
     return (
         <div dangerouslySetInnerHTML={{ __html: content || '' }} />

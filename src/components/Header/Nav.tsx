@@ -65,11 +65,6 @@ export default function Nav() {
 
     const navItems = [
         {
-            name: 'Docs',
-            link: 'https://docs.movementnetwork.xyz/',
-            target: '_blank',
-        },
-        {
             name: 'Learning Paths',
             link: '/learning-paths',
         },
@@ -81,6 +76,11 @@ export default function Nav() {
             name: 'DevTools',
             link: '/developer-tools',
         },
+        {
+            name: 'Docs',
+            link: 'https://docs.movementnetwork.xyz/',
+            target: '_blank',
+        },
     ]
 
     return (
@@ -91,11 +91,9 @@ export default function Nav() {
                 </Link>
                 <nav id="main-nav" role="navigation" className={mobileNavOpen ? 'active' : ''}>
                     <ul>
-                        {pathname !== '/' && (
-                            <li>
-                                <Link href={'/'} onClick={() => setMobileNavOpen(false)}>Home</Link>
-                            </li>
-                        )}
+                        <li>
+                            <Link href={'/'} onClick={() => setMobileNavOpen(false)}>Home</Link>
+                        </li>
                         {navItems.map((item, index) => (
                             <li key={index}>
                                 <Link

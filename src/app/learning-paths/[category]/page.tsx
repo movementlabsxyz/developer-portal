@@ -21,19 +21,21 @@ interface PostPageProps {
 //     }))
 // }
 
-// export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-//     const id = params.category
-//     const postData = await getPostData(id)
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+    const { category: pageSlug, subCategory } = params
 
-//     if (!postData) {
-//         return {}
-//     }
+    if (!pageSlug) {
+        return {}
+    }
 
-//     return {
-//         title: `${decodeURIComponent(postData.title || "")} - Movement Network`,
-//         description: postData.description || '',
-//     }
-// }
+    const pageCategory = getCategoryBySlug('learning-paths', pageSlug.toString())
+    const pageSubCategory = getCategoryBySlug('learning-paths', pageSlug.toString(), subCategory ? subCategory.toString() : undefined)
+
+    return {
+        title: `${params.subCategory ? pageSubCategory?.name.includes('-') ? pageSubCategory?.name.split('-')[1] : pageSubCategory?.name : pageCategory?.name} - Movement Network`,
+        description: 'Learning Paths for the Movement Network',
+    }
+}
 
 export default async function LearningPathLandingPage({ params }: PostPageProps) {
     const { category: pageSlug, subCategory } = params

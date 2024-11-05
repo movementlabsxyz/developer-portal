@@ -18,19 +18,14 @@ interface PostPageProps {
 //     }))
 // }
 
-// export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-//     const id = params.category
-//     const postData = await getPostData(id)
 
-//     if (!postData) {
-//         return {}
-//     }
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
 
-//     return {
-//         title: `${decodeURIComponent(postData.title || "")} - Movement Network`,
-//         description: postData.description || '',
-//     }
-// }
+    return {
+        title: `Tutorials & Guides - Movement Network`,
+        description: 'Tutorials for building on the Movement Network',
+    }
+}
 
 export default function TutorialsLandingPage() {
     return (

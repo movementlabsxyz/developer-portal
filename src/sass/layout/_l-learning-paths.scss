@@ -24,6 +24,9 @@
       padding: 0 80px;
       grid-gap: 20px;
    }
+   .hero-grid.grid-2-column {
+      padding: 40px 80px;
+   }
    @include breakpoint-991 {
       .slide {
          display: flex;
@@ -41,6 +44,9 @@
          }
       }
       .hero-grid {
+         padding: 0 30px;
+      }
+      .hero-grid.grid-2-column {
          padding: 0 30px;
       }
       .slick-pager {
