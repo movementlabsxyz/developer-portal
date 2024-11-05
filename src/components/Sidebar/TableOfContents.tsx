@@ -88,7 +88,7 @@ const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
         </>
     )
 
-    return <ul id="scroll-index">{renderItems(nestedItems)}</ul>
+    return nestedItems.length > 0 ? <ul id="scroll-index">{renderItems(nestedItems)}</ul> : null
 }
 
 export default TableOfContents

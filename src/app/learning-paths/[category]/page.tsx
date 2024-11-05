@@ -84,7 +84,7 @@ export default async function LearningPathLandingPage({ params }: PostPageProps)
 
                 <div className="grid grid-4-column path-types-grid">
                     {categories.map((category, index) => {
-                        if (!category.name) return
+                        if (!category.name || category.name === 'images') return
                         return (
                             <Link 
                             href={`${pathUrl}/${category.link}`}

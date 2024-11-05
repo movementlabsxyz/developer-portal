@@ -31,6 +31,7 @@ export default function ArticlePage(props: {
                     </p> */}
                 </div>
                 <div className="tutorial-content">
+                    { props.data.tableOfContents.length > 0 && (
                     <div className="col col-lt sidebar">
                         <div className="inner">
                             <h4 id="index-heading">On This Page</h4>
@@ -38,7 +39,8 @@ export default function ArticlePage(props: {
                             <TableOfContents tableOfContents={props.data.tableOfContents} />
                         </div>
                     </div>
-                    <div className="col col-rt">
+                    )}
+                    <div className={`col ${props.data.tableOfContents.length > 0 ? 'col-rt' : ''}`}>
                         <div className="content-group">
                             <Markdown content={props.data.contentHtml || ''} />
                         </div>
