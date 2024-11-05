@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import Script from "next/script"
 
-const GTM_ID = "GTM-"
+const GTM_ID = "GTM-5DVSMWSD"
 
 const GTM = () => {
   useEffect(() => {
