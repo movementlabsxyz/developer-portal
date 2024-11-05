@@ -116,4 +116,4 @@ public entry fun change_value_from_global_storage(signer: &signer, value: u64) a
 
 After execution is complete, you can check the transaction and you will see an event with 2 pieces of information: executor and value
 
-![Screenshot 2024-09-27 at 21.47.27.png](Events%2010718675b2d780a49a94e25bbdddbb7a/Screenshot_2024-09-27_at_21.47.27.png)
+![Screenshot 2024-09-27 at 21.47.27.png](/content-images/Events/Screenshot_2024-09-27_at_21.47.27.png)

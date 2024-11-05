@@ -178,12 +178,12 @@ Transaction submitted: https://explorer.aptoslabs.com/txn/0x852c187c3290dbf33eb1
 
 1. Check the transaction on the Movement testnet explorer using this link: https://explorer.movementlabs.xyz/?network=testnet
     
-    ![Screenshot 2024-09-27 at 22.22.45.png](Deploy%20&%20Call%20function%20on-chain%2010e18675b2d7801ebf51f4e2c0262348/Screenshot_2024-09-27_at_22.22.45.png)
+    ![Screenshot 2024-09-27 at 22.22.45.png](/content-images/Deploy%20&%20Call%20function%20on_chain/Screenshot_2024-09-27_at_22.22.45.png)
     
 2. Alternatively, you can search using the account address and navigate to the "Modules" tab: `0x7d470166da365d4ab4ac22c0159827ca0502c0b971ad2f9edda8e493332290c4`
     
-    ![Screenshot 2024-09-27 at 22.17.40.png](Deploy%20&%20Call%20function%20on-chain%2010e18675b2d7801ebf51f4e2c0262348/Screenshot_2024-09-27_at_22.17.40.png)
+    ![Screenshot 2024-09-27 at 22.17.40.png](/content-images/Deploy%20&%20Call%20function%20on_chain/Screenshot_2024-09-27_at_22.17.40.png)
     
 3. Run and View will list the functions available in your module.
     
-    ![Screenshot 2024-09-27 at 22.24.15.png](Deploy%20&%20Call%20function%20on-chain%2010e18675b2d7801ebf51f4e2c0262348/Screenshot_2024-09-27_at_22.24.15.png)
+    ![Screenshot 2024-09-27 at 22.24.15.png](/content-images/Deploy%20&%20Call%20function%20on_chain/Screenshot_2024-09-27_at_22.24.15.png)

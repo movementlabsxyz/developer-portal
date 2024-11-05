@@ -75,18 +75,18 @@ In addition to Core Objects and Collection Objects, we'll find several new objec
 
 ### ConcurrentSupply
 
-![image.png](Token%20Standard%20&%20Mint%20your%20NFT%2011918675b2d780f7bdf6f11c2a6e279f/image.png)
+![image.png](/content-images/Token%20Standard%20&%20Mint%20your%20NFT/image.png)
 
 This provides information about the total supply of the collection and the number of tokens currently circulating in the market.
 
 ### TokenIdentifiers
 
-![image.png](Token%20Standard%20&%20Mint%20your%20NFT%2011918675b2d780f7bdf6f11c2a6e279f/image%201.png)
+![image.png](/content-images/Token%20Standard%20&%20Mint%20your%20NFT/image%201.png)
 
 This will contain the name of the NFT that we initialized through the CLI.
 
 ### Token
 
-![image.png](Token%20Standard%20&%20Mint%20your%20NFT%2011918675b2d780f7bdf6f11c2a6e279f/image%202.png)
+![image.png](/content-images/Token%20Standard%20&%20Mint%20your%20NFT/image%202.png)
 
 This is the Object Token containing the information of the `Token`

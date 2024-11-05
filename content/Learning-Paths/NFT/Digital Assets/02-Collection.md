@@ -71,7 +71,7 @@ In reality, a user (account) can own one or multiple different collections. Usin
 
 Furthermore, after creating Tokens, we know that these tokens may not necessarily belong to the collection owner but can be owned by anyone. With the use of objects, transferring, buying, selling, and managing these tokens will be easier and more flexible than ever before.
 
-![image.png](Collection%2011918675b2d7808eb874eec585da0c43/image.png)
+![image.png](/content-images/Collection/image.png)
 
 ### Initializing an object through the collection library
 
@@ -103,10 +103,10 @@ aptos move publish
 
 After completing this process, check the transaction details on the explorer:
 
-![image.png](Collection%2011918675b2d7808eb874eec585da0c43/image%201.png)
+![image.png](/content-images/Collection/image%201.png)
 
 Through the `create_fixed_collection` function, we've initialized an `object` owned by the creator who initiated and possesses the object. We've also generated an `addr` of `0xa71c541d8f6022e60423d84a6cd5c0c76f898586933204f3521ab5f8f89bae86`. This address represents both the object's location and the `address owner` of the Collection.
 
-![image.png](Collection%2011918675b2d7808eb874eec585da0c43/image%202.png)
+![image.png](/content-images/Collection/image%202.png)
 
 The second resource initialized is a Collection that we defined in the Function.

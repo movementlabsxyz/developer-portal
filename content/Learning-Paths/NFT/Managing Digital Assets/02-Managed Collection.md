@@ -41,7 +41,7 @@ fun init_module(resource_account: &signer) {
 }
 ```
 
-![image.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/image.png)
+![image.png](/content-images/Managed%20Collection/image.png)
 
 ## Create Movement AptosCollection
 
@@ -88,7 +88,7 @@ public entry fun create_movement_collection(admin: &signer) acquires CollectionM
 }
 ```
 
-![image.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/image%201.png)
+![image.png](/content-images/Managed%20Collection/image%201.png)
 
 After initializing the Collection, we'll create tokens within the `collection`. Since we've stored the `collection_name` in the MovementCollection Resource, we can easily access the user's global data to retrieve this information through acquires.
 
@@ -147,13 +147,13 @@ public fun get_collection_object_address(owner: address): address acquires Movem
 
 After checking the `object` information, you'll see that it creates four different resources when you call the `create_movement_collection` function:
 
-![Screenshot 2024-10-15 at 15.54.09.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/Screenshot_2024-10-15_at_15.54.09.png)
+![Screenshot 2024-10-15 at 15.54.09.png](/content-images/Managed%20Collection/Screenshot_2024-10-15_at_15.54.09.png)
 
-![Screenshot 2024-10-15 at 15.54.14.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/Screenshot_2024-10-15_at_15.54.14.png)
+![Screenshot 2024-10-15 at 15.54.14.png](/content-images/Managed%20Collection/Screenshot_2024-10-15_at_15.54.14.png)
 
-![Screenshot 2024-10-15 at 15.54.18.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/Screenshot_2024-10-15_at_15.54.18.png)
+![Screenshot 2024-10-15 at 15.54.18.png](/content-images/Managed%20Collection/Screenshot_2024-10-15_at_15.54.18.png)
 
-![Screenshot 2024-10-15 at 15.54.22.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/Screenshot_2024-10-15_at_15.54.22.png)
+![Screenshot 2024-10-15 at 15.54.22.png](/content-images/Managed%20Collection/Screenshot_2024-10-15_at_15.54.22.png)
 
 ## Create AptosToken
 
@@ -221,7 +221,7 @@ public fun get_token_object(owner: address): vector<address> acquires MovementCo
 
 With this view function, I can easily determine how many `AptosTokens` have been created and which `tokens` they are.
 
-![image.png](Managed%20Collection%2011f18675b2d780dbbc0dfdfec6c9e66a/image%202.png)
+![image.png](/content-images/Managed%20Collection/image%202.png)
 
 ## FullCode
 

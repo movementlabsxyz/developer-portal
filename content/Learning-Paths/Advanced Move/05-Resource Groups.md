@@ -97,4 +97,4 @@ Test result: OK. Total tests: 1; passed: 1; failed: 0
 > In terms of functionality and usage, Resource groups are not different from regular resources—they only support more efficient storage. In the memory of global storage, these resources are stored close to each other, ensuring quick queries and reduced processing costs/fee.
 > 
 
-![image.png](Resource%20Groups%20c0b63164896343538b331979b0e01238/image.png)
+![image.png](/content-images/Resource%20Groups/image.png)

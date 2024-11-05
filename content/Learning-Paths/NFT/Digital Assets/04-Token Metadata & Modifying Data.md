@@ -128,7 +128,7 @@ movement run --function-id '0x8e4ad880c961f094f149993b3f83ac9eace3dd7ab8cedca7d0
 
 After the successful execution, we can verify the results on the explorer. We'll find a new Resource added:
 
-![image.png](Token%20Metadata%20&%20Modifying%20Data%2011918675b2d78023a17ac2fba02de1d1/image.png)
+![image.png](/content-images/Token%20Metadata%20&%20Modifying%20Data/image.png)
 
 ## Modify Token Metadata
 

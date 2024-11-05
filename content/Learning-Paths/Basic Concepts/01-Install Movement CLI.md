@@ -144,7 +144,7 @@ To execute transactions on the Movement blockchain, you'll need Move Tokens to p
 
 - Use the address generated in the file `.aptos/config.yaml`
     
-    ![image.png](image.png)
+    ![image.png](/content-images/install-movement-cli/image.png)
     
 - Afterwards, you can verify your token balance using the following command:
     
@@ -322,15 +322,15 @@ You can use the `transaction hash` to search for your contract on the Movement e
 "transaction_hash": "0xe019cffa060c50e067fa0522199cc5f667bab840998a30c57e70d09f6d13a77f"
 ```
 
-![image.png](image%201.png)
+![image.png](/content-images/install-movement-cli/image%201.png)
 
 Alternatively, you can search for the account you generated earlier to view the modules you have deployed.
 
-![image.png](image%202.png)
+![image.png](/content-images/install-movement-cli/image%202.png)
 
 In each module, you can call the available functions to test or verify them directly through the user interface.
 
-![image.png](image%203.png)
+![image.png](/content-images/install-movement-cli/image%203.png)
 
 ## Call function with Movement CLI
 
