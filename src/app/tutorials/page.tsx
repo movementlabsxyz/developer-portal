@@ -1,9 +1,8 @@
-import HeroSlider from '@/components/Slider/HeroSlider'
-import { getAllPostsData, getCategoryBySlug, getPostData, getSubCategories } from '@/lib/posts'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import Article from '@/pages/Tutorials/Article'
 import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
+import useTutorials from '@/hooks/useTutorials'
+import TutorialCard from '@/components/Cards/Tutorial'
 
 interface PostPageProps {
     params: {
@@ -28,6 +27,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 }
 
 export default function TutorialsLandingPage() {
+    const TutorialsData = useTutorials()
     return (
         <div id="learning-paths-inner-wrap" className="subpage-wrap">
             <div className="contain">
@@ -48,28 +48,10 @@ export default function TutorialsLandingPage() {
 
                 <section className="guides">
                     <div className="flex flex-col gap-10 mt-40">
-                        <input type="text" placeholder="Search" className="search-field w-full p-2" />
                         <div className="grid grid-4-column guides-grid">
-                            {Array.from({ length: 12 }).map((_, index) => (
-                                <a href="#" className="card card-type-2" key={index}>
-                                    <span className="meta">
-                                        <span>Advanced</span>
-                                        <span>25m</span>
-                                    </span>
-                                    <div className="card-content">
-                                        <span className="title">Title</span>
-                                        <p className="desc">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </p>
-                                    </div>
-                                    <picture>
-                                        <img src="/images/tech-stack.png" alt="" />
-                                        <span className="tags">
-                                            <span className="tag">Tag</span>
-                                            <span className="tag">Tag</span>
-                                        </span>
-                                    </picture>
-                                </a>
+
+                        {Object.keys(TutorialsData).map((key) => (
+                            <TutorialCard key={key} data={TutorialsData[key]} />
                             ))}
                         </div>
                     </div>

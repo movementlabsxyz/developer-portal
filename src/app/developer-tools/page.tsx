@@ -1,10 +1,8 @@
-import HeroSlider from '@/components/Slider/HeroSlider'
-import { getAllPostsData, getCategoryBySlug, getPostData, getSubCategories } from '@/lib/posts'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import Article from '@/pages/Tutorials/Article'
 import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
 import useDeveloperTools from '@/hooks/useDeveloperTools'
+import ToolsCard from '@/components/Cards/Tools'
 
 interface PostPageProps {
     params: {
@@ -76,20 +74,7 @@ export default function TutorialsLandingPage() {
                         {/* <input type="text" placeholder="Search" className="search-field w-full p-2" /> */}
                         <div className="grid grid-4-column guides-grid">
                             {Object.keys(DeveloperToolsData).map((key) => (
-                                <Link href={DeveloperToolsData[key].link} target="_blank" className="card card-type-3" key={key}>
-                                    <picture>
-                                        <img src="/images/dev-tools-img.jpg" alt="" />
-                                    </picture>
-                                    <div className="card-content">
-                                        <span className="title">{DeveloperToolsData[key].title}</span>
-                                        <p className="desc">{DeveloperToolsData[key].description}</p>
-                                        <span className="tags">
-                                            {DeveloperToolsData[key].tags.map((tag) => (
-                                                <span className="tag" key={`tag${tag}`}>{tag}</span>
-                                            ))}
-                                        </span>
-                                    </div>
-                                </Link>
+                                <ToolsCard data={DeveloperToolsData[key]} key={key} />
                             ))}
                         </div>
                     </div>

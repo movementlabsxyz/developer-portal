@@ -6,16 +6,19 @@ import { PostData } from '@/types/posts'
 import Link from 'next/link'
 import useDeveloperTools from '@/hooks/useDeveloperTools'
 import ToolsCard from '@/components/Cards/Tools'
+import TutorialCard from '@/components/Cards/Tutorial'
 import LearningPathCard from '@/components/Cards/LearningPath'
 // import lottiebkg from '../../../public/json/home-circles.json'
 // import LottiePlayer from '@/components/Lottie/Player'
 import Carousel from '@/components/Slider/Carousel'
+import useTutorials from '@/hooks/useTutorials'
 
 export default function Home(props: { postData: PostData[] }) {
     const allPostsData = props.postData
     const categories = getSubCategories('learning-paths')
     const LearningPathsData = useLearningPaths()
     const DeveloperToolsData = useDeveloperTools()
+    const TutorialData = useTutorials()
     return (
         <div className="md:mt-40">
             <HeroSlider>
@@ -27,11 +30,10 @@ export default function Home(props: { postData: PostData[] }) {
                 </div>
                 <div className="col-rt">
                     <div className="inner">
-                    <span className="subtitle">Learn to Build</span>
-                    <h1 className="title">NFT Drop</h1>
-                    <p>Write your first smart contract and run it in your browser without any knowledge about Ethereum or blockchains.</p>
-                    <a href="#" className="btn btn-yellow">Guide</a>
-                    <a href="#" className="btn btn-yellow">Demo</a>
+                    <span className="subtitle">Learning Paths</span>
+                    <h1 className="title">Basic Concepts</h1>
+                    <p>Learn the core syntax, data structures, and fundamental concepts of the Move Language.</p>
+                    <a href="/learning-paths/basic-concepts" className="btn btn-yellow">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -57,20 +59,6 @@ export default function Home(props: { postData: PostData[] }) {
                             movement
                         </p>
                         <span className="ul-link body-12">View All Paths</span>
-                        {/* <button className="play">
-                            <svg
-                                width="38"
-                                height="44"
-                                viewBox="0 0 38 44"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M37.6506 22.0001L0.114485 43.9951L0.114487 0.00516918L37.6506 22.0001Z"
-                                    fill=""
-                                />
-                            </svg>
-                        </button> */}
                     </Link>
                 </div>
             </section>
@@ -94,47 +82,8 @@ export default function Home(props: { postData: PostData[] }) {
                 </div>
                 <div className="guides-grid">
                     <Carousel>
-                        <a href="#" className="card card-type-play min-h-[300px]">
-                            <span className="body-20">
-                                Sharpen your skills and understand how to get the most out of Movement
-                            </span>
-                            <span className="play-wrap">
-                                <button className="play">
-                                    <svg
-                                        width="38"
-                                        height="44"
-                                        viewBox="0 0 38 44"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M37.6506 22.0001L0.114485 43.9951L0.114487 0.00516918L37.6506 22.0001Z"
-                                            fill=""
-                                        />
-                                    </svg>
-                                </button>
-                            </span>
-                        </a>
-                        {Array.from({ length: 10 }, (_, i) => i).map((key) => (
-                            <a href="#" className="card card-type-2" key={key}>
-                                <span className="meta">
-                                    <span>Advanced</span>
-                                    <span>25m</span>
-                                </span>
-                                <div className="card-content">
-                                    <span className="title">Title</span>
-                                    <p className="desc">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </p>
-                                </div>
-                                <picture>
-                                    <img src="/images/tech-stack.png" alt="" />
-                                    <span className="tags">
-                                        <span className="tag">Tag</span>
-                                        <span className="tag">Tag</span>
-                                    </span>
-                                </picture>
-                            </a>
+                        {Object.keys(TutorialData).map((key) => (
+                            <TutorialCard key={key} data={TutorialData[key]} />
                         ))}
                     </Carousel>
                 </div>

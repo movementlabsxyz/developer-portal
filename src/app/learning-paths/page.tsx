@@ -29,7 +29,7 @@ export default function LearningPathLandingPage() {
                 <div className="slide">
                     <div className="col-lt">
                         <div className="hero-grid grid grid-2-column">
-                            <Link href="#Basic-Concepts" className="card card-type-3">
+                            <Link href="/learning-paths/basic-concepts" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
@@ -37,7 +37,7 @@ export default function LearningPathLandingPage() {
                                     <span className="title">Basic Concepts</span>
                                 </div>
                             </Link>
-                            <Link href="#Advanced-Move" className="card card-type-3">
+                            <Link href="/learning-paths/advanced-move" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
@@ -45,7 +45,7 @@ export default function LearningPathLandingPage() {
                                     <span className="title">Advanced Move</span>
                                 </div>
                             </Link>
-                            <Link href="#NFT" className="card card-type-3">
+                            <Link href="/learning-paths/nft" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>
@@ -53,7 +53,7 @@ export default function LearningPathLandingPage() {
                                     <span className="title">NFT</span>
                                 </div>
                             </Link>
-                            <Link href="#DeFi" className="card card-type-3">
+                            <Link href="/learning-paths/defi" className="card card-type-3">
                                 <picture>
                                     <img src="/images/learning-paths-grid-thumb.jpg" alt="" />
                                 </picture>

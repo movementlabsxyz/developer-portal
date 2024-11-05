@@ -1,0 +1,42 @@
+{
+  "Beginner" : {
+    "category": "Beginner",
+    "title": "Lorem Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "amt": "25m",
+    "link":"#",
+    "tags": ["Tag", "Tag"]
+  },
+  "Intermediate" : {
+    "category": "Intermediate",
+    "title": "Lorem Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "amt": "45m",
+    "link":"#",
+    "tags": ["Tag", "Tag"]
+  },
+  "Advanced" : {
+    "category": "Advanced",
+    "title": "Lorem Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "amt": "50m",
+    "link":"#",
+    "tags": ["Tag", "Tag"]
+  },
+  "Expert" : {
+    "category": "Expert",
+    "title": "Lorem Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "amt": "45m",
+    "link":"#",
+    "tags": ["Tag", "Tag"]
+  },
+  "King" : {
+    "category": "King",
+    "title": "Lorem Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "amt": "50m",
+    "link":"#",
+    "tags": ["Tag", "Tag"]
+  }
+}
