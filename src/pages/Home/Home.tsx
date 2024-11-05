@@ -4,11 +4,11 @@ import useLearningPaths from '@/hooks/useLearningPaths'
 import { getSubCategories } from '@/lib/posts'
 import { PostData } from '@/types/posts'
 import Link from 'next/link'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import useDeveloperTools from '@/hooks/useDeveloperTools'
 import ToolsCard from '@/components/Cards/Tools'
 import LearningPathCard from '@/components/Cards/LearningPath'
-import lottiebkg from '../../../public/json/home-circles.json'
+// import lottiebkg from '../../../public/json/home-circles.json'
+// import LottiePlayer from '@/components/Lottie/Player'
 import Carousel from '@/components/Slider/Carousel'
 
 export default function Home(props: { postData: PostData[] }) {
@@ -35,38 +35,6 @@ export default function Home(props: { postData: PostData[] }) {
                     </div>
                 </div>
             </div>
-                {/* <div className="slide has-video">
-                    <div className="col-lt">
-                        <picture>
-                            <button className="play">
-                                <svg
-                                    width="38"
-                                    height="44"
-                                    viewBox="0 0 38 44"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M37.6506 22.0001L0.114485 43.9951L0.114487 0.00516918L37.6506 22.0001Z"
-                                        fill=""
-                                    />
-                                </svg>
-                            </button>
-                        </picture>
-                    </div>
-                    <div className="col-rt">
-                        <div className="inner">
-                            <h1 className="title">Meet the Founders!</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <a href="#" className="btn btn-yellow">
-                                Guide
-                            </a>
-                            <a href="#" className="btn btn-yellow">
-                                Demo
-                            </a>
-                        </div>
-                    </div>
-                </div> */}
             </HeroSlider>
 
             <section className="contain learning-paths">
@@ -79,7 +47,7 @@ export default function Home(props: { postData: PostData[] }) {
                 <div className="path-link">
                     <div className="video-bg">
                         <video autoPlay loop muted playsInline preload="meta">
-                            <source type="video/mp4" src="/video/video-bg-1.mp4" />
+                            <source type="video/mp4" src="/video/video-bg-2.mp4" />
                         </video>
                     </div>
                     <Link href="/learning-paths" className="learning-content">
