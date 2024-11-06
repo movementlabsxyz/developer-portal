@@ -5,7 +5,8 @@
     "description": "Learn the basics of Move by reviewing a module for an onchain Twitter Clone",
     "amt": "23m",
     "link":"https://youtu.be/i8iYgcjrtJk",
-    "tags": ["Contract", "Code Review"]
+    "tags": ["Contract", "Code Review"],
+    "featured": true
   },
   "Your First Move Module" : {
     "category": "Beginner",

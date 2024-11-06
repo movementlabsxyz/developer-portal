@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import BreadCrumbs from '@/components/Breadcrumbs/BreadCrumbs'
 import useTutorials from '@/hooks/useTutorials'
 import TutorialCard from '@/components/Cards/Tutorial'
+import { TutorialType } from '@/types/content'
 
 interface PostPageProps {
     params: {
@@ -28,6 +29,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
 export default function TutorialsLandingPage() {
     const TutorialsData = useTutorials()
+    const featuredTutorialObject: TutorialType = Object.fromEntries(Object.entries(TutorialsData).filter(([key, value]) => value.featured === true)) || null
+    const featuredTutorial = featuredTutorialObject ? Object.values(featuredTutorialObject) : null
     return (
         <div id="learning-paths-inner-wrap" className="subpage-wrap">
             <div className="contain">
@@ -35,16 +38,20 @@ export default function TutorialsLandingPage() {
                     <Link href="/tutorials">Tutorials</Link>
                 </BreadCrumbs>
 
-                <div className="page-intro">
-                    <span className="subtitle body-12">Featured Tutorials</span>
-                    <h1 className="title">DeFi</h1>
-                    <p className="body-24">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                    <Link href={`#`} className="btn">
-                        Start
-                    </Link>
-                </div>
+                {
+                    featuredTutorial && (
+                        <div className="page-intro">
+                            <span className="subtitle body-12">Featured Tutorial</span>
+                            <h1 className="title">{featuredTutorial[0].title}</h1>
+                            <p className="body-24">
+                                {featuredTutorial[0].description}
+                            </p>
+                            <Link href={featuredTutorial[0].link} target={"_blank"} className="btn">
+                                Start
+                            </Link>
+                        </div>
+                    )
+                }
 
                 <section className="guides">
                     <div className="flex flex-col gap-10 mt-40">

@@ -1,13 +1,5 @@
 import DeveloperTool from '../../content/developer-tools.json'
-
-interface DeveloperToolType {
-    [key: string]: {
-        title: string
-        description: string
-        link: string
-        tags: string[]
-    }
-}
+import { DeveloperToolType } from '@/types/content'
 
 export default function useDeveloperTools(): DeveloperToolType {
     return DeveloperTool

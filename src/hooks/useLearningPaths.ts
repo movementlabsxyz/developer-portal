@@ -1,12 +1,5 @@
 import LearningPath from '../../content/learning-paths.json'
-
-interface LearningPathType {
-    [key: string]: {
-        mainBlurb: string
-        extendedBlurb: string
-        learningPoints: string[]
-    }
-}
+import { LearningPathType } from '@/types/content'
 
 export default function useLearningPaths(): LearningPathType {
     return LearningPath
