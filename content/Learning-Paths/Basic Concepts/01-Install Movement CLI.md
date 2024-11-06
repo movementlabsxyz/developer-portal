@@ -42,7 +42,7 @@
         cargo --version
         ```
         
-- Step 3: Build the Aptos CLI tool
+- Step 3: Build the CLI tool
     
     ```bash
     cargo build -p movement
@@ -70,7 +70,7 @@ movement --help
 ```bash
 Command Line Interface (CLI) for developing and interacting with the Movement blockchain
 
-Usage: aptos <COMMAND>
+Usage: movement <COMMAND>
 
 Commands:
   account     Tool for interacting with accounts
@@ -92,28 +92,27 @@ Options:
   -V, --version  Print version
 ```
 
-## Build, Test & Call function on Movement with Aptos Move
+## Build, Test & Call function on Movement 
 
-> Ensure you have the [Aptos CLI](https://aptos.dev/en/build/cli) installed
-> 
+> Ensure you have the ClI installed
 
 ### Set up Development Environment
 
 - Initialize your Aptos profile for package development and add Movement as a custom network
     
     ```bash
-    movement init --network custom --rest-url https://aptos.devnet.suzuka.movementlabs.xyz/v1 --skip-faucet
+    movement init --network custom --rest-url https://aptos.testnet.porto.movementlabs.xyz/v1 --skip-faucet
     ```
     
 
-> Currently, we'll skip the faucet stage in the CLI and instead execute this through the UI via a [link](https://faucet.movementlabs.xyz/?network=aptos).
+> Currently, we'll skip the faucet stage in the CLI and instead execute this through the UI via this [link](https://faucet.movementnetwork.xyz/).
 > 
 - Sucess Result:
 
 ```bash
 Configuring for profile default
 Configuring for network Custom
-Using command line argument for rest URL https://aptos.devnet.suzuka.movementlabs.xyz/v1
+Using command line argument for rest URL https://aptos.testnet.porto.movementlabs.xyz/v1 
 Not configuring a faucet because --skip-faucet was provided
 Enter your private key as a hex literal (0x...) [Current: None | No input: Generate new key (or keep one if present)]
 
@@ -121,9 +120,9 @@ No key given, generating key...
 Account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586 has been initialized locally, but you must transfer coins to it to create the account onchain
 
 ---
-Aptos CLI is now set up for account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586 as profile default!
+Movement CLI is now set up for account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586 as profile default!
  See the account here: https://explorer.aptoslabs.com/account/0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586?network=custom
- Run `aptos --help` for more information about commands
+ Run `movement --help` for more information about commands
 {
   "Result": "Success"
 }
@@ -136,20 +135,20 @@ No key given, generating key...
 Account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586 has been initialized locally, but you must transfer coins to it to create the account onchain
 ```
 
-After completing this process, a folder named `.aptos` containing a `config.yaml` file will appear in your directory. All the information you previously generated will be stored in this `config.yaml` file.
+After completing this process, a folder named `.movement` containing a `config.yaml` file will appear in your directory. All the information you previously generated will be stored in this `config.yaml` file.
 
 ### Faucet Move Token
 
 To execute transactions on the Movement blockchain, you'll need Move Tokens to pay for transaction fees. You can obtain free Move tokens from the faucet UI using this link:
 
-- Use the address generated in the file `.aptos/config.yaml`
+- Use the address generated in the file `.movement/config.yaml`
     
     ![image.png](/content-images/install-movement-cli/image.png)
     
 - Afterwards, you can verify your token balance using the following command:
     
     ```bash
-    aptos account balance --account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586
+    movement account balance --account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586
     ```
     
     - The result below confirms that you now possess 1 Move token
@@ -172,13 +171,13 @@ To execute transactions on the Movement blockchain, you'll need Move Tokens to p
 You can easily initialize a default project source code using the following command:
 
 ```bash
-aptos move init --name hello_movement
+movement move init --name hello_movement
 ```
 
 After initializing the Move source code, your folder will contain the following files and directories:
 
 ```bash
-├── .aptos/config.yaml
+├── .movement/config.yaml
 ├── Move.toml
 ├── scripts
 ├── sources
@@ -257,7 +256,7 @@ module movement::hello_world {
 - Building & Testing Contact
     
     ```rust
-    aptos move build
+    movement move build
     ```
     
     Result:
