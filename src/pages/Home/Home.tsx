@@ -12,6 +12,8 @@ import LearningPathCard from '@/components/Cards/LearningPath'
 // import LottiePlayer from '@/components/Lottie/Player'
 import Carousel from '@/components/Slider/Carousel'
 import useTutorials from '@/hooks/useTutorials'
+import HomeHeroImage from '../../../public/images/home-hero.webp'
+import Image from 'next/image'
 
 export default function Home(props: { postData: PostData[] }) {
     const allPostsData = props.postData
@@ -25,7 +27,7 @@ export default function Home(props: { postData: PostData[] }) {
             <div className="slide">
                 <div className="col-lt">
                     <picture>
-                    <img src="/images/nft-drop.jpg" alt="" style={{ mixBlendMode: 'lighten' }} />
+                    <Image src={HomeHeroImage} alt="" style={{ mixBlendMode: 'lighten' }} />
                     </picture>
                 </div>
                 <div className="col-rt">
