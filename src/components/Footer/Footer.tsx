@@ -14,7 +14,7 @@ export default function Footer() {
                         <ul className="row">
                             <li className="title">Movement Network</li>
                             <li>
-                                <Link href="https://docs.movementnetwork.xyz" target="_blank">Docs</Link>
+                                <Link href="https://movementnetwork.xyz" target="_blank">Home</Link>
                             </li>
                             <li>
                                 <Link href="https://explorer.movementnetwork.xyz" target="_blank">Explorer</Link>
@@ -26,7 +26,10 @@ export default function Footer() {
                         <ul className="row">
                             <li className="title"></li>
                             <li>
-                                <Link href="https://aptos.testnet.porto.movementlabs.xyz/v1/" target="_blank">RPC</Link>
+                                <Link href="https://docs.movementnetwork.xyz" target="_blank">Docs</Link>
+                            </li>
+                            <li>
+                                <Link href="https://docs.movementnetwork.xyz/devs/networkEndpoints" target="_blank">RPC</Link>
                             </li>
                             <li>
                                 <Link href="https://movementnetwork.xyz/learn" target="_blank">Learn</Link>
@@ -84,7 +87,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://movementlabs.xyz" target="_blank">
+                                <Link href="https://movementnetwork.xyz" target="_blank">
                                     <svg
                                         width="37"
                                         height="27"

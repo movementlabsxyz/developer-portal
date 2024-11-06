@@ -26,6 +26,9 @@
    }
    .hero-grid.grid-2-column {
       padding: 40px 80px;
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
    }
    @include breakpoint-991 {
       .slide {
@@ -48,6 +51,7 @@
       }
       .hero-grid.grid-2-column {
          padding: 0 30px;
+         gap: 20px;
       }
       .slick-pager {
          justify-content: center;
@@ -68,6 +72,12 @@
          .title {
             font-size: 12px;
          }
+      }
+      .hero-grid.grid-2-column {
+         padding: 0 30px;
+         gap: 20px;
+         width: 100%;
+         max-width: 100%;
       }
    }
 }
