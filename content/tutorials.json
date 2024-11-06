@@ -1,42 +1,42 @@
 {
-  "Beginner" : {
+  "Onchain Twitter Clone" : {
     "category": "Beginner",
-    "title": "Lorem Title",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "amt": "25m",
-    "link":"#",
-    "tags": ["Tag", "Tag"]
+    "title": "Onchain Twitter Clone",
+    "description": "Learn the basics of Move by reviewing a module for an onchain Twitter Clone",
+    "amt": "23m",
+    "link":"https://youtu.be/i8iYgcjrtJk",
+    "tags": ["Contract", "Code Review"]
   },
-  "Intermediate" : {
+  "Your First Move Module" : {
+    "category": "Beginner",
+    "title": "Your First Move Module",
+    "description": "Build and Deploy your very first Hello World Move Module.",
+    "amt": "20m",
+    "link":"https://docs.movementnetwork.xyz/devs/firstmove",
+    "tags": ["Contract", "Code Along"]
+  },
+  "Building an AVS that integrates with Movement" : {
     "category": "Intermediate",
-    "title": "Lorem Title",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "amt": "45m",
-    "link":"#",
-    "tags": ["Tag", "Tag"]
-  },
-  "Advanced" : {
-    "category": "Advanced",
-    "title": "Lorem Title",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "title": "Building an AVS that integrates with Movement",
+    "description": "Learn how to build an Actively Validated Service that interacts with EigenLayer and Movement Network",
     "amt": "50m",
-    "link":"#",
-    "tags": ["Tag", "Tag"]
+    "link":"Building an AVS that integrates with Movement",
+    "tags": ["AVS", "Code Along"]
   },
-  "Expert" : {
-    "category": "Expert",
-    "title": "Lorem Title",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "amt": "45m",
-    "link":"#",
-    "tags": ["Tag", "Tag"]
+  "Secure Smart Contracts with Formal Verification" : {
+    "category": "Intermediate",
+    "title": "Secure Smart Contracts with Formal Verification",
+    "description": "Learn about securing Smart Contracts on the Move VM with Formal Verification.",
+    "amt": "15m",
+    "link":"https://www.youtube.com/watch?v=arNowpvckcQ",
+    "tags": ["Formal Verification", "Workshop"]
   },
-  "King" : {
-    "category": "King",
-    "title": "Lorem Title",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "amt": "50m",
-    "link":"#",
-    "tags": ["Tag", "Tag"]
+  "Move Spiders" : {
+    "category": "Beginner",
+    "title": "Move Spiders",
+    "description": "Interactive Game for learning Move from the basics",
+    "amt": "5+hrs",
+    "link":"https://movespiders.com/",
+    "tags": ["Code Along", "Game"]
   }
 }
