@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import logo from '../../../public/images/movement-logo-black.svg'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -13,46 +14,43 @@ export default function Footer() {
                         <ul className="row">
                             <li className="title">Movement Network</li>
                             <li>
-                                <a href="https://docs.movementnetwork.xyz" target="_blank">Docs</a>
+                                <Link href="https://docs.movementnetwork.xyz" target="_blank">Docs</Link>
                             </li>
                             <li>
-                                <a href="https://explorer.movementnetwork.xyz" target="_blank">Explorer</a>
+                                <Link href="https://explorer.movementnetwork.xyz" target="_blank">Explorer</Link>
                             </li>
                             <li>
-                                <a href="https://faucet.movementlabs.xyz" target="_blank">Faucet</a>
+                                <Link href="https://faucet.movementlabs.xyz" target="_blank">Faucet</Link>
                             </li>
                         </ul>
                         <ul className="row">
                             <li className="title"></li>
                             <li>
-                                <a href="https://aptos.testnet.suzuka.movementlabs.xyz/v1/" target="_blank">RPC</a>
+                                <Link href="https://aptos.testnet.porto.movementlabs.xyz/v1/" target="_blank">RPC</Link>
                             </li>
                             <li>
-                                <a href="#">Dev Tools</a>
-                            </li>
-                            <li>
-                                <a href="https://movementnetwork.xyz/learn" target="_blank">Learn</a>
+                                <Link href="https://movementnetwork.xyz/learn" target="_blank">Learn</Link>
                             </li>
                         </ul>
                         <ul className="row">
                             <li className="title">Developer Portal</li>
                             <li>
-                                <a href="#">Learning Paths</a>
+                                <Link href="/learning-paths">Learning Paths</Link>
                             </li>
                             <li>
-                                <a href="#">Tutorials</a>
+                                <Link href="/tutorials">Tutorials</Link>
                             </li>
                             <li>
-                                <a href="#">Developer Tools</a>
+                                <Link href="/developer-tools">Developer Tools</Link>
                             </li>
                         </ul>
                         <ul className="row">
                             <li className="title">Terms of Service</li>
                             <li>
-                                <a href="https://movementnetwork.xyz/privacy-policy" target="_blank">Privacy Policy</a>
+                                <Link href="https://movementnetwork.xyz/privacy-policy" target="_blank">Privacy Policy</Link>
                             </li>
                             <li>
-                                <a href="https://movementnetwork.xyz/terms-of-service" target="_blank">Terms of Service</a>
+                                <Link href="https://movementnetwork.xyz/terms-of-service" target="_blank">Terms of Service</Link>
                             </li>
                         </ul>
                     </nav>
@@ -62,7 +60,7 @@ export default function Footer() {
                         </span>
                         <ul className="social">
                             <li>
-                                <a href="http://discord.gg/movementlabsxyz" target="_blank">
+                                <Link href="http://discord.gg/movementlabsxyz" target="_blank">
                                     <svg
                                         width="37"
                                         height="27"
@@ -75,18 +73,18 @@ export default function Footer() {
                                             fill="black"
                                         />
                                     </svg>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="https://twitter.com/movementlabsxyz" target="_blank">
+                                <Link href="https://twitter.com/movementlabsxyz" target="_blank">
 
                                     <svg width="38" height="32" viewBox="0 0 76 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M59.8545 0H71.5083L46.0481 29.2277L76 69H52.5479L34.1794 44.8783L13.1616 69H1.50076L28.733 37.7377L0 0H24.0475L40.651 22.0482L59.8545 0ZM55.7643 61.9938H62.2219L20.5386 6.63815H13.609L55.7643 61.9938Z" fill="#000000"/>
                                     </svg>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="https://movementlabs.xyz" target="_blank">
+                                <Link href="https://movementlabs.xyz" target="_blank">
                                     <svg
                                         width="37"
                                         height="27"
@@ -99,7 +97,7 @@ export default function Footer() {
                                             fill="black"
                                         />
                                     </svg>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
