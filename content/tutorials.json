@@ -21,7 +21,7 @@
     "title": "Building an AVS that integrates with Movement",
     "description": "Learn how to build an Actively Validated Service that interacts with EigenLayer and Movement Network",
     "amt": "50m",
-    "link":"Building an AVS that integrates with Movement",
+    "link":"https://blog.movementlabs.xyz/article/tutorial-eigenlayer-avs-movement-network",
     "tags": ["AVS", "Code Along"]
   },
   "Secure Smart Contracts with Formal Verification" : {
