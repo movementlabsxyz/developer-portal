@@ -26,16 +26,11 @@ export default function ArticlePage(props: {
 
                 <div className="page-intro">
                     <h1 className="title">{props.data.title ? props.data.title.split('-')[1] : ""}</h1>
-                    {/* <p className="body-24">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p> */}
                 </div>
                 <div className="tutorial-content">
                     { props.data.tableOfContents.length > 0 && (
                     <div className="col col-lt sidebar">
                         <div className="inner">
-                            <h4 id="index-heading">On This Page</h4>
-                            {/* <!-- ADD CLASS '.ACTIVE' TO 'H4#INDEX-HEADING' TO TRIGGER ACTIVE STATE --> */}
                             <TableOfContents tableOfContents={props.data.tableOfContents} />
                         </div>
                     </div>

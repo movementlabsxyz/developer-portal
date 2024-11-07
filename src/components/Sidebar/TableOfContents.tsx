@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import slugify from 'slugify'
 
@@ -16,6 +17,7 @@ interface Props {
 
 const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
     const [activeId, setActiveId] = useState<string>('')
+    const [openMobile, setOpenMobile] = useState<boolean>(false)
 
     useEffect(() => {
         const headingElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
@@ -38,11 +40,8 @@ const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
         }
     }, [])
 
-
     // Helper function to create a nested array structure based on depth
-    const createNestedStructure = (
-        items: TableOfContentsItem[]
-    ): TableOfContentsItem[] => {
+    const createNestedStructure = (items: TableOfContentsItem[]): TableOfContentsItem[] => {
         const nested: TableOfContentsItem[] = []
         let currentDepth = 1
         let currentList: TableOfContentsItem[] = nested
@@ -76,9 +75,15 @@ const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
                 const slug = slugify(item.text, { lower: true, strict: true })
                 return (
                     <li key={index}>
-                        <span><a href={`#user-content-${slug}`} className={activeId === `#user-content-${slug}` ? 'active' : ''}>
-                            {item.text}
-                        </a></span>
+                        <span>
+                            <Link
+                                href={`#user-content-${slug}`}
+                                className={activeId === `#user-content-${slug}` ? 'active' : ''}
+                                onClick={() => setOpenMobile(false)}
+                            >
+                                {item.text}
+                            </Link>
+                        </span>
                         {item.children && item.children.length > 0 && (
                             <ul className="nested">{renderItems(item.children)}</ul>
                         )}
@@ -88,7 +93,16 @@ const TableOfContents: React.FC<Props> = ({ tableOfContents }) => {
         </>
     )
 
-    return nestedItems.length > 0 ? <ul id="scroll-index">{renderItems(nestedItems)}</ul> : null
+    return nestedItems.length > 0 ? (
+        <>
+            <h4 id="index-heading" onClick={() => setOpenMobile(!openMobile)} className={openMobile ? 'active' : ''}>
+                On This Page
+            </h4>
+            <ul id="scroll-index" className={openMobile ? 'active' : ''}>
+                {renderItems(nestedItems)}
+            </ul>
+        </>
+    ) : null
 }
 
 export default TableOfContents
