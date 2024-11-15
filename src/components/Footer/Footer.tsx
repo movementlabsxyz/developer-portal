@@ -26,13 +26,13 @@ export default function Footer() {
                         <ul className="row">
                             <li className="title"></li>
                             <li>
-                                <Link href="https://docs.movementnetwork.xyz" target="_blank">Docs</Link>
-                            </li>
-                            <li>
                                 <Link href="https://docs.movementnetwork.xyz/devs/networkEndpoints" target="_blank">RPC</Link>
                             </li>
                             <li>
                                 <Link href="https://movementnetwork.xyz/learn" target="_blank">Learn</Link>
+                            </li>
+                            <li>
+                                <Link href="https://forums.movementnetwork.xyz" target="_blank">Forums</Link>
                             </li>
                         </ul>
                         <ul className="row">
