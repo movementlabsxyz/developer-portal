@@ -155,8 +155,6 @@ module movement::smart_table_module {
 }
 ```
 
-Certainly! I'll provide a step-by-step description of the functions in the Smart Table module for a tutorial. Let's break down each function:
-
 ### 1. init_module(caller: &signer)
 
 This function initializes the module when it's published:

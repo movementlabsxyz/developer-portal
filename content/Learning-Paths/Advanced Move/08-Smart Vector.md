@@ -41,8 +41,6 @@ module movement::smart_vector_module {
 }
 ```
 
-Certainly! I'll provide a step-by-step description of the functions used in the smart vector module. This tutorial will break down the code and explain each part:
-
 1. Module Declaration:
 
 ```ruby

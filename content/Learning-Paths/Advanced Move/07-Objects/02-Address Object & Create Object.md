@@ -65,7 +65,6 @@ module movement::object_module_entry {
 }
 ```
 
-Certainly! I'll provide a step-by-step description of the `example_object` function from the code you've selected. This function demonstrates how to create and use objects in the Aptos framework:
 
 1. Function Signature:
 
