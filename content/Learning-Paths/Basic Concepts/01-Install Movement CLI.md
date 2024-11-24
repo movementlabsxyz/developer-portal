@@ -18,45 +18,45 @@
 ### Install
 
 - Step 1: Clone the Aptos-core repo & go into the newly created directory
-    
+
     ```rust
-    git clone [https://github.com/movementlabsxyz/aptos-core.git](https://github.com/movementlabsxyz/aptos-core.git) && cd aptos-core
+    git clone https://github.com/movementlabsxyz/aptos-core.git && cd aptos-core
     ```
-    
+
 - Step 2: Install all prerequites using automatic script
     1. Using the Automatic Script to install prerequisites
-        
+
         ```bash
         ./scripts/dev_setup.sh
         ```
-        
+
     2. Update your current shell environment
-        
+
         ```bash
         source ~/.cargo/env
         ```
-        
+
     3. Ensure you have `cargo` installed by following this commands:
-        
+
         ```bash
         cargo --version
         ```
-        
+
 - Step 3: Build the CLI tool
-    
+
     ```bash
     cargo build -p movement
     ```
-    
+
 
 > The binary will be available at `target/debug/movement`
-> 
+>
 - Step 4: Move this executable to a place in your path
-    
+
     ```bash
     sudo cp target/debug/movement /opt/homebrew/bin/
     ```
-    
+
 
 ### Check
 
@@ -65,7 +65,7 @@ movement --help
 ```
 
 > Result
-> 
+>
 
 ```bash
 Command Line Interface (CLI) for developing and interacting with the Movement blockchain
@@ -92,27 +92,27 @@ Options:
   -V, --version  Print version
 ```
 
-## Build, Test & Call function on Movement 
+## Build, Test & Call function on Movement
 
 > Ensure you have the ClI installed
 
 ### Set up Development Environment
 
 - Initialize your Aptos profile for package development and add Movement as a custom network
-    
+
     ```bash
-    movement init --network custom --rest-url https://aptos.testnet.porto.movementlabs.xyz/v1 --skip-faucet
+    movement init --network custom --rest-url https://aptos.testnet.porto.movementlabs.xyz/v1 --faucet-url   https://fund.testnet.porto.movementlabs.xyz
     ```
-    
+
 
 > Currently, we'll skip the faucet stage in the CLI and instead execute this through the UI via this [link](https://faucet.movementnetwork.xyz/).
-> 
+>
 - Sucess Result:
 
 ```bash
 Configuring for profile default
 Configuring for network Custom
-Using command line argument for rest URL https://aptos.testnet.porto.movementlabs.xyz/v1 
+Using command line argument for rest URL https://aptos.testnet.porto.movementlabs.xyz/v1
 Not configuring a faucet because --skip-faucet was provided
 Enter your private key as a hex literal (0x...) [Current: None | No input: Generate new key (or keep one if present)]
 
@@ -142,17 +142,17 @@ After completing this process, a folder named `.movement` containing a `config.y
 To execute transactions on the Movement blockchain, you'll need Move Tokens to pay for transaction fees. You can obtain free Move tokens from the faucet UI using this link:
 
 - Use the address generated in the file `.movement/config.yaml`
-    
+
     ![image.png](/content-images/install-movement-cli/image.png)
-    
+
 - Afterwards, you can verify your token balance using the following command:
-    
+
     ```bash
     movement account balance --account 0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586
     ```
-    
+
     - The result below confirms that you now possess 1 Move token
-    
+
     ```json
     {
       "Result": [
@@ -164,7 +164,7 @@ To execute transactions on the Movement blockchain, you'll need Move Tokens to p
       ]
     }
     ```
-    
+
 
 ### Initialize your Move project
 
@@ -186,7 +186,7 @@ After initializing the Move source code, your folder will contain the following 
 
 The key file to pay attention to is Move.toml
 
-```toml
+```js
 [package] # Includes packages metadata such as name version
 name = "hello_movement"
 version = "1.0.0"
@@ -208,7 +208,7 @@ subdir = "aptos-move/framework/aptos-framework"
 
 You will copy and paste the previously generated account address into the [addresses] section to publish your contract to that address.
 
-```toml
+```js
 [addresses]
 movement = "0x3d4dd145c51722b2b236bf544a2f12718450f4e7ab4f70c789160a5829e73586"
 ```
@@ -227,7 +227,7 @@ Create your `.move` contract file in the `/sources` folder.
 ```
 
 > `/sources/hello_world.move`
-> 
+>
 
 ```rust
 module movement::hello_world {
@@ -254,13 +254,13 @@ module movement::hello_world {
 ```
 
 - Building & Testing Contact
-    
+
     ```rust
     movement move build
     ```
-    
+
     Result:
-    
+
     ```json
     {
       "Result": [
@@ -268,15 +268,15 @@ module movement::hello_world {
       ]
     }
     ```
-    
+
 - Testing:
-    
+
     ```bash
     movement move test --filter hello_world
     ```
-    
+
     Result:
-    
+
     ```json
     Running Move unit tests
     [debug] "Hello World!!!"
@@ -286,7 +286,7 @@ module movement::hello_world {
       "Result": "Success"
     }
     ```
-    
+
 
 ### Publish Contract & Interact on Blockchain
 
