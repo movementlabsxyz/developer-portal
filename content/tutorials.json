@@ -8,6 +8,15 @@
     "tags": ["Contract", "Code Review"],
     "featured": true
   },
+  "Solidity vs Move" : {
+    "category": "Beginner",
+    "title": "Solidity vs Move",
+    "description": "Learn the differences between the Solidity and Move languages and start exploring the security enhancements and developer environment provided by Move.",
+    "amt": "23m",
+    "link":"https://youtu.be/SJo7PiMV89E",
+    "tags": ["Move", "Solidity"],
+    "featured": true
+  },
   "Your First Move Module" : {
     "category": "Beginner",
     "title": "Your First Move Module",
