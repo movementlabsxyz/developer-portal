@@ -1,44 +1,90 @@
 {
-  "Movement CLI" : {
+  "Movement CLI": {
     "title": "Movement CLI",
     "description": "CLI tool for compiling, testing, and deploying Move Contracts",
-    "link":"https://docs.movementnetwork.xyz/devs/movementcli",
-    "tags": ["cli", "contracts"]
+    "link": "https://docs.movementnetwork.xyz/devs/movementcli",
+    "tags": [
+      "cli",
+      "contracts"
+    ]
   },
   "Aptos TS SDK": {
     "title": "Aptos TS SDK",
     "description": "Typescript SDK for interacting with Aptos Move based chains like Movement Network.",
     "link": "https://aptos.dev/en/build/sdks/ts-sdk",
-    "tags": ["sdk", "frontend"]
+    "tags": [
+      "sdk",
+      "frontend"
+    ]
   },
-    "Razer Wallet Kit": {
-      "title": "Razor Wallet Kit",
-      "description": "A wallet adaptor for DApps to interact with all the wallets in Movement ecosystem easily",
-      "link": "https://kit.razorwallet.xyz/",
-      "tags": ["sdk", "frontend", "wallet"]
-    },
-    "Nightly Connect": {
-      "title": "Nightly Connect",
-      "description": "Nightly Connect is a permissionless, open-source solution that serves as both a wallet adapter and a bridge wallet, enabling connections through QR codes or deep links.",
-      "link": "https://connect.nightly.app/docs/movement/movement/start",
-      "tags": ["sdk", "frontend", "wallet"]
-    },
-    "Scaffold Move": {
-      "title": "Scaffold Move",
-      "description": "Scaffold Move is an open-source, cutting-edge toolkit for building decentralized applications (dApps) on Move Based Blockchains.",
-      "link": "https://scaffold-move-chi.vercel.app/",
-      "tags": ["fullstack", "contracts"]
-    },
-    "Lync Infrastructure Tools": {
-      "title": "Lync Infrastructure Tools",
-      "description": "Lync provides a suite of tools for helping speed up the development process on Movement Network, this includes Indexers, NFT Deployers, Social Login SDK's, Unity SDK, as well as Wallet Creation and Transaction APIs.",
-      "link": "https://docs.lync.world/movement-labs/",
-      "tags": ["fullstack", "contracts", "indexer", "sdk"]
-    },
-    "Pyth": {
-      "title": "Pyth",
-      "description": "Pyth Network is an oracle protocol that connects the owners of market data to applications on multiple blockchains.",
-      "link":"https://docs.pyth.network/home",
-      "tags":["oracle", "price feeds"]
-    }
+  "Razer Wallet Kit": {
+    "title": "Razor Wallet Kit",
+    "description": "A wallet adaptor for DApps to interact with all the wallets in Movement ecosystem easily",
+    "link": "https://kit.razorwallet.xyz/",
+    "tags": [
+      "sdk",
+      "frontend",
+      "wallet"
+    ]
+  },
+  "Nightly Connect": {
+    "title": "Nightly Connect",
+    "description": "Nightly Connect is a permissionless, open-source solution that serves as both a wallet adapter and a bridge wallet, enabling connections through QR codes or deep links.",
+    "link": "https://connect.nightly.app/docs/movement/movement/start",
+    "tags": [
+      "sdk",
+      "frontend",
+      "wallet"
+    ]
+  },
+  "Scaffold Move": {
+    "title": "Scaffold Move",
+    "description": "Scaffold Move is an open-source, cutting-edge toolkit for building decentralized applications (dApps) on Move Based Blockchains.",
+    "link": "https://scaffold-move-chi.vercel.app/",
+    "tags": [
+      "fullstack",
+      "contracts"
+    ]
+  },
+  "Lync Infrastructure Tools": {
+    "title": "Lync Infrastructure Tools",
+    "description": "Lync provides a suite of tools for helping speed up the development process on Movement Network, this includes Indexers, NFT Deployers, Social Login SDK's, Unity SDK, as well as Wallet Creation and Transaction APIs.",
+    "link": "https://docs.lync.world/movement-labs/",
+    "tags": [
+      "fullstack",
+      "contracts",
+      "indexer",
+      "sdk"
+    ]
+  },
+  "Pyth": {
+    "title": "Pyth",
+    "description": "Pyth Network is an oracle protocol that connects the owners of market data to applications on multiple blockchains.",
+    "link": "https://docs.pyth.network/home",
+    "tags": [
+      "oracle",
+      "price feeds"
+    ]
+  },
+  "Move On Aptos": {
+    "title": "Move On Aptos",
+    "description": "A powerful IntelliJ plugin that enhances Move development with features like syntax highlighting, navigation and search, code formatting, code analysis, rename refactoring, and imports integration using the Aptos Move framework.",
+    "link": "https://plugins.jetbrains.com/plugin/14721-move-on-aptos",
+    "tags": [
+      "plugin",
+      "intellij",
+      "development",
+      "aptos"
+    ]
+  },
+  "Move Language": {
+    "title": "Move Language Extension for VSCode",
+    "description": "Built by developers for developers, this extension will simplify your Move development and will make your first experience with Move less painful.",
+    "link": "https://marketplace.visualstudio.com/items?itemName=PontemNetwork.move-language",
+    "tags": [
+      "extension",
+      "vscode",
+      "development"
+    ]
+  }
 }
