@@ -86,5 +86,29 @@
       "vscode",
       "development"
     ]
+  },
+  "Mosaic Swap Widget": {
+      "title": "Mosaic Swap Widget",
+      "description": "The Swap Widget bundles the whole swapping experience into a single React component that developers can easily embed in their app with a few lines of code.",
+      "link": "https://www.npmjs.com/package/@mosaicag/swap-widget",
+      "tags": ["sdk", "frontend", "widget"]
+  },
+  "Mosaic Gas Station": {
+      "title": "Mosaic Gas Station",
+      "description": "Movement Gas Station is a simple and efficient solution for transaction sponsorship on the Movement network. It allows dApp developers to easily cover gas fees for their users, enhancing user experience and reducing barriers to entry.",
+      "link": "https://github.com/kitelabs-io/mvmt-gas-station",
+      "tags": ["contracts"]
+  },
+  "Mosaic Token Utils": {
+      "title": "Mosaic Token Utils",
+      "description": "Helper to query the balance of multiple fa and coins without indexer.",
+      "link": "https://github.com/kitelabs-io/mvmt-token-utils",
+      "tags": ["contracts"]
+  },
+  "Mosaic Token List": {
+      "title": "Mosaic Token List",
+      "description": "Mosaic's Movement Token List is the go-to categorized catalog for both legacy coins and Fungible Assets tradeable on the Movement chain",
+      "link": "https://github.com/kitelabs-io/mvmt-tokens",
+      "tags": ["tokens"]
   }
 }
