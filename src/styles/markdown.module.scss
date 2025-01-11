@@ -1,0 +1,62 @@
+.markdown {
+    // Table styles
+    table {
+        width: 100%;
+        margin: 1rem 0;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        background-color: #ffffff;
+        border: 1px solid #374151;
+    }
+
+    th {
+        font-weight: 600;
+        text-align: left;
+        background-color: #1f2937;
+        color: #ffffff;
+        padding: 0.75rem 1rem;
+        border: 1px solid #374151;
+    }
+
+    td {
+        padding: 0.75rem 1rem;
+        border: 1px solid #374151;
+        vertical-align: top;
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    // Style code blocks within table cells
+    td code {
+        background-color: #1f2937;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.9em;
+        color: #10b981; // A nice green color for code
+        white-space: nowrap;
+    }
+
+    // Make tables responsive
+    @media (max-width: 768px) {
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    // Add subtle hover effect
+    tr:hover td {
+        background-color: #111111;
+    }
+
+    // Style for multiple parameters in a cell
+    td p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+}

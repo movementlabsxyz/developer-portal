@@ -7,6 +7,7 @@ import { remark } from 'remark'
 import html from 'remark-html'
 import remarkPrism from 'remark-prism'
 import remarkParse from 'remark-parse'
+import remarkGfm from 'remark-gfm'
 import slugify from 'slugify'
 
 interface PostData {
@@ -17,6 +18,9 @@ interface PostData {
     categories: string[]
     contentHtml?: string
     filePath: string
+    prevPage?: string
+    nextPage?: string
+    tableOfContents?: Heading[]
     [key: string]: any // For additional front matter properties
 }
 
@@ -183,11 +187,39 @@ export function getAllPostIds(): { params: { id: string } }[] {
  */
 export async function getPostData(id: string): Promise<PostData | null> {
     const allPosts = getAllPostsData()
-    const post = allPosts.find((post) => post.link === id)
+    
+    // Define the correct order of main categories
+    const CATEGORY_ORDER = ['Basic Concepts', 'Advanced Move', 'NFT', 'DeFi'];
 
-    if (!post) {
+    // Sort posts based on category order and then by their natural order within categories
+    const sortedPosts = [...allPosts].sort((a, b) => {
+        const aCats = path.dirname(a.filePath).split(path.sep).filter(Boolean);
+        const bCats = path.dirname(b.filePath).split(path.sep).filter(Boolean);
+        
+        // Get main category (removing 'Learning-Paths')
+        const aMainCat = aCats.find(cat => CATEGORY_ORDER.includes(cat)) || '';
+        const bMainCat = bCats.find(cat => CATEGORY_ORDER.includes(cat)) || '';
+        
+        // Compare main categories first
+        const aIndex = CATEGORY_ORDER.indexOf(aMainCat);
+        const bIndex = CATEGORY_ORDER.indexOf(bMainCat);
+        if (aIndex !== bIndex) {
+            return aIndex - bIndex;
+        }
+        
+        // If in same category, compare by file path
+        return a.filePath.localeCompare(b.filePath);
+    });
+
+    const currentIndex = sortedPosts.findIndex((post) => post.link === id)
+
+    if (currentIndex === -1) {
         return null
     }
+
+    const post = sortedPosts[currentIndex]
+    const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null
+    const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null
 
     const fullPath = 'content/' + post.filePath
     const decodeFullPath = decodeURIComponent(fullPath)
@@ -199,6 +231,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
     const tableOfContents: Heading[] = []
     const processedContent = await remark()
         .use(remarkParse)
+        .use(remarkGfm)
         .use(() => (tree) => {
             function visitor(node: any) {
                 if (node.type === 'heading') {
@@ -238,11 +271,27 @@ export async function getPostData(id: string): Promise<PostData | null> {
     const contentHtml = processedContent.toString()
 
     const categories = path.dirname(post.filePath).split(path.sep).filter(Boolean)
+    const prevCategories = prevPost ? path.dirname(prevPost.filePath).split(path.sep).filter(Boolean) : []
+    const nextCategories = nextPost ? path.dirname(nextPost.filePath).split(path.sep).filter(Boolean) : []
 
     const data = matterResult.data as {
         title?: string
         date?: string
         [key: string]: any
+    }
+
+    // Build the URL paths preserving the full category structure
+    const buildPagePath = (postLink: string | null, postCategories: string[]) => {
+        if (!postLink) return null
+        // Remove 'Learning-Paths' from categories
+        const relevantCategories = postCategories.filter(cat => cat !== 'Learning-Paths');
+        const formattedCategories = relevantCategories.map(category => 
+            slugify(category, {
+                lower: true,
+                strict: true
+            })
+        );
+        return `/learning-paths/${formattedCategories.join('/')}/${postLink}`
     }
 
     const postData: PostData = {
@@ -253,6 +302,8 @@ export async function getPostData(id: string): Promise<PostData | null> {
         date: data.date || '',
         categories,
         tableOfContents,
+        prevPage: buildPagePath(prevPost?.link || null, prevCategories),
+        nextPage: buildPagePath(nextPost?.link || null, nextCategories),
         ...data,
     }
 

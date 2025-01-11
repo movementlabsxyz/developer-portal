@@ -39,36 +39,28 @@ export default function ArticlePage(props: {
                         <div className="content-group">
                             <Markdown content={props.data.contentHtml || ''} />
                         </div>
-                        {/* <div className="tut-nav">
-                            <Link href="#" className="tut-arrow tut-prev">
-                                <span className="icon">
-                                    <svg
-                                        width="9"
-                                        height="12"
-                                        viewBox="0 0 9 12"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path d="M7.86805e-07 6L9 0.803848L9 11.1962L7.86805e-07 6Z" fill="" />
-                                    </svg>
-                                </span>
-                                <span className="text">Getting Started</span>
-                            </Link>
-                            <Link href="#" className="tut-arrow tut-next">
-                                <span className="text">Movement CLI</span>
-                                <span className="icon">
-                                    <svg
-                                        width="9"
-                                        height="12"
-                                        viewBox="0 0 9 12"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path d="M9 6L4.64275e-07 11.1962L9.18537e-07 0.803847L9 6Z" fill="" />
-                                    </svg>
-                                </span>
-                            </Link>
-                        </div> */}
+                        <div className="tut-nav">
+                            {props.data.prevPage && (
+                                <Link href={props.data.prevPage} className="btn btn-yellow tut-arrow tut-prev">
+                                    <span className="icon">
+                                        <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.15997 10.56L3.61997 6L8.15997 1.44L6.71997 0L0.719971 6L6.71997 12L8.15997 10.56Z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>Previous</span>
+                                </Link>
+                            )}
+                            {props.data.nextPage && (
+                                <Link href={props.data.nextPage} className="btn btn-yellow tut-arrow tut-next">
+                                    <span>Next</span>
+                                    <span className="icon">
+                                        <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.719971 10.56L5.25997 6L0.719971 1.44L2.15997 0L8.15997 6L2.15997 12L0.719971 10.56Z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>

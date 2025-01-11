@@ -17,6 +17,7 @@ import 'prismjs/plugins/toolbar/prism-toolbar.min.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import styles from '../styles/markdown.module.scss'
 
 export function Markdown({ content }: { content: string }) {
     const pathname = usePathname()
@@ -25,6 +26,6 @@ export function Markdown({ content }: { content: string }) {
     }, [pathname])
 
     return (
-        <div dangerouslySetInnerHTML={{ __html: content || '' }} />
+        <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: content || '' }} />
     )
 }

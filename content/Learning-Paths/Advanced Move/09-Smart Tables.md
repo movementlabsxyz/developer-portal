@@ -235,36 +235,38 @@ Test result: OK. Total tests: 2; passed: 2; failed: 0
 
 ## Additional SimpleMap Functions
 
+
+
 | Function | Parameters | Description | Return Value |
-| --- | --- | --- | --- |
+| -------- | --------- | ----------- | ------------ |
 | `new` | None | Creates an empty SmartTable with default configurations | `SmartTable<K, V>` |
-| `new_with_config` | `num_initial_buckets: u64`, `split_load_threshold: u8`, `target_bucket_size: u64` | Creates an empty SmartTable with customized configurations | `SmartTable<K, V>` |
+| `new_with_config` | `num_initial_buckets: u64`  `split_load_threshold: u8`  `target_bucket_size: u64` | Creates an empty SmartTable with customized configurations | `SmartTable<K, V>` |
 | `destroy_empty` | `self: SmartTable<K, V>` | Destroys an empty table | None |
-| `destroy` | `self: SmartTable<K, V>` | Destroys a table completely when V has `drop` | None |
-| `clear` | `self: &mut SmartTable<K, V>` | Clears a table completely when T has `drop` | None |
-| `add` | `self: &mut SmartTable<K, V>`, `key: K`, `value: V` | Adds a key-value pair to the table | None |
-| `add_all` | `self: &mut SmartTable<K, V>`, `keys: vector<K>`, `values: vector<V>` | Adds multiple key-value pairs to the table | None |
+| `destroy` | `self: SmartTable<K, V>` | Destroys a table completely when T has drop | None |
+| `clear` | `self: &mut SmartTable<K, V>` | Clears a table completely when T has drop | None |
+| `add` | `self: &mut SmartTable<K, V>`  `key: K`  `value: V` | Adds a key-value pair to the table | None |
+| `add_all` | `self: &mut SmartTable<K, V>`  `keys: vector<K>`  `values: vector<V>` | Adds multiple key-value pairs to the table | None |
 | `unzip_entries` | `entries: &vector<Entry<K, V>>` | Unzips entries into separate key and value vectors | `(vector<K>, vector<V>)` |
 | `to_simple_map` | `self: &SmartTable<K, V>` | Converts a smart table to a simple_map | `SimpleMap<K, V>` |
 | `keys` | `self: &SmartTable<K, V>` | Gets all keys in a smart table | `vector<K>` |
-| `keys_paginated` | `self: &SmartTable<K, V>`, `starting_bucket_index: u64`, `starting_vector_index: u64`, `num_keys_to_get: u64` | Gets keys from a smart table, paginated | `(vector<K>, Option<u64>, Option<u64>)` |
+| `keys_paginated` | `self: &SmartTable<K, V>`  `starting_bucket_index: u64`  `num_keys_to_get: u64` | Gets keys from a smart table, paginated | `(vector<K>, Option<u64>)` |
 | `split_one_bucket` | `self: &mut SmartTable<K, V>` | Splits one bucket into two | None |
-| `bucket_index` | `level: u8`, `num_buckets: u64`, `hash: u64` | Returns the expected bucket index for a hash | `u64` |
-| `borrow` | `self: &SmartTable<K, V>`, `key: K` | Borrows an immutable reference to the value associated with the key | `&V` |
-| `borrow_with_default` | `self: &SmartTable<K, V>`, `key: K`, `default: &V` | Borrows an immutable reference to the value, or returns the default if key not found | `&V` |
-| `borrow_mut` | `self: &mut SmartTable<K, V>`, `key: K` | Borrows a mutable reference to the value associated with the key | `&mut V` |
-| `borrow_mut_with_default` | `self: &mut SmartTable<K, V>`, `key: K`, `default: V` | Borrows a mutable reference to the value, or inserts and returns default if key not found | `&mut V` |
-| `contains` | `self: &SmartTable<K, V>`, `key: K` | Checks if the table contains a key | `bool` |
-| `remove` | `self: &mut SmartTable<K, V>`, `key: K` | Removes and returns the value associated with the key | `V` |
-| `upsert` | `self: &mut SmartTable<K, V>`, `key: K`, `value: V` | Inserts a key-value pair or updates an existing one | None |
+| `bucket_index` | `level: u8`  `num_buckets: u64`  `hash: u64` | Returns the expected bucket index for a hash | `u64` |
+| `borrow` | `self: &SmartTable<K, V>`  `key: K` | Borrows an immutable reference to the value associated with the key | `&V` |
+| `borrow_with_default` | `self: &SmartTable<K, V>`  `key: K`  `default: &V` | Borrows an immutable reference to the value, or returns the default if key not found | `&V` |
+| `borrow_mut` | `self: &mut SmartTable<K, V>`  `key: K` | Borrows a mutable reference to the value associated with the key | `&mut V` |
+| `borrow_mut_with_default` | `self: &mut SmartTable<K, V>`  `key: K`  `default: V` | Borrows a mutable reference to the value, or inserts and returns default if key not found | `&mut V` |
+| `contains` | `self: &SmartTable<K, V>`  `key: K` | Checks if the table contains a key | `bool` |
+| `remove` | `self: &mut SmartTable<K, V>`  `key: K` | Removes and returns the value associated with the key | `V` |
+| `upsert` | `self: &mut SmartTable<K, V>`  `key: K`  `value: V` | Inserts a key-value pair or updates an existing one | None |
 | `length` | `self: &SmartTable<K, V>` | Returns the number of entries in the table | `u64` |
 | `load_factor` | `self: &SmartTable<K, V>` | Returns the load factor of the hashtable | `u64` |
-| `update_split_load_threshold` | `self: &mut SmartTable<K, V>`, `split_load_threshold: u8` | Updates the split load threshold | None |
-| `update_target_bucket_size` | `self: &mut SmartTable<K, V>`, `target_bucket_size: u64` | Updates the target bucket size | None |
-| `for_each_ref` | `self: &SmartTable<K, V>`, `f: \|&K, &V\|` | Applies a function to a reference of each key-value pair | None |
-| `for_each_mut` | `self: &mut SmartTable<K, V>`, `f: \|&K, &mut V\|` | Applies a function to a mutable reference of each key-value pair | None |
-| `map_ref` | `self: &SmartTable<K, V1>`, `f: \|&V1\|V2` | Maps a function over the values, producing a new SmartTable | `SmartTable<K, V2>` |
-| `any` | `self: &SmartTable<K, V>`, `p: \|&K, &V\|bool` | Checks if any key-value pair satisfies the predicate | `bool` |
+| `update_split_load_threshold` | `self: &mut SmartTable<K, V>`  `split_load_threshold: u8` | Updates the split load threshold | None |
+| `update_target_bucket_size` | `self: &mut SmartTable<K, V>`  `target_bucket_size: u64` | Updates the target bucket size | None |
+| `for_each_ref` | `self: &SmartTable<K, V>`  `f: \|&K, &V\|` | Applies a function to a reference of each key-value pair | None |
+| `for_each_mut` | `self: &mut SmartTable<K, V>`  `f: \|&K, &mut V\|` | Applies a function to a mutable reference of each key-value pair | None |
+| `map_ref` | `self: &SmartTable<K, V1>`  `f: \|&V1\|V2` | Maps a function over the values, producing a new SmartTable | `SmartTable<K, V2>` |
+| `any` | `self: &SmartTable<K, V>`  `p: \|&K, &V\|bool` | Checks if any key-value pair satisfies the predicate | `bool` |
 | `borrow_kv` | `self: &Entry<K, V>` | Borrows references to the key and value of an entry | `(&K, &V)` |
 | `borrow_kv_mut` | `self: &mut Entry<K, V>` | Borrows mutable references to the key and value of an entry | `(&mut K, &mut V)` |
 | `num_buckets` | `self: &SmartTable<K, V>` | Returns the number of buckets in the table | `u64` |
