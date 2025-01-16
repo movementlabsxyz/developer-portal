@@ -48,7 +48,7 @@
         .hero_intro {
             position: relative;
             padding-bottom: 60px;
-            margin-bottom: 80px;
+            margin: 40px 0 80px;
             max-width: 800px;
 
             &:after {
@@ -1126,6 +1126,16 @@
 
         .faqs__list {
             margin-top: 48px;
+
+            a {
+                color: $yellow;
+                text-decoration: underline;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
 
         .disclaimer {

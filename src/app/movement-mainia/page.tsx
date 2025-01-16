@@ -23,7 +23,7 @@ export default function MovementMainiaPage() {
                     We&apos;re calling on developers, researchers, and innovators to build the next generation of AI-powered applications on the Movement Network.
                 </p>
                 <Link
-                    href="https://forms.movement.xyz/hackathon-signup"
+                    href="https://airtable.com/appMmudt1GU2UXhvV/pagJddwzqUl5IAg4b/form"
                     className="start-button"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -383,7 +383,7 @@ export default function MovementMainiaPage() {
                 <h2>🔍 FAQ</h2>
                 <div className="faqs__list">
                     <FAQElement title="How do I register?">
-                        <p>You can register via the Airtable form, only one submission is needed per team.</p>
+                        <p>You can register via the <Link href="https://airtable.com/appMmudt1GU2UXhvV/pagJddwzqUl5IAg4b/form" target="_blank" rel="noopener noreferrer">Airtable form</Link>, only one submission is needed per team.</p>
                     </FAQElement>
                     <FAQElement title="Can I work as a team?">
                         <p>Yes! Teams of up to 4 people are welcome.</p>
