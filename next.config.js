@@ -1,7 +1,8 @@
-module.exports = {
-    webpack: (config) => {
-        config.resolve.fallback = { fs: false }
-
-        return config
-    },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  sassOptions: {
+    includePaths: ['./src/sass'],
+  },
 }
+
+module.exports = nextConfig

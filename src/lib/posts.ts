@@ -5,7 +5,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
-import remarkPrism from 'remark-prism'
 import remarkParse from 'remark-parse'
 import slugify from 'slugify'
 

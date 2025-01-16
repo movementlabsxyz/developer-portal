@@ -1,6 +1,9 @@
+'use client'
+
 import Scroller from '@/components/Marquee/Scroller'
 import HeroSlider from '@/components/Slider/HeroSlider'
 import useLearningPaths from '@/hooks/useLearningPaths'
+import { getSubCategories } from '@/lib/posts'
 import { PostData } from '@/types/posts'
 import Link from 'next/link'
 import useDeveloperTools from '@/hooks/useDeveloperTools'
@@ -14,6 +17,7 @@ import Image from 'next/image'
 
 export default function Home(props: { postData: PostData[] }) {
     const allPostsData = props.postData
+    const categories = getSubCategories('learning-paths')
     const LearningPathsData = useLearningPaths()
     const DeveloperToolsData = useDeveloperTools()
     const TutorialData = useTutorials()
@@ -106,4 +110,4 @@ export default function Home(props: { postData: PostData[] }) {
             </section>
         </div>
     )
-}
+} 

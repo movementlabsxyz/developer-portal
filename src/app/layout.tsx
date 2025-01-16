@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import '@/sass/movement.scss'
+import '@/sass/main.scss'
 import localFont from 'next/font/local'
 import { cn } from '@/lib/utils'
 import GTM from '@/components/GTM/GTM'
