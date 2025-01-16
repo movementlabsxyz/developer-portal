@@ -20,7 +20,7 @@ export default function MovementMainiaPage() {
                     <p>An AI focused hackathon on the Movement Network</p>
                 </div>
                 <p className="cta">
-                    We're calling on developers, researchers, and innovators to build the next generation of AI-powered applications on the Movement Network.
+                    We&apos;re calling on developers, researchers, and innovators to build the next generation of AI-powered applications on the Movement Network.
                 </p>
                 <Link
                     href="https://forms.movement.xyz/hackathon-signup"
@@ -226,7 +226,7 @@ export default function MovementMainiaPage() {
                             <div className="session">
                                 <h4>Intro to Movement & AI Integration</h4>
                                 <ul>
-                                    <li>Overview of Movement's architecture</li>
+                                    <li>Overview of Movement&apos;s architecture</li>
                                     <li>AI integration possibilities</li>
                                     <li>Setting up your development environment</li>
                                 </ul>
