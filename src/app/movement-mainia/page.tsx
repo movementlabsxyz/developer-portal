@@ -208,7 +208,7 @@ export default function MovementMainiaPage() {
                 <h2>🗓️ Timeline</h2>
                 <ul className="timeline-list">
                     <li><strong>Registration Opens:</strong> January 21st 2025</li>
-                    <li><strong>Hackathon Start:</strong> January 20th 2025</li>
+                    <li><strong>Hackathon Start:</strong> January 21st 2025</li>
                     <li><strong>Project Submissions Due:</strong> February 16th 2025</li>
                     <li><strong>Shortlisting period:</strong> February 16th - 24th 2025</li>
                     <li><strong>Winners Announced:</strong> February 26th 2025</li>
