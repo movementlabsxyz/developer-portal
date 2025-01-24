@@ -1223,4 +1223,361 @@
             }
         }
     }
+
+    #sponsors {
+        padding: 100px 0;
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            text-align: center;
+        }
+
+        .sponsors-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .sponsor-tier {
+            background: linear-gradient(180deg, rgba(0, 12, 58, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid $yellow;
+            border-radius: 24px;
+            padding: 32px;
+
+            h3 {
+                font-size: 36px;
+                font-weight: 400;
+                margin-bottom: 24px;
+                text-align: center;
+                font-family: var(--ff_1);
+            }
+
+            .sponsor-list {
+                display: grid;
+                gap: 24px;
+                justify-content: center;
+            }
+
+            .sponsor {
+                font-family: 'neue-haas-unica';
+                font-size: 24px;
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+                text-decoration: none;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            &.gold {
+                background: linear-gradient(180deg, rgba(218, 165, 32, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+                border-color: goldenrod;
+                
+                h3 {
+                    color: goldenrod;
+                    font-size: 42px;
+                }
+
+                .sponsor-list {
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+
+                .sponsor {
+                    font-size: 32px;
+                    font-weight: 500;
+                }
+            }
+
+            &.silver {
+                background: linear-gradient(180deg, rgba(192, 192, 192, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+                border-color: silver;
+                
+                h3 {
+                    color: silver;
+                    font-size: 36px;
+                }
+
+                .sponsor-list {
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                }
+
+                .sponsor {
+                    font-size: 28px;
+                }
+            }
+
+            &.bronze {
+                background: linear-gradient(180deg, rgba(205, 127, 50, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+                border-color: #cd7f32;
+                
+                h3 {
+                    color: #cd7f32;
+                }
+
+                .sponsor-list {
+                    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                }
+            }
+        }
+
+        @include breakpoint-tablet {
+            padding: 80px 0;
+
+            .sponsors-grid {
+                gap: 32px;
+                margin-top: 32px;
+            }
+
+            .sponsor-tier {
+                padding: 24px;
+
+                h3 {
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                }
+
+                .sponsor {
+                    font-size: 21px;
+                }
+
+                &.gold {
+                    h3 {
+                        font-size: 36px;
+                    }
+
+                    .sponsor {
+                        font-size: 28px;
+                    }
+                }
+
+                &.silver {
+                    h3 {
+                        font-size: 32px;
+                    }
+
+                    .sponsor {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint-mobile {
+            padding: 60px 0;
+
+            .sponsors-grid {
+                gap: 24px;
+                margin-top: 24px;
+            }
+
+            .sponsor-tier {
+                padding: 20px;
+
+                h3 {
+                    font-size: 28px;
+                    margin-bottom: 16px;
+                }
+
+                .sponsor {
+                    font-size: 18px;
+                }
+
+                &.gold {
+                    h3 {
+                        font-size: 32px;
+                    }
+
+                    .sponsor {
+                        font-size: 24px;
+                    }
+                }
+
+                &.silver {
+                    h3 {
+                        font-size: 28px;
+                    }
+
+                    .sponsor {
+                        font-size: 21px;
+                    }
+                }
+            }
+        }
+    }
+
+    #bounties {
+        padding: 100px 0;
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .bounty-section {
+            background: linear-gradient(180deg, rgba(0, 12, 58, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid $yellow;
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 48px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            h3 {
+                font-size: 42px;
+                font-weight: 700;
+                margin-bottom: 24px;
+                color: $yellow;
+            }
+
+            h4 {
+                font-size: 32px;
+                font-weight: 600;
+                margin: 40px 0 24px;
+                color: white;
+            }
+
+            h5 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                color: $yellow;
+            }
+
+            p {
+                font-family: 'neue-haas-unica';
+                font-size: 21px;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 16px;
+            }
+
+            .bounty-link {
+                display: inline-block;
+                color: $yellow;
+                text-decoration: none;
+                margin-right: 24px;
+                margin-bottom: 24px;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            .focus-area {
+                margin-bottom: 40px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 16px 0;
+
+                li {
+                    font-family: 'neue-haas-unica';
+                    font-size: 21px;
+                    color: rgba(255, 255, 255, 0.9);
+                    margin-bottom: 12px;
+                    padding-left: 24px;
+                    position: relative;
+
+                    &:before {
+                        content: "•";
+                        color: $yellow;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+
+                    ul {
+                        margin: 12px 0 12px 24px;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint-tablet {
+            padding: 80px 0;
+
+            h2 {
+                margin-bottom: 40px;
+            }
+
+            .bounty-section {
+                padding: 32px;
+                margin-bottom: 32px;
+
+                h3 {
+                    font-size: 36px;
+                }
+
+                h4 {
+                    font-size: 28px;
+                    margin: 32px 0 20px;
+                }
+
+                h5 {
+                    font-size: 21px;
+                }
+
+                p, ul li {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        @include breakpoint-mobile {
+            padding: 60px 0;
+
+            h2 {
+                margin-bottom: 32px;
+            }
+
+            .bounty-section {
+                padding: 24px;
+                margin-bottom: 24px;
+
+                h3 {
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                }
+
+                h4 {
+                    font-size: 24px;
+                    margin: 24px 0 16px;
+                }
+
+                h5 {
+                    font-size: 18px;
+                }
+
+                p, ul li {
+                    font-size: 16px;
+                }
+
+                .bounty-link {
+                    margin-right: 16px;
+                    margin-bottom: 16px;
+                }
+
+                .focus-area {
+                    margin-bottom: 32px;
+                }
+            }
+        }
+    }
 } 

@@ -79,6 +79,157 @@ export default function MovementMainiaPage() {
                 </div>
             </div>
 
+            <div id="sponsors" className="l-container">
+                <h2>🤝 Sponsors</h2>
+                <div className="sponsors-grid">
+                    <div className="sponsor-tier gold">
+                        <h3>Gold</h3>
+                        <div className="sponsor-list">
+                            <Link href="https://x.com/YuzuDEX" target="_blank" rel="noopener noreferrer" className="sponsor">Yuzu</Link>
+                            <Link href="https://x.com/fleek" target="_blank" rel="noopener noreferrer" className="sponsor">Fleek</Link>
+                        </div>
+                    </div>
+
+                    <div className="sponsor-tier silver">
+                        <h3>Silver</h3>
+                        <div className="sponsor-list">
+                            <Link href="https://x.com/caesar_data" target="_blank" rel="noopener noreferrer" className="sponsor">Caesar</Link>
+                            <Link href="https://twitter.com/root_mud" target="_blank" rel="noopener noreferrer" className="sponsor">RootMUD</Link>
+                        </div>
+                    </div>
+
+                    <div className="sponsor-tier bronze">
+                        <h3>Bronze</h3>
+                        <div className="sponsor-list">
+                            <Link href="https://buidlerboard.bewater.xyz" target="_blank" rel="noopener noreferrer" className="sponsor">BeWater</Link>
+                            <Link href="https://x.com/PicWeGlobal" target="_blank" rel="noopener noreferrer" className="sponsor">PicWe</Link>
+                            <Link href="https://x.com/codeandledger" target="_blank" rel="noopener noreferrer" className="sponsor">Code & Ledger</Link>
+                            <Link href="https://x.com/j17crypto" target="_blank" rel="noopener noreferrer" className="sponsor">J17</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bounties" className="l-container">
+                <h2>💰 Bounty Descriptions</h2>
+                
+                <div className="bounty-section">
+                    <h3>Prizes from rootMUD DAO</h3>
+                    <p>rootMUD DAO is a decentralized autonomous organization built on the Move Stack.</p>
+                    <Link href="https://twitter.com/root_mud" target="_blank" rel="noopener noreferrer" className="bounty-link">Twitter Profile</Link>
+
+                    <h4>Focus Areas</h4>
+                    <div className="focus-area">
+                        <h5>Scaffold-Move</h5>
+                        <p>Scaffold has proven to be an essential public resource for blockchain ecosystems, enabling developers to concentrate on core functionality instead of basic features like wallet connections. Following the success of scaffold-eth, we&apos;re seeking applications built using scaffold-move!</p>
+                        <Link href="https://github.com/NonceGeek/scaffold-move/" target="_blank" rel="noopener noreferrer" className="bounty-link">View on GitHub</Link>
+                    </div>
+
+                    <div className="focus-area">
+                        <h5>MoveDID + AI Agent Integration</h5>
+                        <p>MoveDID is a decentralized identity protocol developed by the rootMUD community. Following the W3C DID specification, it can represent various entities as on-chain objects.</p>
+                        <Link href="https://www.w3.org/TR/did-core/" target="_blank" rel="noopener noreferrer" className="bounty-link">W3C Specification</Link>
+                        <Link href="https://github.com/NonceGeek/MoveDID" target="_blank" rel="noopener noreferrer" className="bounty-link">MoveDID on GitHub</Link>
+                    </div>
+
+                    <div className="focus-area">
+                        <h5>AI SaaS on Movement</h5>
+                        <p>We&apos;re exploring new models for AI Services built on Movement. What opportunities emerge when users can generate images or videos by paying with Movement-based cryptocurrencies? Could this create a new paradigm for AI Software-as-a-Service?</p>
+                    </div>
+
+                    <div className="focus-area">
+                        <h5>Innovation Track</h5>
+                        <p>We welcome additional innovative projects! You&apos;re eligible for our bounties if you believe your project brings something unique and exciting to the ecosystem.</p>
+                    </div>
+
+                    <div className="prize-structure">
+                        <h4>Prize Structure</h4>
+                        <ul>
+                            <li>Three (3) prizes of $1,000 each for exceptional projects</li>
+                            <li>Four (4) prizes of $500 each for promising projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="bounty-section">
+                    <h3>Prizes From BeWater</h3>
+                    <p>BeWater is launching BuidlerBoard in 2025, a new platform aimed at creating a decentralized, algorithmically transparent leaderboard for open-source developers, repositories, and organizations.</p>
+                    <Link href="https://buidlerboard.bewater.xyz" target="_blank" rel="noopener noreferrer" className="bounty-link">Visit BuidlerBoard</Link>
+                    
+                    <p>BuidlerBoard aspires to become the primary reference for developer-focused airdrops.</p>
+                    <p>For this Hackathon, BeWater offers two $500 prizes for the following challenges:</p>
+
+                    <div className="focus-area">
+                        <h5>1. Onchain Decentralized BuidlerBoard Design</h5>
+                        <p>Create a system where developers can submit their GitHub repositories, accounts, or organizations to BuidlerBoard. The leaderboard should evaluate and rank submissions based on one or more onchain functions.</p>
+                    </div>
+
+                    <div className="focus-area">
+                        <h5>2. Movement Airdrop Tool Development</h5>
+                        <p>Develop an onchain airdrop tool targeting developers, open-source projects, or GitHub organizations. The tool should support distribution of both cryptocurrencies and NFTs.</p>
+                    </div>
+                </div>
+
+                <div className="bounty-section">
+                    <h3>Fleek Bounty $10,000 Prize Pool: Deploy an AI Agent!</h3>
+                    <p>Fleek is offering $10,000 in prizes to reward the overall most innovative AI agents deployed. Whether you are a first time builder or experienced developer this is your chance to redefine what&apos;s possible with AI agent while showcasing your creativity and skills!</p>
+
+                    <h4>What is Fleek?</h4>
+                    <p>Fleek is the Autonomous Cloud for building and deploying the next generation of apps and AI agents. We prioritize autonomy, scalability and simplicity empowering builders to bring their visions to life with tools designed for the future.</p>
+
+                    <h4>Bounty Categories</h4>
+                    
+                    <div className="focus-area">
+                        <h5>1. Best Overall AI Agent – $5,000</h5>
+                        <p><strong>Objective:</strong> Reward the most innovative and comprehensive AI agent built with Fleek AI Agents using the Eliza Framework.</p>
+                        <p><strong>Criteria:</strong></p>
+                        <ul>
+                            <li>Outstanding functionality and performance</li>
+                            <li>Originality in the use case</li>
+                            <li>High-quality character file (personality, behavior, and knowledge configuration)</li>
+                            <li>Demonstration of real-world value or utility</li>
+                            <li>Seamless integration with the plugin-movement framework</li>
+                        </ul>
+                    </div>
+
+                    <div className="focus-area">
+                        <h5>2. Most User-Friendly Agent – $3,000</h5>
+                        <p><strong>Objective:</strong> Recognize an agent designed for accessibility and ease of use, ensuring even non-technical users can interact seamlessly.</p>
+                        <p><strong>Criteria:</strong></p>
+                        <ul>
+                            <li>Simplicity in user interaction and intuitive functionality</li>
+                            <li>Clear and easy-to-follow instructions</li>
+                            <li>Visual/UI enhancements or user guides (if applicable)</li>
+                        </ul>
+                    </div>
+
+                    <div className="focus-area">
+                        <h5>3. Community Choice Award – $2,000</h5>
+                        <p><strong>Objective:</strong> Celebrate the agent that wins the hearts of the Fleek and plugin-movement community.</p>
+                        <p><strong>Criteria:</strong></p>
+                        <ul>
+                            <li>Total number of votes from community members</li>
+                            <li>Projects must meet a minimum quality threshold to qualify</li>
+                        </ul>
+                    </div>
+
+                    <div className="submission-requirements">
+                        <h4>Submission Requirements</h4>
+                        <ul>
+                            <li><strong>Deployment:</strong> Your AI agent must be live and operational, built on Fleek using the Eliza Framework.</li>
+                            <li><strong>Documentation:</strong> Provide a detailed write-up or video showcasing:
+                                <ul>
+                                    <li>The purpose and use case of the agent</li>
+                                    <li>Configuration details of the character file</li>
+                                    <li>Challenges faced and solutions implemented during development</li>
+                                </ul>
+                            </li>
+                            <li><strong>Optional Resources:</strong> Link to a GitHub repository or any other supporting documentation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div id="movedrop-wrap">
                 <div className="l-container">
                     <div className="movedrop">
