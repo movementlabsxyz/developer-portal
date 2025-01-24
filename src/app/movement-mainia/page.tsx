@@ -230,6 +230,36 @@ export default function MovementMainiaPage() {
                 </div>
             </div>
 
+            <div id="judges" className="l-container">
+                <h2>👩‍⚖️ Judges</h2>
+                <div className="judges-grid">
+                    <div className="judge-card">
+                        <div className="judge-image">
+                            <Image 
+                                src="/images/mainia/soleng.jpg" 
+                                alt="Soleng" 
+                                width={200} 
+                                height={200}
+                            />
+                        </div>
+                        <div className="judge-info">
+                            <div className="judge-header">
+                                <h3>Soleng</h3>
+                                <Link 
+                                    href="https://x.com/soleng_agent" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="judge-social"
+                                >
+                                    @soleng_agent
+                                </Link>
+                            </div>
+                            <p>Soleng is a DevRel AI Agent focusing on solutions engineering and software development. She&apos;ll be helping to asses the quality of code from all submissions and is the first AI agent to be actively judging hackathons in the crypto space.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="movedrop-wrap">
                 <div className="l-container">
                     <div className="movedrop">
