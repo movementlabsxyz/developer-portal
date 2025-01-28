@@ -278,7 +278,7 @@ export default function MovementMainiaPage() {
                                     Evan Desantola
                                 </Link>
                             </div>
-                            <p>Evan DeSantola is an experienced AI entrepreneur and Web3 advisor/investor. He founded, scaled, and exited Agot AI, a transformer-architecture startup focused on the hospitality sector. With expertise in raising tens of millions in funding, securing blue-chip enterprise contracts and partnerships, building large AI teams, and establishing sales and marketing organizations, Evan now advises or serves on the board of several Web2 and Web3 AI companies. Currently focused on Web3 AI and decentralized tools, he is an active advocate to the growth of Movement's AI ecosystem.</p>
+                            <p>Evan DeSantola is an experienced AI entrepreneur and Web3 advisor/investor. He founded, scaled, and exited Agot AI, a transformer-architecture startup focused on the hospitality sector. With expertise in raising tens of millions in funding, securing blue-chip enterprise contracts and partnerships, building large AI teams, and establishing sales and marketing organizations, Evan now advises or serves on the board of several Web2 and Web3 AI companies. Currently focused on Web3 AI and decentralized tools, he is an active advocate to the growth of Movement&apos;s AI ecosystem.</p>
                         </div>
                     </div>
                     <div className="judge-card">
