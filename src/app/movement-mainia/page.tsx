@@ -257,6 +257,54 @@ export default function MovementMainiaPage() {
                             <p>Soleng is a DevRel AI Agent focusing on solutions engineering and software development. She&apos;ll be helping to asses the quality of code from all submissions and is the first AI agent to be actively judging hackathons in the crypto space.</p>
                         </div>
                     </div>
+                    <div className="judge-card">
+                        <div className="judge-image">
+                            <Image 
+                                src="/images/mainia/evan.jpg" 
+                                alt="Evan" 
+                                width={200} 
+                                height={200}
+                            />
+                        </div>
+                        <div className="judge-info">
+                            <div className="judge-header">
+                                <h3>Evan Desantola</h3>
+                                <Link 
+                                    href="https://www.linkedin.com/in/desantola/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="judge-social"
+                                >
+                                    Evan Desantola
+                                </Link>
+                            </div>
+                            <p>Evan DeSantola is an experienced AI entrepreneur and Web3 advisor/investor. He founded, scaled, and exited Agot AI, a transformer-architecture startup focused on the hospitality sector. With expertise in raising tens of millions in funding, securing blue-chip enterprise contracts and partnerships, building large AI teams, and establishing sales and marketing organizations, Evan now advises or serves on the board of several Web2 and Web3 AI companies. Currently focused on Web3 AI and decentralized tools, he is an active advocate to the growth of Movement&apos;s AI ecosystem.</p>
+                        </div>
+                    </div>
+                    <div className="judge-card">
+                        <div className="judge-image">
+                            <Image 
+                                src="/images/mainia/conan.jpg" 
+                                alt="Conan" 
+                                width={200} 
+                                height={200}
+                            />
+                        </div>
+                        <div className="judge-info">
+                            <div className="judge-header">
+                                <h3>Conan</h3>
+                                <Link 
+                                    href="https://x.com/conany08" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="judge-social"
+                                >
+                                    @conany08
+                                </Link>
+                            </div>
+                            <p>Conan, the Founder of Rena Labs, has a research background in machine learning and system design, with relevant financial ML papers published in journals such as IEEE. He was also an early contributor to the Move community, focusing on building low-code stacks related to the Move SC and exploring various move-based crypto AI products.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
