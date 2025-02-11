@@ -22,14 +22,24 @@ export default function MovementMainiaPage() {
                 <p className="cta">
                     We&apos;re calling on developers, researchers, and innovators to build the next generation of AI-powered applications on the Movement Network.
                 </p>
-                <Link
-                    href="https://airtable.com/appMmudt1GU2UXhvV/pagJddwzqUl5IAg4b/form"
-                    className="start-button"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    SIGN UP
-                </Link>
+                <div className="hero-buttons">
+                    <Link
+                        href="https://airtable.com/appMmudt1GU2UXhvV/pagJddwzqUl5IAg4b/form"
+                        className="start-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        SIGN UP
+                    </Link>
+                    <Link
+                        href="https://airtable.com/appMmudt1GU2UXhvV/pagCMw4Mfy4s7kAA6/form"
+                        className="start-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        SUBMIT PROJECT
+                    </Link>
+                </div>
             </div>
             <div id="prizes">
                 <div className="l-container">
@@ -87,6 +97,8 @@ export default function MovementMainiaPage() {
                         <div className="sponsor-list">
                             <Link href="https://x.com/YuzuDEX" target="_blank" rel="noopener noreferrer" className="sponsor">Yuzu</Link>
                             <Link href="https://x.com/fleek" target="_blank" rel="noopener noreferrer" className="sponsor">Fleek</Link>
+                            <Link href="https://x.com/sentioxyz" target="_blank" rel="noopener noreferrer" className="sponsor">Sentio</Link>
+                        
                         </div>
                     </div>
 
@@ -95,6 +107,7 @@ export default function MovementMainiaPage() {
                         <div className="sponsor-list">
                             <Link href="https://x.com/caesar_data" target="_blank" rel="noopener noreferrer" className="sponsor">Caesar</Link>
                             <Link href="https://twitter.com/root_mud" target="_blank" rel="noopener noreferrer" className="sponsor">RootMUD</Link>
+                            <Link href="https://x.com/crossmint" target="_blank" rel="noopener noreferrer" className="sponsor">Crossmint</Link>
                         </div>
                     </div>
 
@@ -105,6 +118,8 @@ export default function MovementMainiaPage() {
                             <Link href="https://x.com/PicWeGlobal" target="_blank" rel="noopener noreferrer" className="sponsor">PicWe</Link>
                             <Link href="https://x.com/codeandledger" target="_blank" rel="noopener noreferrer" className="sponsor">Code & Ledger</Link>
                             <Link href="https://x.com/j17crypto" target="_blank" rel="noopener noreferrer" className="sponsor">J17</Link>
+                            <Link href="https://x.com/RazorDAO" target="_blank" rel="noopener noreferrer" className="sponsor">Razor DAO</Link>
+                            <Link href="https://x.com/elfa_ai" target="_blank" rel="noopener noreferrer" className="sponsor">Elfa.ai</Link>
                         </div>
                     </div>
                 </div>
@@ -226,6 +241,40 @@ export default function MovementMainiaPage() {
                             </li>
                             <li><strong>Optional Resources:</strong> Link to a GitHub repository or any other supporting documentation.</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div className="bounty-section">
+                    <h3>Prizes from Elfa.ai</h3>
+                    <p>Elfa is a realtime crypto data x trading product that helps busy crypto natives take action on latest opportunities. Now, we&apos;re bringing that edge to hackers.</p>
+
+                    <h4>Bounty</h4>
+                    <p>4 Months of Growth Tier API (worth $1,160) with 100K requests/month for the best hacker who:</p>
+                    <ul>
+                        <li>Builds a product using Elfa&apos;s API</li>
+                        <li>Helps traders save time by surfacing valuable insights</li>
+                    </ul>
+
+                    <h4>Why Use Elfa&apos;s API?</h4>
+                    <ul>
+                        <li>Train AI models with high-quality crypto data</li>
+                        <li>Build AI agents that act on live insights</li>
+                        <li>Create discovery dashboards with market signals</li>
+                    </ul>
+
+                    <h4>Available Datasets</h4>
+                    <ul>
+                        <li>Smart Followers & Influence Index – Identify the most impactful voices</li>
+                        <li>All Smart Mentions – Track any keyword (tickers, contract addresses, anything!)</li>
+                        <li>Trending Tokens – See which assets are dominating the conversation</li>
+                        <li>Viral Tweets – Train AI agents with the most engaged content</li>
+                    </ul>
+
+                    <h4>Ready to build?</h4>
+                    <div className="bounty-links">
+                        <Link href="https://elfa.ai/api" target="_blank" rel="noopener noreferrer" className="bounty-link">Get API key</Link>
+                        <Link href="https://api-docs.elfa.ai" target="_blank" rel="noopener noreferrer" className="bounty-link">Documentation</Link>
+                        <Link href="https://x.com/tethrees/status/1870291709302845537?s=46" target="_blank" rel="noopener noreferrer" className="bounty-link">Guide</Link>
                     </div>
                 </div>
             </div>
