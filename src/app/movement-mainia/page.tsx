@@ -32,7 +32,7 @@ export default function MovementMainiaPage() {
                         SIGN UP
                     </Link>
                     <Link
-                        href="https://airtable.com/appMmudt1GU2UXhvV/pagCMw4Mfy4s7kAA6/form"
+                        href="https://airtable.com/appMmudt1GU2UXhvV/paggPfxXtuUisvtPZ/form"
                         className="start-button"
                         target="_blank"
                         rel="noopener noreferrer"
