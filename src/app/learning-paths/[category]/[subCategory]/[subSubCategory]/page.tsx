@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
     const id = params.subSubCategory || params.subCategory
-    const postData = await getPostData(id)
+    const postData = await getPostData(id || '')
 
     if (!postData) {
         return {}
@@ -38,7 +38,7 @@ export default async function PostPage({ params }: PostPageProps) {
     }
     const postData = await getPostData(id)
 
-    const pageCategory = getCategoryBySlug('learning-paths', params.category.toString()) as DirectoryNode
-    const subCategory = getCategoryBySlug('learning-paths', params.category.toString(), params.subCategory.toString()) as DirectoryNode
+    const pageCategory = getCategoryBySlug('learning-paths', params.category?.toString() || '') as DirectoryNode
+    const subCategory = getCategoryBySlug('learning-paths', params.category?.toString() || '', params.subCategory?.toString() || '') as DirectoryNode
     return <Article data={postData} category={pageCategory} subCategory={subCategory} />
 }
