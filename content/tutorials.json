@@ -1,52 +1,68 @@
 {
-  "Onchain Twitter Clone" : {
+  "install-movement-cli": {
+    "category": "Beginner",
+    "title": "Install Movement CLI",
+    "description": "Learn how to install and set up the Movement CLI tool",
+    "amt": "10m",
+    "type": "written",
+    "markdownFile": "InstallMovementCLI.md",
+    "tags": ["CLI", "Setup"],
+    "featured": false
+  },
+  "onchain-twitter-clone": {
     "category": "Beginner",
     "title": "Onchain Twitter Clone",
     "description": "Learn the basics of Move by reviewing a module for an onchain Twitter Clone",
     "amt": "23m",
-    "link":"https://youtu.be/i8iYgcjrtJk",
+    "type": "external",
+    "link": "https://youtu.be/i8iYgcjrtJk",
     "tags": ["Contract", "Code Review"],
     "featured": true
   },
-  "Solidity vs Move" : {
+  "solidity-vs-move": {
     "category": "Beginner",
     "title": "Solidity vs Move",
     "description": "Learn the differences between the Solidity and Move languages and start exploring the security enhancements and developer environment provided by Move.",
     "amt": "23m",
-    "link":"https://youtu.be/SJo7PiMV89E",
+    "type": "external",
+    "link": "https://youtu.be/SJo7PiMV89E",
     "tags": ["Move", "Solidity"],
     "featured": true
   },
-  "Your First Move Module" : {
+  "your-first-move-module": {
     "category": "Beginner",
     "title": "Your First Move Module",
     "description": "Build and Deploy your very first Hello World Move Module.",
     "amt": "20m",
-    "link":"https://docs.movementnetwork.xyz/devs/firstmove",
+    "type": "external",
+    "link": "https://docs.movementnetwork.xyz/devs/firstmove",
     "tags": ["Contract", "Code Along"]
   },
-  "Building an AVS that integrates with Movement" : {
+  "building-avs-movement": {
     "category": "Intermediate",
     "title": "Building an AVS that integrates with Movement",
     "description": "Learn how to build an Actively Validated Service that interacts with EigenLayer and Movement Network",
     "amt": "50m",
-    "link":"https://blog.movementlabs.xyz/article/tutorial-eigenlayer-avs-movement-network",
+    "type": "external",
+    "link": "https://blog.movementlabs.xyz/article/tutorial-eigenlayer-avs-movement-network",
     "tags": ["AVS", "Code Along"]
   },
-  "Secure Smart Contracts with Formal Verification" : {
+  "secure-smart-contracts": {
     "category": "Intermediate",
     "title": "Secure Smart Contracts with Formal Verification",
     "description": "Learn about securing Smart Contracts on the Move VM with Formal Verification.",
     "amt": "15m",
-    "link":"https://www.youtube.com/watch?v=arNowpvckcQ",
+    "type": "external",
+    "link": "https://www.youtube.com/watch?v=arNowpvckcQ",
     "tags": ["Formal Verification", "Workshop"]
   },
-  "Move Spiders" : {
+  "move-spiders": {
     "category": "Beginner",
     "title": "Move Spiders",
     "description": "Interactive Game for learning Move from the basics",
     "amt": "5+hrs",
-    "link":"https://movespiders.com/",
+    "type": "external",
+    "link": "https://movespiders.com/",
     "tags": ["Code Along", "Game"]
   }
 }

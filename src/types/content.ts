@@ -15,14 +15,19 @@ export interface LearningPathType {
     }
 }
 
-export interface TutorialType {
-    [key: string]: {
-        category: string
-        title: string
-        description: string
-        amt: string
-        link: string
-        tags: string[]
-        featured?: boolean | false
-    }
+export interface Tutorial {
+    category: string
+    title: string
+    description: string
+    amt: string
+    type: 'written' | 'external'
+    link?: string
+    markdownFile?: string
+    tags: string[]
+    featured?: boolean
+    image?: string
+}
+
+export type TutorialType = {
+    [key: string]: Tutorial
 }

@@ -1,35 +1,43 @@
 import Link from "next/link"
 
-export default function ToolsCard(
-    props: {
-        data: {
-            category: string
-            title: string
-            description: string
-            amt: string
-            link: string
-            tags: string[]
-            image?: string
-            linkTarget?: string
-        }
-    }
-) {
+interface TutorialData {
+    category: string
+    title: string
+    description: string
+    amt: string
+    type: 'written' | 'external'
+    link?: string
+    markdownFile?: string
+    tags: string[]
+    image?: string
+    linkTarget?: string
+}
+
+export default function TutorialCard({ data }: { data: TutorialData }) {
+    // For written tutorials, generate the URL based on the title
+    const href = data.type === 'written' 
+        ? `/tutorials/${data.markdownFile?.replace('.md', '').toLowerCase().replace(/\s+/g, '-')}`
+        : data.link || '#'
+
+    // External tutorials open in new tab, written tutorials don't
+    const target = data.type === 'external' ? '_blank' : undefined
+
     return (
-        <Link href={props.data.link} target={props.data.linkTarget || "_blank"} className="card card-type-2" key={props.data.title}>
+        <Link href={href} target={target} className="card card-type-2" key={data.title}>
             <span className="meta">
-                <span>{props.data.category}</span>
-                <span>{props.data.amt}</span>
+                <span>{data.category}</span>
+                <span>{data.amt}</span>
             </span>
             <div className="card-content">
-                <span className="title">{props.data.title}</span>
+                <span className="title">{data.title}</span>
                 <p className="desc">
-                    {props.data.description}
+                    {data.description}
                 </p>
             </div>
             <picture>
                 <img src="/images/tech-stack.png" alt="" />
                 <span className="tags">
-                    {props.data.tags.map((tag) => (
+                    {data.tags.map((tag) => (
                         <span className="tag" key={`tag${tag}`}>{tag}</span>
                     ))}
                 </span>

@@ -30,8 +30,9 @@ export type PostNode = DirectoryNode | FileNode
 
 export interface PostPageProps {
     params: {
-        category: string
-        subCategory: string
-        subSubCategory?: string | undefined
+        category?: string
+        subCategory?: string
+        subSubCategory?: string
+        tutorial?: string
     }
 }
