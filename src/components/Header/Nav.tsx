@@ -81,10 +81,6 @@ export default function Nav() {
             link: 'https://docs.movementnetwork.xyz/',
             target: '_blank',
         },
-        {
-            name: 'Movement mAInia',
-            link: '/movement-mainia',
-        },
     ]
 
     return (

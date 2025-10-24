@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
-export default function Home() {
+export default function UnderConstruction() {
     return (
         <div className="under-construction">
             <div className="container">
                 <div className="content">
                     <h1>We&apos;re Under Construction</h1>
-                    <p>See you soon! For now, head over to the Movement docs:</p>
+                    <p>This page is temporarily unavailable. For now, head over to the Movement docs:</p>
                     <Link 
                         href="https://docs.movementnetwork.xyz/devs" 
                         target="_blank" 
