@@ -54,7 +54,7 @@ export default function Home(props: { postData: PostData[] }) {
                     <div className="path-content">
                         <div className="path-grid">
                             {Object.keys(LearningPathsData).map((key) => (
-                                <LearningPathCard key={key} data={LearningPathsData[key]} />
+                                <LearningPathCard key={key} cardKey={key} data={LearningPathsData[key]} />
                             ))}
                         </div>
                     </div>
