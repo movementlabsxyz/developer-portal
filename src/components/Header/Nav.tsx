@@ -65,16 +65,12 @@ export default function Nav() {
 
     const navItems = [
         {
-            name: 'Learning Paths',
-            link: '/learning-paths',
+            name: 'Kits',
+            link: '/',
         },
         {
-            name: 'Tutorials',
-            link: '/tutorials',
-        },
-        {
-            name: 'DevTools',
-            link: '/developer-tools',
+            name: 'Events & Rewards',
+            link: '/events',
         },
         {
             name: 'Docs',
@@ -91,16 +87,17 @@ export default function Nav() {
                 </Link>
                 <nav id="main-nav" role="navigation" className={mobileNavOpen ? 'active' : ''}>
                     <ul>
-                        <li key="home">
-                            <Link href={'/'} onClick={() => setMobileNavOpen(false)} className={pathname === '/' ? 'active' : ''}>Home</Link>
-                        </li>
                         {navItems.map((item, index) => (
                             <li key={index}>
                                 <Link
                                     href={item.link}
                                     target={item.target}
                                     onClick={() => setMobileNavOpen(false)}
-                                    className={pathname?.toLowerCase().includes(item.link.toLowerCase()) ? 'active' : ''}
+                                    className={
+                                        item.link === '/'
+                                            ? (pathname === '/' ? 'active' : '')
+                                            : (pathname?.toLowerCase().includes(item.link.toLowerCase()) ? 'active' : '')
+                                    }
                                 >
                                     {item.name}
                                 </Link>

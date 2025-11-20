@@ -1,0 +1,124 @@
+{
+  "kits": [
+    {
+      "id": "shinami",
+      "name": "Shinami",
+      "description": "Invisible node infrastructure for seamless blockchain development. Enterprise-grade RPC nodes and APIs.",
+      "tags": ["Infrastructure", "API", "RPC"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/shinami-icon.svg",
+      "featured": true
+    },
+    {
+      "id": "privy",
+      "name": "Privy",
+      "description": "Embedded wallets & user authentication for Move-based apps. Simple onboarding for your users.",
+      "tags": ["Wallet", "SDK", "Auth"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/privy-icon.svg",
+      "featured": true
+    },
+    {
+      "id": "yuzu",
+      "name": "Yuzu",
+      "description": "Cross-chain asset bridge and liquidity protocol. Move assets seamlessly across networks.",
+      "tags": ["Bridge", "DeFi", "SDK"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/yuzu-icon.svg",
+      "featured": true
+    },
+    {
+      "id": "sentio",
+      "name": "Sentio",
+      "description": "Powerful blockchain analytics and monitoring platform. Real-time insights for your Move apps.",
+      "tags": ["Analytics", "Monitoring", "API"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/sentio-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "movement-cli",
+      "name": "Movement CLI",
+      "description": "Official command-line interface for Movement Network. Build, test, and deploy Move contracts.",
+      "tags": ["CLI", "Developer Tools", "SDK"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/movement-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "movement-sdk",
+      "name": "Movement TypeScript SDK",
+      "description": "Type-safe TypeScript SDK for building frontend applications on Movement Network.",
+      "tags": ["SDK", "TypeScript", "Frontend"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/movement-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "oracle-kit",
+      "name": "Oracle Integration",
+      "description": "Real-world data feeds for your Move smart contracts. Reliable price feeds and external data.",
+      "tags": ["Oracle", "Data", "API"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/oracle-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "wallet-adapter",
+      "name": "Wallet Adapter",
+      "description": "Universal wallet connection library. Support multiple wallets with a single integration.",
+      "tags": ["Wallet", "SDK", "Frontend"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/wallet-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "move-prover",
+      "name": "Move Prover",
+      "description": "Formal verification tool for Move smart contracts. Ensure your code is mathematically correct.",
+      "tags": ["Security", "Testing", "CLI"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/prover-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "indexer",
+      "name": "Movement Indexer",
+      "description": "Fast blockchain data indexer. Query historical data and events with ease.",
+      "tags": ["Indexer", "API", "Data"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/indexer-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "nft-toolkit",
+      "name": "NFT Toolkit",
+      "description": "Complete toolkit for creating and managing NFTs on Movement. Minting, metadata, and marketplaces.",
+      "tags": ["NFT", "SDK", "Frontend"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/nft-icon.svg",
+      "featured": false
+    },
+    {
+      "id": "defi-sdk",
+      "name": "DeFi Protocol SDK",
+      "description": "Build decentralized finance applications with pre-built modules for lending, swapping, and staking.",
+      "tags": ["DeFi", "SDK", "Smart Contracts"],
+      "docsLink": "#",
+      "replitLink": "#",
+      "icon": "/images/kits/defi-icon.svg",
+      "featured": false
+    }
+  ]
+}
