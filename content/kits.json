@@ -14,7 +14,7 @@
       "name": "Movement Pixel Canvas",
       "description": "A collaborative on-chain canvas where anyone can place colored pixels to create shared artwork on Movement blockchain.",
       "tags": ["Move", "Movement CLI", "Game Development"],
-      "githubLink": "#",
+      "githubLink": "https://github.com/shayansanjideh/pixel-place",
       "replitLink": "https://replit.com/@shayansanjideh1/Movement-PixelPlace",
       "type": "module"
     },
