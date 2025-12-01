@@ -1,7 +1,7 @@
 // FOOTER //
 
 footer {
-   background: linear-gradient(to bottom, $black, $yellow 325px);
+   background: linear-gradient(to bottom, $black, $green 325px);
    color: $black;
    padding: 375px 0 35px;
    position: relative;
@@ -20,7 +20,7 @@ footer {
    }
    &:after {
       z-index: 1;
-      background: url(/images/pattern-bg-yellow.svg) top center repeat-x;
+      background: url(/images/pattern-bg-green.svg) top center repeat-x;
       background-size: auto 350px;
    }
    a {
@@ -98,7 +98,7 @@ footer {
       }
    }
    @include breakpoint-mobile {
-      background: linear-gradient(to bottom, $black, $yellow 225px);
+      background: linear-gradient(to bottom, $black, $green 225px);
       padding: 250px 0 40px;
       margin-top: 40px;
       &:before, &:after {

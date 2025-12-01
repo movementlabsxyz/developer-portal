@@ -36,15 +36,15 @@ export default function Footer() {
                             </li>
                         </ul>
                         <ul className="row">
-                            <li className="title">Developer Portal</li>
+                            <li className="title">Builder Kit</li>
                             <li>
-                                <Link href="/learning-paths">Learning Paths</Link>
+                                <Link href="/">Kits</Link>
                             </li>
                             <li>
-                                <Link href="/tutorials">Tutorials</Link>
+                                <Link href="/events">Events & Rewards</Link>
                             </li>
                             <li>
-                                <Link href="/developer-tools">Developer Tools</Link>
+                                <Link href="https://docs.movementnetwork.xyz/devs" target="_blank">Documentation</Link>
                             </li>
                         </ul>
                         <ul className="row">

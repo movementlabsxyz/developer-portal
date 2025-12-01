@@ -1,31 +1,112 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@movementlabsxyz/movement-design-system/component-styles";
+@import "@movementlabsxyz/movement-design-system/theme";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* TWKEverett Font Family */
+@font-face {
+  font-family: 'TWKEverett';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(/fonts/twk-everett/TWKEverett-Ultralight.woff2) format("woff2"),
+       url(/fonts/twk-everett/TWKEverett-Ultralight.woff) format("woff");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'TWKEverett';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/twk-everett/TWKEverett-Light.woff2) format("woff2"),
+       url(/fonts/twk-everett/TWKEverett-Light.woff) format("woff");
 }
 
+@font-face {
+  font-family: 'TWKEverett';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/twk-everett/TWKEverett-Regular.woff2) format("woff2"),
+       url(/fonts/twk-everett/TWKEverett-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'TWKEverett';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/twk-everett/TWKEverett-Medium.woff2) format("woff2"),
+       url(/fonts/twk-everett/TWKEverett-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'TWKEverett';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/twk-everett/TWKEverett-Bold.woff2) format("woff2"),
+       url(/fonts/twk-everett/TWKEverett-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'TWKEverett';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/fonts/twk-everett/TWKEverett-Black.woff2) format("woff2"),
+       url(/fonts/twk-everett/TWKEverett-Black.woff) format("woff");
+}
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+}
+
+/* Base Styles */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-family: 'neue-haas-unica', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-guild-green-400);
+}
+
+/* Selection */
+::selection {
+  color: var(--color-guild-green-400);
+  background: black;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Guild Green Utilities */
+@utility text-guild-green-400 {
+  color: var(--color-guild-green-400);
+}
+
+@utility border-guild-green-400 {
+  border-color: var(--color-guild-green-400);
+}
+
+@utility border-guild-green-400-20 {
+  border-color: color-mix(in srgb, var(--color-guild-green-400) 20%, transparent);
+}
+
+@utility bg-guild-green-400 {
+  background-color: var(--color-guild-green-400);
 }

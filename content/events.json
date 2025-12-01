@@ -1,0 +1,93 @@
+{
+  "rewards": {
+    "title": "Push Code and Get Rewarded",
+    "description": "We believe in rewarding active builders in the Movement ecosystem. Every month, developers who contribute meaningful code, deploy projects, or create innovative applications are eligible for premium Replit accounts and other exclusive benefits.",
+    "benefits": [
+      "Monthly Replit Premium accounts for active developers",
+      "Early access to new Movement features and tools",
+      "Direct support from the Movement DevRel team",
+      "Featured project showcase opportunities"
+    ],
+    "eligibility": "Build and deploy on Movement Network, contribute to ecosystem projects, or create educational content to qualify.",
+    "ctaText": "Start Building",
+    "ctaLink": "#"
+  },
+  "hackathons": [
+    {
+      "id": "battle-of-olympus",
+      "title": "Battle of Olympus",
+      "type": "Hackathon",
+      "status": "active",
+      "description": "The ultimate Move developer competition. Build the next generation of blockchain applications and compete for substantial prizes.",
+      "dates": "January 15 - February 28, 2026",
+      "prizes": "$100,000+ in prizes",
+      "prizeBreakdown": [
+        "1st Place: $50,000",
+        "2nd Place: $25,000",
+        "3rd Place: $15,000",
+        "Category Winners: $10,000 each"
+      ],
+      "categories": ["DeFi", "NFTs", "Gaming", "Infrastructure", "Social"],
+      "registrationLink": "#",
+      "learnMoreLink": "#",
+      "featured": true
+    },
+    {
+      "id": "mainnet-mania",
+      "title": "Mainnet Mania",
+      "type": "Hackathon",
+      "status": "upcoming",
+      "description": "Celebrate Movement Mainnet launch by building production-ready applications. Deploy to mainnet and win big.",
+      "dates": "March 1 - April 15, 2026",
+      "prizes": "$75,000+ in prizes",
+      "prizeBreakdown": [
+        "Best Mainnet Deploy: $30,000",
+        "Most Innovative: $20,000",
+        "Best UX: $15,000",
+        "Community Choice: $10,000"
+      ],
+      "categories": ["Production Apps", "Developer Tools", "Consumer Apps"],
+      "registrationLink": "#",
+      "learnMoreLink": "#",
+      "featured": true
+    }
+  ],
+  "communityEvents": [
+    {
+      "id": "move-builder-workshop",
+      "title": "Move Builder Workshop Series",
+      "type": "Workshop",
+      "description": "Weekly hands-on workshops covering Move fundamentals, advanced patterns, and real-world application development.",
+      "schedule": "Every Wednesday at 2 PM EST",
+      "registrationLink": "#",
+      "recurring": true
+    },
+    {
+      "id": "office-hours",
+      "title": "Developer Office Hours",
+      "type": "Office Hours",
+      "description": "Get your questions answered by the Movement core team. Bring your bugs, ideas, and architectural questions.",
+      "schedule": "Every Friday at 4 PM EST",
+      "registrationLink": "#",
+      "recurring": true
+    },
+    {
+      "id": "demo-day",
+      "title": "Monthly Demo Day",
+      "type": "Community Event",
+      "description": "Showcase your projects to the Movement community. Get feedback, find collaborators, and win community awards.",
+      "schedule": "Last Friday of every month",
+      "registrationLink": "#",
+      "recurring": true
+    },
+    {
+      "id": "move-lang-deep-dive",
+      "title": "Move Language Deep Dive",
+      "type": "Technical Talk",
+      "description": "Advanced Move programming concepts with core language contributors. Learn about resource-oriented programming, formal verification, and more.",
+      "date": "January 25, 2026",
+      "registrationLink": "#",
+      "recurring": false
+    }
+  ]
+}

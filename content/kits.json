@@ -1,0 +1,94 @@
+{
+  "kits": [
+    {
+      "id": "nextjs-dapp-starter",
+      "name": "Next.js DApp Starter",
+      "description": "Full-stack web application template with Next.js 14, TypeScript, Tailwind CSS, and Privy wallet authentication.",
+      "tags": ["Next.js", "TypeScript", "Privy", "Tailwind"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "app"
+    },
+    {
+      "id": "react-native-wallet",
+      "name": "React Native Wallet App",
+      "description": "Mobile wallet application built with React Native and Expo. Includes Movement SDK integration for transactions.",
+      "tags": ["React Native", "Expo", "Movement SDK", "Mobile"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "app"
+    },
+    {
+      "id": "vue-dashboard",
+      "name": "Vue.js Analytics Dashboard",
+      "description": "Real-time blockchain analytics dashboard built with Vue 3, Vite, and Movement SDK for on-chain data visualization.",
+      "tags": ["Vue.js", "Vite", "Movement SDK", "Analytics"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "app"
+    },
+    {
+      "id": "telegram-mini-app",
+      "name": "Telegram Mini App",
+      "description": "Telegram bot with embedded mini app functionality. Uses Telegram Bot API and Movement SDK for Web3 features.",
+      "tags": ["Telegram", "Bot API", "Movement SDK", "Mini App"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "app"
+    },
+    {
+      "id": "token-module",
+      "name": "Fungible Token Module",
+      "description": "Move smart contract for creating and managing fungible tokens. Includes mint, burn, and transfer functionality.",
+      "tags": ["Move", "Fungible Assets", "Movement CLI", "Smart Contract"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "module"
+    },
+    {
+      "id": "nft-collection",
+      "name": "NFT Collection Module",
+      "description": "Digital asset collection smart contract with minting, metadata, and royalty support using the Aptos Token Standard.",
+      "tags": ["Move", "Digital Assets", "NFT", "Aptos Framework"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "module"
+    },
+    {
+      "id": "defi-swap",
+      "name": "DEX Swap Module",
+      "description": "Automated market maker (AMM) module with liquidity pools, token swaps, and LP token management.",
+      "tags": ["Move", "DeFi", "AMM", "Liquidity Pools"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "module"
+    },
+    {
+      "id": "staking-module",
+      "name": "Staking & Rewards Module",
+      "description": "Token staking smart contract with configurable reward rates, lock periods, and governance voting power.",
+      "tags": ["Move", "Staking", "Rewards", "Governance"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "module"
+    },
+    {
+      "id": "multisig-wallet",
+      "name": "Multisig Wallet Module",
+      "description": "Multi-signature wallet contract requiring multiple approvals for transactions. Configurable threshold and signers.",
+      "tags": ["Move", "Multisig", "Security", "Smart Contract"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "module"
+    },
+    {
+      "id": "escrow-module",
+      "name": "Escrow & Payments Module",
+      "description": "Secure escrow contract for conditional payments. Supports milestones, disputes, and automatic releases.",
+      "tags": ["Move", "Escrow", "Payments", "Smart Contract"],
+      "githubLink": "#",
+      "replitLink": "#",
+      "type": "module"
+    }
+  ]
+}

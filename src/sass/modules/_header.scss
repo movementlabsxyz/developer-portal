@@ -36,12 +36,12 @@ header {
       justify-content: center;
       gap: 40px;
       a:hover {
-         color: $yellow;
+         color: $green;
       }
    }
    li {
       a.active {
-         color: $yellow;
+         color: $green;
       }
    }
    #nav-btn {
