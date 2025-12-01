@@ -23,7 +23,7 @@ export default function EventsPage() {
           We&apos;re working on something exciting! The Events & Rewards page will be available soon.
         </Text>
 
-        <div className="mb-8 p-6 rounded-xl border border-guild-green-400 bg-background/50">
+        <div className="mb-8 p-6 rounded-xl border border-guild-green-400 bg-black/50">
           <Typography variant="h3" className="text-guild-green-400 mb-3">
             M1 Hackathon is Live!
           </Typography>

@@ -93,7 +93,7 @@ export default function Home() {
               </TabsList>
             </Tabs>
             <div className="relative">
-              <MagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground z-10" size={18} />
+              <MagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-white z-10" size={18} />
               <Input
                 type="search"
                 placeholder="Search kits..."
