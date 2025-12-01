@@ -1,124 +1,94 @@
 {
   "kits": [
     {
-      "id": "shinami",
-      "name": "Shinami",
-      "description": "Invisible node infrastructure for seamless blockchain development. Enterprise-grade RPC nodes and APIs.",
-      "tags": ["Infrastructure", "API", "RPC"],
-      "docsLink": "#",
+      "id": "nextjs-dapp-starter",
+      "name": "Next.js DApp Starter",
+      "description": "Full-stack web application template with Next.js 14, TypeScript, Tailwind CSS, and Privy wallet authentication.",
+      "tags": ["Next.js", "TypeScript", "Privy", "Tailwind"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/shinami-icon.svg",
-      "featured": true
+      "type": "app"
     },
     {
-      "id": "privy",
-      "name": "Privy",
-      "description": "Embedded wallets & user authentication for Move-based apps. Simple onboarding for your users.",
-      "tags": ["Wallet", "SDK", "Auth"],
-      "docsLink": "#",
+      "id": "react-native-wallet",
+      "name": "React Native Wallet App",
+      "description": "Mobile wallet application built with React Native and Expo. Includes Movement SDK integration for transactions.",
+      "tags": ["React Native", "Expo", "Movement SDK", "Mobile"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/privy-icon.svg",
-      "featured": true
+      "type": "app"
     },
     {
-      "id": "yuzu",
-      "name": "Yuzu",
-      "description": "Cross-chain asset bridge and liquidity protocol. Move assets seamlessly across networks.",
-      "tags": ["Bridge", "DeFi", "SDK"],
-      "docsLink": "#",
+      "id": "vue-dashboard",
+      "name": "Vue.js Analytics Dashboard",
+      "description": "Real-time blockchain analytics dashboard built with Vue 3, Vite, and Movement SDK for on-chain data visualization.",
+      "tags": ["Vue.js", "Vite", "Movement SDK", "Analytics"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/yuzu-icon.svg",
-      "featured": true
+      "type": "app"
     },
     {
-      "id": "sentio",
-      "name": "Sentio",
-      "description": "Powerful blockchain analytics and monitoring platform. Real-time insights for your Move apps.",
-      "tags": ["Analytics", "Monitoring", "API"],
-      "docsLink": "#",
+      "id": "telegram-mini-app",
+      "name": "Telegram Mini App",
+      "description": "Telegram bot with embedded mini app functionality. Uses Telegram Bot API and Movement SDK for Web3 features.",
+      "tags": ["Telegram", "Bot API", "Movement SDK", "Mini App"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/sentio-icon.svg",
-      "featured": false
+      "type": "app"
     },
     {
-      "id": "movement-cli",
-      "name": "Movement CLI",
-      "description": "Official command-line interface for Movement Network. Build, test, and deploy Move contracts.",
-      "tags": ["CLI", "Developer Tools", "SDK"],
-      "docsLink": "#",
+      "id": "token-module",
+      "name": "Fungible Token Module",
+      "description": "Move smart contract for creating and managing fungible tokens. Includes mint, burn, and transfer functionality.",
+      "tags": ["Move", "Fungible Assets", "Movement CLI", "Smart Contract"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/movement-icon.svg",
-      "featured": false
+      "type": "module"
     },
     {
-      "id": "movement-sdk",
-      "name": "Movement TypeScript SDK",
-      "description": "Type-safe TypeScript SDK for building frontend applications on Movement Network.",
-      "tags": ["SDK", "TypeScript", "Frontend"],
-      "docsLink": "#",
+      "id": "nft-collection",
+      "name": "NFT Collection Module",
+      "description": "Digital asset collection smart contract with minting, metadata, and royalty support using the Aptos Token Standard.",
+      "tags": ["Move", "Digital Assets", "NFT", "Aptos Framework"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/movement-icon.svg",
-      "featured": false
+      "type": "module"
     },
     {
-      "id": "oracle-kit",
-      "name": "Oracle Integration",
-      "description": "Real-world data feeds for your Move smart contracts. Reliable price feeds and external data.",
-      "tags": ["Oracle", "Data", "API"],
-      "docsLink": "#",
+      "id": "defi-swap",
+      "name": "DEX Swap Module",
+      "description": "Automated market maker (AMM) module with liquidity pools, token swaps, and LP token management.",
+      "tags": ["Move", "DeFi", "AMM", "Liquidity Pools"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/oracle-icon.svg",
-      "featured": false
+      "type": "module"
     },
     {
-      "id": "wallet-adapter",
-      "name": "Wallet Adapter",
-      "description": "Universal wallet connection library. Support multiple wallets with a single integration.",
-      "tags": ["Wallet", "SDK", "Frontend"],
-      "docsLink": "#",
+      "id": "staking-module",
+      "name": "Staking & Rewards Module",
+      "description": "Token staking smart contract with configurable reward rates, lock periods, and governance voting power.",
+      "tags": ["Move", "Staking", "Rewards", "Governance"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/wallet-icon.svg",
-      "featured": false
+      "type": "module"
     },
     {
-      "id": "move-prover",
-      "name": "Move Prover",
-      "description": "Formal verification tool for Move smart contracts. Ensure your code is mathematically correct.",
-      "tags": ["Security", "Testing", "CLI"],
-      "docsLink": "#",
+      "id": "multisig-wallet",
+      "name": "Multisig Wallet Module",
+      "description": "Multi-signature wallet contract requiring multiple approvals for transactions. Configurable threshold and signers.",
+      "tags": ["Move", "Multisig", "Security", "Smart Contract"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/prover-icon.svg",
-      "featured": false
+      "type": "module"
     },
     {
-      "id": "indexer",
-      "name": "Movement Indexer",
-      "description": "Fast blockchain data indexer. Query historical data and events with ease.",
-      "tags": ["Indexer", "API", "Data"],
-      "docsLink": "#",
+      "id": "escrow-module",
+      "name": "Escrow & Payments Module",
+      "description": "Secure escrow contract for conditional payments. Supports milestones, disputes, and automatic releases.",
+      "tags": ["Move", "Escrow", "Payments", "Smart Contract"],
+      "githubLink": "#",
       "replitLink": "#",
-      "icon": "/images/kits/indexer-icon.svg",
-      "featured": false
-    },
-    {
-      "id": "nft-toolkit",
-      "name": "NFT Toolkit",
-      "description": "Complete toolkit for creating and managing NFTs on Movement. Minting, metadata, and marketplaces.",
-      "tags": ["NFT", "SDK", "Frontend"],
-      "docsLink": "#",
-      "replitLink": "#",
-      "icon": "/images/kits/nft-icon.svg",
-      "featured": false
-    },
-    {
-      "id": "defi-sdk",
-      "name": "DeFi Protocol SDK",
-      "description": "Build decentralized finance applications with pre-built modules for lending, swapping, and staking.",
-      "tags": ["DeFi", "SDK", "Smart Contracts"],
-      "docsLink": "#",
-      "replitLink": "#",
-      "icon": "/images/kits/defi-icon.svg",
-      "featured": false
+      "type": "module"
     }
   ]
 }

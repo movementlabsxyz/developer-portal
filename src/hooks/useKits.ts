@@ -6,10 +6,9 @@ export interface Kit {
   name: string;
   description: string;
   tags: string[];
-  docsLink: string;
+  githubLink: string;
   replitLink: string;
-  icon: string;
-  featured: boolean;
+  type: 'app' | 'module';
 }
 
 export interface KitsData {
@@ -19,12 +18,12 @@ export interface KitsData {
 export function useKits() {
   const data: KitsData = useMemo(() => kitsData as KitsData, []);
 
-  const featuredKits = useMemo(
-    () => data.kits.filter((kit) => kit.featured),
+  const allKits = useMemo(() => data.kits, [data.kits]);
+
+  const getKitsByType = useMemo(
+    () => (type: 'app' | 'module') => data.kits.filter((kit) => kit.type === type),
     [data.kits]
   );
-
-  const allKits = useMemo(() => data.kits, [data.kits]);
 
   const getKitsByTag = useMemo(
     () => (tag: string) => data.kits.filter((kit) => kit.tags.includes(tag)),
@@ -41,7 +40,7 @@ export function useKits() {
 
   return {
     kits: allKits,
-    featuredKits,
+    getKitsByType,
     getKitsByTag,
     allTags: getAllTags,
   };

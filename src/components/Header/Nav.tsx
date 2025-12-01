@@ -2,7 +2,7 @@
 
 import gsap from 'gsap'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import logo from '../../../public/images/movement-logo-white.svg'
 import { usePathname } from 'next/navigation'
@@ -105,7 +105,6 @@ export default function Nav() {
                         ))}
                     </ul>
                 </nav>
-                <div className="lang-selector"></div>
                 <button
                     id="nav-btn"
                     aria-label="Open Mobile Nav"

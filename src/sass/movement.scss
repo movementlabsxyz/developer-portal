@@ -1,16 +1,7 @@
-@import 'base/fonts';
+// Core abstracts (needed by header/footer)
 @import 'base/variables';
 @import 'base/mixins';
-@import 'base/reset';
-@import 'base/base';
 
+// Header & Footer only
 @import 'modules/header';
 @import 'modules/footer';
-@import 'modules/components';
-@import 'modules/weglot';
-
-@import 'layout/l-home';
-@import 'layout/l-tutorials';
-@import 'layout/l-learning-paths';
-@import 'layout/l-kits';
-@import 'layout/l-events';
