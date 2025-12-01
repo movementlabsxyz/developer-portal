@@ -1,94 +1,76 @@
 {
   "kits": [
     {
-      "id": "nextjs-dapp-starter",
-      "name": "Next.js DApp Starter",
-      "description": "Full-stack web application template with Next.js 14, TypeScript, Tailwind CSS, and Privy wallet authentication.",
-      "tags": ["Next.js", "TypeScript", "Privy", "Tailwind"],
-      "githubLink": "#",
-      "replitLink": "#",
-      "type": "app"
-    },
-    {
-      "id": "react-native-wallet",
-      "name": "React Native Wallet App",
-      "description": "Mobile wallet application built with React Native and Expo. Includes Movement SDK integration for transactions.",
-      "tags": ["React Native", "Expo", "Movement SDK", "Mobile"],
-      "githubLink": "#",
-      "replitLink": "#",
-      "type": "app"
-    },
-    {
-      "id": "vue-dashboard",
-      "name": "Vue.js Analytics Dashboard",
-      "description": "Real-time blockchain analytics dashboard built with Vue 3, Vite, and Movement SDK for on-chain data visualization.",
-      "tags": ["Vue.js", "Vite", "Movement SDK", "Analytics"],
-      "githubLink": "#",
-      "replitLink": "#",
-      "type": "app"
-    },
-    {
-      "id": "telegram-mini-app",
-      "name": "Telegram Mini App",
-      "description": "Telegram bot with embedded mini app functionality. Uses Telegram Bot API and Movement SDK for Web3 features.",
-      "tags": ["Telegram", "Bot API", "Movement SDK", "Mini App"],
-      "githubLink": "#",
-      "replitLink": "#",
-      "type": "app"
-    },
-    {
-      "id": "token-module",
-      "name": "Fungible Token Module",
-      "description": "Move smart contract for creating and managing fungible tokens. Includes mint, burn, and transfer functionality.",
-      "tags": ["Move", "Fungible Assets", "Movement CLI", "Smart Contract"],
-      "githubLink": "#",
-      "replitLink": "#",
+      "id": "hello-blockchain-starter",
+      "name": "Hello Blockchain Starter",
+      "description": "A hello world Move Module template you can fork to easily build, compile, and deploy Move Modules on the Movement Network Testnet.",
+      "tags": ["Move", "Starter", "Movement CLI"],
+      "githubLink": "https://github.com/movementlabsxyz/Move-0-1",
+      "replitLink": "https://replit.com/@MovementNetwork/Movement-Hello-Blockchain",
       "type": "module"
     },
     {
-      "id": "nft-collection",
-      "name": "NFT Collection Module",
-      "description": "Digital asset collection smart contract with minting, metadata, and royalty support using the Aptos Token Standard.",
-      "tags": ["Move", "Digital Assets", "NFT", "Aptos Framework"],
+      "id": "pixel-canvas",
+      "name": "Movement Pixel Canvas",
+      "description": "A collaborative on-chain canvas where anyone can place colored pixels to create shared artwork on Movement blockchain.",
+      "tags": ["Move", "Movement CLI", "Game Development"],
       "githubLink": "#",
-      "replitLink": "#",
+      "replitLink": "https://replit.com/@shayansanjideh1/Movement-PixelPlace",
       "type": "module"
     },
     {
-      "id": "defi-swap",
-      "name": "DEX Swap Module",
-      "description": "Automated market maker (AMM) module with liquidity pools, token swaps, and LP token management.",
+      "id": "move-slayers",
+      "name": "Move Slayers",
+      "description": "A complete RPG game template for the Movement Network, featuring heroes, enemies, inventory, combat, and leveling systems.",
+      "tags": ["Move", "Movement CLI", "Game Development"],
+      "githubLink": "https://github.com/movementlabsxyz/move-slayers",
+      "replitLink": "https://replit.com/@shayansanjideh1/Movement-Move-Slayers",
+      "type": "module"
+    },
+    {
+      "id": "movement-uniswap-v2  ",
+      "name": "Movement Uniswap V2",
+      "description": "A complete, production-ready Automated Market Maker (AMM) implementation built for Movement. This project demonstrates advanced DeFi mechanics including constant product formula pools, LP token management, and factory registry patterns..",
       "tags": ["Move", "DeFi", "AMM", "Liquidity Pools"],
-      "githubLink": "#",
-      "replitLink": "#",
+      "githubLink": "https://github.com/movementlabsxyz/movement-defi-examples/tree/main/univ2/sources",
+      "replitLink": "https://replit.com/@shayansanjideh1/Movement-Uniswap-v2",
       "type": "module"
     },
     {
-      "id": "staking-module",
-      "name": "Staking & Rewards Module",
-      "description": "Token staking smart contract with configurable reward rates, lock periods, and governance voting power.",
-      "tags": ["Move", "Staking", "Rewards", "Governance"],
-      "githubLink": "#",
-      "replitLink": "#",
+      "id": "document-management-module",
+      "name": "Document Management Module",
+      "description": "A decentralized document management system built on the Movement Network that enables secure document upload, sharing, and digital signing with blockchain-based verification and IPFS storage.",
+      "tags": ["Move", "Document Management", "Movement CLI", "Smart Contract"],
+      "githubLink": "https://github.com/dumbdevss/Movement-Document-Management",
+      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-Document-Management",
       "type": "module"
     },
     {
-      "id": "multisig-wallet",
-      "name": "Multisig Wallet Module",
-      "description": "Multi-signature wallet contract requiring multiple approvals for transactions. Configurable threshold and signers.",
-      "tags": ["Move", "Multisig", "Security", "Smart Contract"],
-      "githubLink": "#",
-      "replitLink": "#",
+      "id": "vesting-contract",
+      "name": "Vesting Contract",
+      "description": "A decentralized token vesting contract built on the Movement Network that enables time-locked token distribution with cliff periods and linear vesting schedules for team members, investors, and contributors.",
+      "tags": ["Move", "Vesting", "Token Distribution", "Smart Contract"],
+      "githubLink": "https://github.com/dumbdevss/Movement-Vesting-Template",
+      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-Vesting-Contract",
       "type": "module"
     },
     {
-      "id": "escrow-module",
-      "name": "Escrow & Payments Module",
-      "description": "Secure escrow contract for conditional payments. Supports milestones, disputes, and automatic releases.",
-      "tags": ["Move", "Escrow", "Payments", "Smart Contract"],
-      "githubLink": "#",
-      "replitLink": "#",
-      "type": "module"
+      "id": "react-native-privy",
+      "name": "React Native Privy Wallet",
+      "description": "A comprehensive example demonstrating how to build a Movement blockchain wallet using Privy's Expo SDK in React Native.",
+      "tags": ["Move", "React Native", "Privy", "Wallet"],
+      "githubLink": "https://github.com/dumbdevss/Movement-react-native-privy-template",
+      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-react-native-privy-template",
+      "type": "app"
+    },
+    {
+      "id": "movement-react-template",
+      "name": "Movement React Template",
+      "description": "A production-ready Next.js template for building decentralized applications (dApps) on Movement Network with comprehensive wallet integration, network switching, message signing, and transaction capabilities.",
+      "tags": ["Move", "Next.js", "React", "Wallet"],
+      "githubLink": "https://github.com/Rahat-ch/Movement-Network-ConnectWallet-Template",
+      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-react-template",
+      "type": "app"
     }
   ]
 }
