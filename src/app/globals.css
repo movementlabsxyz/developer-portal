@@ -1,6 +1,6 @@
-@import "tailwindcss";
 @import "@movementlabsxyz/movement-design-system/component-styles";
 @import "@movementlabsxyz/movement-design-system/theme";
+@import "tailwindcss";
 
 /* TWKEverett Font Family */
 @font-face {
