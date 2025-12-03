@@ -124,11 +124,13 @@ export default function Home() {
                   </div>
                 </CardContent>
                 <CardFooter className="gap-2">
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={kit.githubLink} target="_blank" rel="noopener noreferrer">
-                      GitHub
-                    </Link>
-                  </Button>
+                  {kit.githubLink && (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={kit.githubLink} target="_blank" rel="noopener noreferrer">
+                        GitHub
+                      </Link>
+                    </Button>
+                  )}
                   <Button variant="default" size="sm" asChild>
                     <Link href={kit.replitLink} target="_blank" rel="noopener noreferrer">
                       Open in Replit
