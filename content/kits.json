@@ -15,7 +15,7 @@
       "description": "A collaborative on-chain canvas where anyone can place colored pixels to create shared artwork on Movement blockchain.",
       "tags": ["Move", "Movement CLI", "Game Development"],
       "githubLink": "https://github.com/shayansanjideh/pixel-place",
-      "replitLink": "https://replit.com/@shayansanjideh1/Movement-PixelPlace",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-PixelPlace",
       "type": "module"
     },
     {
@@ -24,7 +24,7 @@
       "description": "A complete RPG game template for the Movement Network, featuring heroes, enemies, inventory, combat, and leveling systems.",
       "tags": ["Move", "Movement CLI", "Game Development"],
       "githubLink": "https://github.com/movementlabsxyz/move-slayers",
-      "replitLink": "https://replit.com/@shayansanjideh1/Movement-Move-Slayers",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Move-Slayers",
       "type": "module"
     },
     {
@@ -33,7 +33,7 @@
       "description": "A complete, production-ready Automated Market Maker (AMM) implementation built for Movement. This project demonstrates advanced DeFi mechanics including constant product formula pools, LP token management, and factory registry patterns..",
       "tags": ["Move", "DeFi", "AMM", "Liquidity Pools"],
       "githubLink": "https://github.com/movementlabsxyz/movement-defi-examples/tree/main/univ2/sources",
-      "replitLink": "https://replit.com/@shayansanjideh1/Movement-Uniswap-v2",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Uniswap-v2-1",
       "type": "module"
     },
     {
@@ -42,7 +42,7 @@
       "description": "A decentralized document management system built on the Movement Network that enables secure document upload, sharing, and digital signing with blockchain-based verification and IPFS storage.",
       "tags": ["Move", "Document Management", "Movement CLI", "Smart Contract"],
       "githubLink": "https://github.com/dumbdevss/Movement-Document-Management",
-      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-Document-Management",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Document-Management",
       "type": "module"
     },
     {
@@ -51,7 +51,7 @@
       "description": "A decentralized token vesting contract built on the Movement Network that enables time-locked token distribution with cliff periods and linear vesting schedules for team members, investors, and contributors.",
       "tags": ["Move", "Vesting", "Token Distribution", "Smart Contract"],
       "githubLink": "https://github.com/dumbdevss/Movement-Vesting-Template",
-      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-Vesting-Contract",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Vesting-Contract",
       "type": "module"
     },
     {
@@ -60,7 +60,7 @@
       "description": "A comprehensive example demonstrating how to build a Movement blockchain wallet using Privy's Expo SDK in React Native.",
       "tags": ["Move", "React Native", "Privy", "Wallet"],
       "githubLink": "https://github.com/dumbdevss/Movement-react-native-privy-template",
-      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-react-native-privy-template",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-react-native-privy-template",
       "type": "app"
     },
     {
@@ -70,6 +70,15 @@
       "tags": ["Move", "Next.js", "React", "Wallet"],
       "githubLink": "https://github.com/Rahat-ch/Movement-Network-ConnectWallet-Template",
       "replitLink": "https://replit.com/@triumphanttaiwo/Movement-react-template",
+      "type": "app"
+    },
+    {
+      "id": "movement-privy-template",
+      "name": "Movement Privy Template",
+      "description": "A decentralized counter game built on the Movement blockchain, featuring dual wallet support with Privy social login and native Movement wallets. ",
+      "tags": ["Move", "Counter Game", "Privy", "Wallet", "Game Development", "React"],
+      "githubLink": "https://github.com/dumbdevss/Movement-Counter-template",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Counter-template",
       "type": "app"
     }
   ]
