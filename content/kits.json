@@ -69,7 +69,7 @@
       "description": "A production-ready Next.js template for building decentralized applications (dApps) on Movement Network with comprehensive wallet integration, network switching, message signing, and transaction capabilities.",
       "tags": ["Move", "Next.js", "React", "Wallet"],
       "githubLink": "https://github.com/Rahat-ch/Movement-Network-ConnectWallet-Template",
-      "replitLink": "https://replit.com/@triumphanttaiwo/Movement-react-template",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Network-React-Template",
       "type": "app"
     },
     {
@@ -79,6 +79,15 @@
       "tags": ["Move", "Counter Game", "Privy", "Wallet", "Game Development", "React"],
       "githubLink": "https://github.com/dumbdevss/Movement-Counter-template",
       "replitLink": "https://replit.com/t/movement-labs/repls/Movement-Counter-template",
+      "type": "app"
+    },
+    {
+      "id": "pixel-canvas-frontend",
+      "name": "Pixel Canvas Frontend",
+      "description": "A frontend for the Pixel Canvas game built on the Movement blockchain, featuring a simple pixel editor and a canvas to display the pixels.",
+      "tags": ["Move", "Pixel Canvas", "Game Development", "React"],
+      "githubLink": "",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Pixel-Canvas-Frontend",
       "type": "app"
     }
   ]
