@@ -90,5 +90,14 @@
       "replitLink": "https://replit.com/t/movement-labs/repls/Pixel-Canvas-Frontend/view#README.md",
       "type": "app"
     }
+    {
+      "id": "x402-template",
+      "name": "X402 Template",
+      "description": "A template for building with x402 on Movement Network.",
+      "tags": ["x402", "AI", "React", "Express"],
+      "githubLink": "https://github.com/Rahat-ch/movement-x402",
+      "replitLink": "https://replit.com/t/movement-labs/repls/Movement-x402-Template/view#README.md",
+      "type": "app"
+    }
   ]
 }
