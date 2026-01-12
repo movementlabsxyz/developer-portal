@@ -4,12 +4,21 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import logo from '../../../public/images/movement-logo-white.svg'
+import logoWhite from '../../../public/images/movement-logo-white.svg'
+import logoBlack from '../../../public/images/movement-logo-black.svg'
 import { usePathname } from 'next/navigation'
+import { ThemeToggle, useTheme } from '@movementlabsxyz/movement-design-system'
 
 export default function Nav() {
     const [mobileNavOpen, setMobileNavOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
     const pathname = usePathname()
+    const { resolvedTheme } = useTheme()
+
+    // Avoid hydration mismatch
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     useEffect(() => {
         const header = document.getElementById('site-header')
@@ -83,7 +92,10 @@ export default function Nav() {
         <header id="site-header">
             <div className="inner-wrap">
                 <Link href={'/'} className="logo">
-                    <Image src={logo} alt="Movement Developer Portal" />
+                    <Image 
+                        src={mounted && resolvedTheme === 'light' ? logoBlack : logoWhite} 
+                        alt="Movement Developer Portal" 
+                    />
                 </Link>
                 <nav id="main-nav" role="navigation" className={mobileNavOpen ? 'active' : ''}>
                     <ul>
@@ -105,6 +117,7 @@ export default function Nav() {
                         ))}
                     </ul>
                 </nav>
+                <ThemeToggle className="theme-toggle" />
                 <button
                     id="nav-btn"
                     aria-label="Open Mobile Nav"

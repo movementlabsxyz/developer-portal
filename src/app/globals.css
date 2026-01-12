@@ -57,10 +57,7 @@
        url(/fonts/twk-everett/TWKEverett-Black.woff) format("woff");
 }
 
-@theme {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-}
+/* Theme colors are provided by the design system's theme.css via semantic tokens */
 
 /* Base Styles */
 html {
@@ -68,8 +65,8 @@ html {
 }
 
 body {
-  color: var(--color-foreground);
-  background: var(--color-background);
+  color: var(--foreground);
+  background: var(--background);
   font-family: 'neue-haas-unica', sans-serif;
 }
 
@@ -77,7 +74,7 @@ body {
 body::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background: black;
+  background: var(--background);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -87,7 +84,15 @@ body::-webkit-scrollbar-thumb {
 /* Selection */
 ::selection {
   color: var(--color-guild-green-400);
-  background: black;
+  background: var(--foreground);
+}
+
+:root ::selection {
+  background: var(--color-neutrals-black);
+}
+
+.dark ::selection {
+  background: var(--color-neutrals-black);
 }
 
 @utility text-balance {

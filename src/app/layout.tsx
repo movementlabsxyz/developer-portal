@@ -6,7 +6,7 @@ import localFont from 'next/font/local'
 import { cn } from '@/lib/utils'
 import GTM from '@/components/GTM/GTM'
 import NavHeader from '@/components/Header/Nav'
-import Footer from '@/components/Footer/Footer'
+import ClientProvider from '@/components/Providers/ClientProvider'
 // import WeGlot from '@/components/Translation/weGlot'
 
 const twkEverett = localFont({
@@ -80,16 +80,17 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <head>
                 <link rel="stylesheet" href="https://use.typekit.net/ntd7efg.css" />
             </head>
             <body className={cn(twkEverett.variable, twkEverettMono.variable)}>
-                <NavHeader />
-                <main>{children}</main>
-                <Footer />
-                <GTM />
-                {/* <WeGlot /> */}
+                <ClientProvider>
+                    <NavHeader />
+                    <main>{children}</main>
+                    <GTM />
+                    {/* <WeGlot /> */}
+                </ClientProvider>
             </body>
         </html>
     )
