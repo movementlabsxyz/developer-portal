@@ -12,7 +12,7 @@
     "@contentful/rich-text-react-renderer": "^15.22.11",
     "@contentful/rich-text-types": "^16.8.5",
     "@lottiefiles/dotlottie-react": "^0.9.3",
-    "@movementlabsxyz/movement-design-system": "github:movementlabsxyz/movement-design-system#shadcn",
+    "@movementlabsxyz/movement-design-system": "github:MoveIndustries/movement-design-system",
     "@tailwindcss/postcss": "^4.1.17",
     "fs": "0.0.1-security",
     "fuse.js": "^7.1.0",
