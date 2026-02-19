@@ -22,21 +22,32 @@ export default function EventsPage() {
           Events & Resources
         </Typography>
 
-        {/* M1 Hackathon Announcement */}
+        {/* Open Claw Hackathon */}
         <div className="mb-8 p-6 rounded-xl border border-guild-green-400 bg-black/50">
           <Typography variant="h3" className="text-guild-green-400 mb-3">
-            M1 Hackathon is Live!
+            Open Claw Hackathon
           </Typography>
           <Text className="text-muted-foreground mb-4">
-            Join the Movement M1 Hackathon hosted by Encode Club. Build on Movement and compete for prizes!
+            IRL Hackathon at ETH Denver — Thursday, February 19th — 5 Hour Build Sprint
           </Text>
           <Button variant="default" size="lg" asChild>
-            <Link
-              href="https://www.encodeclub.com/programmes/movement-m1-hackathon"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join the Hackathon
+            <Link href="/events/openclawhackathon">
+              Learn More
+            </Link>
+          </Button>
+        </div>
+
+        {/* M1 Hackathon Winners */}
+        <div className="mb-8 p-6 rounded-xl border border-guild-green-400 bg-black/50">
+          <Typography variant="h3" className="text-guild-green-400 mb-3">
+            M1 Hackathon
+          </Typography>
+          <Text className="text-muted-foreground mb-4">
+            The Movement M1 Hackathon has wrapped up. Check out the winning projects built on Movement!
+          </Text>
+          <Button variant="default" size="lg" asChild>
+            <Link href="/events/m1">
+              Checkout the Winners
             </Link>
           </Button>
         </div>

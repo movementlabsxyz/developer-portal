@@ -86,8 +86,8 @@ body::-webkit-scrollbar-thumb {
 
 /* Selection */
 ::selection {
-  color: var(--color-guild-green-400);
-  background: black;
+  color: black;
+  background: var(--color-guild-green-400);
 }
 
 @utility text-balance {
