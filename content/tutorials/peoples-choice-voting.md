@@ -40,7 +40,7 @@ The `vote` entry function enforces all invariants:
 4. Signature hasn't expired
 5. Ed25519 signature is valid against stored admin public key
 
-The message being signed is: `bcs::to_bytes(voter_address) ++ bcs::to_bytes(candidate_id) ++ bcs::to_bytes(expiry)`
+The message being signed is BCS-encoded: `bcs::to_bytes(voter_address) ++ bcs::to_bytes(candidate_id) ++ bcs::to_bytes(expiry)`
 
 This prevents replay attacks (address-bound), vote manipulation (candidate-bound), and stale eligibility (time-bound).
 
@@ -54,15 +54,12 @@ Three view functions expose read-only state:
 ### Deployment
 
 ```bash
-movement move publish --named-addresses peoples_choice=default --profile testnet
+movement move publish --named-addresses peoples_choice=default --profile default
 ```
 
 After deployment, initialize with:
 ```bash
-movement move run \
-  --function-id '<address>::peoples_choice::initialize' \
-  --args u64:5 'hex:<admin_public_key_hex>' \
-  --profile testnet
+movement move run --function-id 'default::peoples_choice::initialize' --args u64:5 'hex:<admin_public_key_hex>' --profile default --assume-yes
 ```
 
 ## 2. Ed25519 Keypair Generation
@@ -84,17 +81,47 @@ console.log("Public key (for contract init):", privateKey.publicKey().toString()
 
 The API route (`/api/check-eligibility`) does three things:
 
-1. Fetches user XP from Parthenon GraphQL API (server-side, using API key)
-2. If XP >= 100, signs an eligibility proof with Ed25519
+1. Fetches user XP from the Parthenon REST API (server-side, using API key)
+2. If XP >= 100, signs a BCS-encoded eligibility proof with Ed25519
 3. Returns the signature + expiry for the frontend to include in the vote transaction
 
+The message must be BCS-encoded to match what the contract reconstructs on-chain:
+
 ```typescript
-// Sign the eligibility proof
-const message = new TextEncoder().encode(`${address}:${candidateId}:${expiry}`);
-const signature = privateKey.sign(message);
+import { Ed25519PrivateKey, AccountAddress, Serializer } from "@aptos-labs/ts-sdk";
+
+async function signEligibility(address: string, candidateId: number, expiry: number) {
+  const privateKey = new Ed25519PrivateKey(process.env.ELIGIBILITY_SIGNER_KEY!);
+
+  // BCS-encode each field to match the contract's bcs::to_bytes() calls
+  const addrBytes = AccountAddress.from(address).bcsToBytes();
+
+  const candidateSer = new Serializer();
+  candidateSer.serializeU64(candidateId);
+  const candidateBytes = candidateSer.toUint8Array();
+
+  const expirySer = new Serializer();
+  expirySer.serializeU64(expiry);
+  const expiryBytes = expirySer.toUint8Array();
+
+  // Concatenate: bcs(address) ++ bcs(candidate_id) ++ bcs(expiry)
+  const message = new Uint8Array([...addrBytes, ...candidateBytes, ...expiryBytes]);
+
+  const signature = privateKey.sign(message);
+  return signature.toString();
+}
 ```
 
-The contract independently reconstructs this message and verifies the signature, ensuring only the server (with the private key) can authorize votes.
+The Parthenon API is called as a REST endpoint:
+
+```typescript
+const res = await fetch(
+  `https://parthenon-api.movementlabs.xyz/api/users/xp-by-address?address=${address}`,
+  { headers: { "X-API-KEY": process.env.PARTHENON_API_KEY! } }
+);
+const data = await res.json();
+const xp = data?.data?.xp ?? 0;
+```
 
 ## 4. Wallet Integration (Next.js)
 
@@ -104,10 +131,17 @@ Wrap only the voting page in `AptosWalletAdapterProvider` to avoid loading walle
 
 ```tsx
 // layout.tsx (scoped to /events/peopleschoice)
+import { AptosConfig, Network } from "@aptos-labs/ts-sdk";
+
+const aptosConfig = new AptosConfig({
+  network: Network.MAINNET,
+  fullnode: "https://mainnet.movementnetwork.xyz/v1",
+});
+
 <AptosWalletAdapterProvider
   autoConnect={true}
-  dappConfig={{ network: Network.CUSTOM }}
-  optInWallets={["Nightly", "Razor Wallet"]}
+  dappConfig={aptosConfig}
+  onError={(error) => console.error("Wallet error:", error)}
 >
   {children}
 </AptosWalletAdapterProvider>
@@ -115,16 +149,34 @@ Wrap only the voting page in `AptosWalletAdapterProvider` to avoid loading walle
 
 ### Vote Submission
 
+The signature from the API is a hex string that must be converted to `Uint8Array` before passing as a `vector<u8>` argument to the contract:
+
 ```tsx
 const { signAndSubmitTransaction } = useWallet();
 
-await signAndSubmitTransaction({
+// Convert hex signature to bytes
+const sigHex = signature.replace(/^0x/, "");
+const sigBytes = new Uint8Array(
+  sigHex.match(/.{1,2}/g)!.map((byte) => parseInt(byte, 16))
+);
+
+const response = await signAndSubmitTransaction({
+  sender: account.address,
   data: {
     function: `${MODULE_ADDRESS}::peoples_choice::vote`,
-    typeArguments: [],
-    functionArguments: [candidateId, signature, expiry],
+    functionArguments: [candidateId, sigBytes, expiry],
   },
 });
+
+// Wait for on-chain confirmation
+const txResult = await aptos.waitForTransaction({
+  transactionHash: response.hash,
+  options: { checkSuccess: true },
+});
+
+if (!txResult.success) {
+  // Handle failure
+}
 ```
 
 ## 5. Frontend State Machine
@@ -136,12 +188,15 @@ DISCONNECTED → [connect wallet] → CONNECTED → CHECKING_ELIGIBILITY
   → ELIGIBLE → [click vote] → VOTING → VOTED
   → INELIGIBLE (show XP requirement)
   → ALREADY_VOTED (show which project)
+  → ERROR (show message + try again)
 ```
 
 Vote counts are polled every 15 seconds via view function calls and visible to all users regardless of wallet connection.
 
 ## Security Considerations
 
+- **BCS encoding:** Both server and contract must construct identical messages using BCS serialization — text encoding won't match
+- **Signature format:** The API returns a hex string, but the contract expects raw bytes (`vector<u8>`). The frontend must convert hex to `Uint8Array` before submitting
 - **Replay prevention:** Signature binds to specific address + candidate + expiry window
 - **Server authority:** Only the server with the private key can produce valid eligibility proofs
 - **On-chain enforcement:** Contract verifies everything; the server cannot force a double-vote
