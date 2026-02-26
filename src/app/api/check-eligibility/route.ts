@@ -89,7 +89,10 @@ async function signEligibility(
   expirySer.serializeU64(expiry);
   const expiryBytes = expirySer.toUint8Array();
 
-  const message = new Uint8Array([...addrBytes, ...candidateBytes, ...expiryBytes]);
+  const message = new Uint8Array(addrBytes.length + candidateBytes.length + expiryBytes.length);
+  message.set(addrBytes, 0);
+  message.set(candidateBytes, addrBytes.length);
+  message.set(expiryBytes, addrBytes.length + candidateBytes.length);
 
   const signature = privateKey.sign(message);
   return signature.toString();
