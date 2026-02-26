@@ -48,5 +48,13 @@
     "amt": "5+hrs",
     "link":"https://movespiders.com/",
     "tags": ["Code Along", "Game"]
+  },
+  "On-Chain Voting with Signature Verification" : {
+    "category": "Intermediate",
+    "title": "On-Chain Voting with Signature Verification",
+    "description": "Build a complete on-chain voting system with Move smart contracts, Ed25519 eligibility proofs, and a Next.js frontend with wallet integration.",
+    "amt": "45m",
+    "link":"/tutorials/peoples-choice-voting",
+    "tags": ["Contract", "Full Stack", "Code Along"]
   }
 }
