@@ -329,13 +329,13 @@ export default function PeoplesChoicePage() {
             return (
               <Card
                 key={nominee.id}
-                className={`transition-colors ${
+                className={`flex flex-col transition-colors ${
                   isVotedFor
                     ? "border-guild-green-400 ring-2 ring-guild-green-400/50"
                     : "border-guild-green-400-20 hover:border-guild-green-400"
                 }`}
               >
-                <CardHeader>
+                <CardHeader className="flex-1">
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="secondary">{nominee.prize}</Badge>
                     <Badge variant="secondary">
@@ -347,7 +347,7 @@ export default function PeoplesChoicePage() {
                     {nominee.description}
                   </CardDescription>
                 </CardHeader>
-                <CardFooter className="gap-2 flex-wrap">
+                <CardFooter className="gap-2 flex-wrap mt-auto">
                   {nominee.videoUrl && (
                     <Button variant="outline" size="sm" asChild>
                       <Link
