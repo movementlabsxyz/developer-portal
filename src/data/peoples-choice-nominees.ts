@@ -39,18 +39,11 @@ export const peoplesChoiceNominees: PeoplesChoiceNominee[] = [
   },
   {
     id: 3,
-    name: "Ashfall",
-    prize: "People's Choice Nominee",
-    description:
-      "Post-apocalyptic on-chain survival game with player-owned economies on Movement.",
-  },
-  {
-    id: 4,
     name: "The Village",
     prize: "People's Choice Nominee",
     description:
       "Social coordination platform enabling community governance and collective decision-making on-chain.",
     videoUrl: "https://www.youtube.com/watch?v=60qJEG2PMDE",
-    demoUrl: "https://github.com/jomarip/thevillage",
+    demoUrl: "https://thevillage-khaki.vercel.app/",
   },
 ];
