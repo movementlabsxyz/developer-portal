@@ -1,0 +1,16 @@
+[package]
+name = "peoples_choice"
+version = "1.0.0"
+authors = []
+
+[addresses]
+peoples_choice = "0x9e125ef34b46202e928ce15d2d0681cfb974394e2085569fd8839240a4c6dc0e"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/movementlabsxyz/aptos-core.git"
+rev = "m1"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]

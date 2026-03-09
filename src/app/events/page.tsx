@@ -22,6 +22,22 @@ export default function EventsPage() {
           Events & Resources
         </Typography>
 
+        {/* People's Choice Voting */}
+        <div className="mb-8 p-6 rounded-xl border border-guild-green-400 bg-black/50">
+          <Typography variant="h3" className="text-guild-green-400 mb-3">
+            People&apos;s Choice Award
+          </Typography>
+          <Text className="text-muted-foreground mb-4">
+            Vote for your favorite M1 Hackathon project on-chain. Connect your
+            Movement wallet and cast your vote!
+          </Text>
+          <Button variant="default" size="lg" asChild>
+            <Link href="/events/peopleschoice">
+              Vote Now
+            </Link>
+          </Button>
+        </div>
+
         {/* Open Claw Hackathon */}
         <div className="mb-8 p-6 rounded-xl border border-guild-green-400 bg-black/50">
           <Typography variant="h3" className="text-guild-green-400 mb-3">

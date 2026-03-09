@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^5.2.1",
+    "@aptos-labs/wallet-adapter-react": "^8.3.0",
+    "@aptos-labs/wallet-standard": "^0.5.2",
     "@contentful/rich-text-react-renderer": "^15.22.11",
     "@contentful/rich-text-types": "^16.8.5",
     "@lottiefiles/dotlottie-react": "^0.9.3",
