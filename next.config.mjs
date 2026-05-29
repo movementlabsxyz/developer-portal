@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-      serverComponentsExternalPackages: ['remark-prism']
-    },
-  }
+  sassOptions: {
+    includePaths: ['./src/sass'],
+  },
+  serverExternalPackages: ['remark-prism'],
+}
 
-export default nextConfig;
+export default nextConfig
