@@ -36,7 +36,7 @@ export default function Home(props: { postData: PostData[] }) {
                             <span className="subtitle">Learning Paths</span>
                             <h1 className="title">Basic Concepts</h1>
                             <p>Learn the core syntax, data structures, and fundamental concepts of the Move Language.</p>
-                            <a href="/learning-paths/basic-concepts" className="btn btn-yellow">Get Started</a>
+                            <Link href="/learning-paths/basic-concepts" className="btn btn-yellow">Get Started</Link>
                         </div>
                     </div>
                 </div>

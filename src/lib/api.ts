@@ -91,6 +91,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
       method: "POST",
       headers: headers,
       body: body,
+      cache: "force-cache",
       next: { tags: ["articles"] },
     });
 
